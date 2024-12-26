@@ -1,0 +1,20 @@
+@use '../../abstracts';
+
+.container {
+  @include abstracts.boxProperty(100%,100%,'',0px, inherit);
+  @include abstracts.displayFlex(flex-start, center,row nowrap);
+  gap: 20px;
+
+  .imageWrapper {
+    width: 70px;
+    height: 70px;
+  };
+
+  .userInfo {
+    @include abstracts.boxProperty(70%,100%,'',5px, inherit);
+    @include abstracts.displayFlex(space-around, center,column nowrap);
+    color:white;
+
+  }
+
+}

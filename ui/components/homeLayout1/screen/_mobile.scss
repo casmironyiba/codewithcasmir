@@ -1,0 +1,20 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%, 100%, '', 10px, abstracts.$primary);
+    @include abstracts.displayFlex(space-between, center, column nowrap);
+    // background: purple;
+
+    .wrapper {
+      // height: 350px;
+      // background: orange;
+      @include abstracts.displayFlex(space-between, center, column nowrap);
+    gap: 20px;
+    }
+  }
+
+  @include abstracts.mq('mobileM') {
+    // height: 700px;
+  }
+}

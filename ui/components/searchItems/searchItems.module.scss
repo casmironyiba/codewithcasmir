@@ -1,0 +1,130 @@
+@use '../../abstracts';
+
+.searchItems {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(
+      abstracts.remsize(150),
+      abstracts.remsize(37),
+      auto,
+      abstracts.remsize(5)
+    );
+    // border-radius:5px;
+    background: abstracts.$white;
+    @include abstracts.displayFlex(space-around, center, row nowrap);
+    border:1px solid palevioletred;
+    // dispplay:none;
+
+    .form {
+      @include abstracts.boxProperty(100%, 100%, auto);
+      @include abstracts.displayFlex(space-between, center, row nowrap);
+      padding: 1.5px;
+    // border-radius:5px;
+      background:white;
+      // display:none;
+
+      .input {
+        @include abstracts.boxProperty(90%, 100%);
+        // display:none;
+        background: inherit;
+        text-align: center;
+        font-size: 0.7rem;
+    // border-radius:5px;
+        border: none;
+        outline: none;
+      }
+
+      .button {
+        width: 20%;
+        height: 100%;
+        // background: abstracts.$palevioletred;
+        background: inherit;
+        outline: none;
+        border: none;
+        padding: 3px;
+
+        .icon {
+          width: 100%;
+          height: 100%;
+          border-radius:5px;
+          background: white;
+          color: #333333;
+        }
+      }
+    }
+  }
+
+  @include abstracts.mq('mobileM') {
+    width: abstracts.remsize(180);
+
+    .form {
+      .input {
+        font-size: 0.6rem;
+      }
+    }
+  }
+  @include abstracts.mq('mobileL') {
+    width: abstracts.remsize(200);
+    .form {
+      .input {
+        font-size: 0.55rem;
+      }
+    }
+  }
+
+  @include abstracts.mq('tablet') {
+    width: abstracts.remsize(300);
+    .form {
+      .input {
+        font-size: 0.7rem;
+      }
+    }
+  }
+
+  @include abstracts.mq('laptop') {
+    width: abstracts.remsize(350);
+
+    .form {
+      .input {
+        width: abstracts.remsize(400);
+        animation-play-state: paused;
+        font-size: 1rem;
+
+        &:hover {
+          @include abstracts.animations(scaling, 0.3s, ease-in-out, forwards);
+          animation-play-state: running;
+
+          @keyframes scaling {
+            0% {
+              scale: 1;
+            }
+            100% {
+              scale: 1.1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include abstracts.mq('laptopM') {
+    width: abstracts.remsize(500);
+
+    .form {
+      .input {
+        // font-size: 1rem;
+      }
+    }
+
+  }
+
+  @include abstracts.mq('laptopL') {
+    width: abstracts.remsize(600);
+    .form {
+      .input {
+        width: abstracts.remsize(500);
+      }
+    }
+  }
+}
+
+

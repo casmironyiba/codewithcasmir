@@ -1,0 +1,30 @@
+  @use '@/ui/abstracts';
+
+.layoutContainer {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.displayFlex(center,center,column nowrap);
+    @include abstracts.boxProperty(300px,500px,auto,15px);
+    border: .5px solid abstracts.$palevioletred;
+    box-shadow: 3px 3px 5px;
+    border-radius: 0px 50px;
+    // background: red;
+
+    .layoutWrapper {
+      @include abstracts.boxProperty(100%, 80px,auto,abstracts.remsize(5), abstracts.$white);
+      @include abstracts.displayFlex(center,center);
+
+      h1 {
+        @include abstracts.boxProperty(100%, abstracts.remsize(100),'', abstracts.remsize(5));
+        @include abstracts.displayFlex(center,center);
+        color: abstracts.$black;
+        font-size:1.7rem;
+        font-weight:600;
+      };
+    };
+  };
+
+  @include abstracts.mq('tablet') {
+    width: 300px;
+  }
+};
+

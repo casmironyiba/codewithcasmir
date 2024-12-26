@@ -1,0 +1,46 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('laptop') {
+    @include abstracts.boxProperty(100%,100%,'',0px, abstracts.$primary);
+    @include abstracts.displayFlex(space-between,center,column nowrap);
+    padding: 5px;
+    .textWrapper {
+      @include abstracts.boxProperty(100%,100px,'',0px, abstracts.$primary);
+
+    }
+
+    .userWrapper {
+      @include abstracts.displayFlex(space-between,flex-start,row nowrap);
+      @include abstracts.boxProperty(100%,100%,'',0px, abstracts.$primary);
+      // background: purple;
+
+      .imageContainer {
+        padding: 0;
+        @include abstracts.boxProperty(20%,150px,'',0px, inherit);
+        @include abstracts.displayFlex(center,center);
+        background: blue;
+        .imageWrapper {
+          width: 130px;
+          height: 100%;
+        }
+      };
+
+      .credentialsWrapper {
+        @include abstracts.boxProperty(600px,100%,'',0px, abstracts.$primary);
+        @include abstracts.displayFlex(space-between,flex-start,column nowrap);
+        // background: blue;
+        .inputWrapper {
+          width: 300px;
+          border: 1px solid white;
+          @include abstracts.displayFlex(flex-start,center,row nowrap);
+          
+          // background: red;
+        }
+
+      }
+
+    }
+  };
+};
+

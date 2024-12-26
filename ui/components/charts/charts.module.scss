@@ -1,0 +1,57 @@
+@use '../../abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%,100%,'',5px, inherit);
+    @include abstracts.displayFlex(flex-start,flex-start,column nowrap);
+    background: abstracts.$primary;
+    // background-color: red;
+      font-size:.6rem;
+      // padding: 20px;
+
+    .title {
+      font-size:.8rem;
+      // font-weight: 200;
+      margin-bottom: 20px;
+    };
+
+    .chartWrapper {
+      height: 80%;
+      width: 100%;
+      .responsiveContainer {
+        .lineChart {
+          // background: grey;
+
+        }
+      }
+    }
+  };
+  
+  @include abstracts.mq('tablet') {
+    // padding: 20px;
+    font-size: 1rem;
+
+    .chartWrapper {
+      .responsiveContainer {
+        .lineChart {
+          background: black;
+
+        }
+      }
+    }
+
+    .title {
+    font-size: 1rem;
+      font-weight: 200;
+      margin-bottom: 20px;
+
+    }
+
+  };
+
+  @include abstracts.mq('laptop') {
+    padding: 20px;
+    border-radius: 10px;
+
+  }
+}

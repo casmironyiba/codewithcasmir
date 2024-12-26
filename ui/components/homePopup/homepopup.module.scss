@@ -1,0 +1,30 @@
+@use '../../abstracts';
+
+.homePopup {
+  @include abstracts.mediaQueries('mobileS') {
+    @include abstracts.boxProperty(100%,700px,auto,0px,abstracts.$yellow);
+    @include abstracts.displayFlex(flex-start,flex-start, row nowrap);
+    display: none;
+    z-index: 10;
+    top: 100px;
+
+    .homePopupwrapper {
+      @include abstracts.boxProperty(800px,100%);
+      position: relative;
+
+    }
+
+
+    .closeIcon {
+      @include abstracts.boxProperty(abstracts.remsize(40),abstracts.remsize(40));
+      @include abstracts.displayFlex(center,center);
+      // position: absolute;
+      // bottom: 200px;
+      // left:220px;
+      // top:20px;
+    };
+
+
+  } 
+};
+

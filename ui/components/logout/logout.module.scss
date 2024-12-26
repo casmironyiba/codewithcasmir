@@ -1,0 +1,22 @@
+@use '../../abstracts';
+
+.container {
+  @include abstracts.boxProperty(50%,100%,'',0px,inherit);
+  // @include abstracts.displayCenter;
+  // background: red;
+  border-radius: 8px;
+
+  button {
+    width: 100%;
+    // height:90%;
+    @include abstracts.displayFlex(flex-start,center,row nowrap);
+    gap: 10px;
+    font-size:inherit;
+    border-radius: 8px;
+    cursor:pointer;
+    border: none;
+    color: white;
+    background: inherit;
+
+   };
+};

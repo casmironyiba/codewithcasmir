@@ -1,0 +1,23 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.displayFlex(space-around, center, column nowrap);
+  // background: red;
+  gap: 5px;
+  padding: 5px;
+  width: 100%;
+
+  .addVideos,
+  .addMaterials,
+  .assignments {
+    width: 100%;
+    // min-height: 100%;
+    background: white;
+    padding: 5px;
+    @include abstracts.displayFlex(center, center);
+
+    button {
+      @include abstracts.displayFlex(center, center);
+    }
+  }
+}

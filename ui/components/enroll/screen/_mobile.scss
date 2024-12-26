@@ -1,0 +1,45 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%, 150px, '', 2px, inherit);
+    @include abstracts.displayFlex(space-around, flex-start, column nowrap);
+    // background: pink;
+
+    .textWrapper {
+      font-size: 1.3rem;
+      font-weight: 100;
+      .yellow {
+        color: abstracts.$yellow;
+      }
+      .white {
+        color: abstracts.$white;
+      }
+    }
+
+    .link {
+      @include abstracts.boxProperty(
+        abstracts.remsize(200),
+        abstracts.remsize(40),
+        '',
+        abstracts.remsize(3),
+        blue
+      );
+      @include abstracts.spaceAround;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 50px;
+      color: abstracts.$white;
+      background: pink;
+
+      &:hover {
+        width: 220px;
+      }
+    }
+  }
+  @include abstracts.mq('mobileM') {
+    height: 130px;
+    // background: grey;
+  }
+}

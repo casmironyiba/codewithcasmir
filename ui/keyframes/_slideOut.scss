@@ -1,0 +1,11 @@
+
+@keyframes SlideOut {
+  from {
+    transform: translate(0%);
+    display: flex;
+  }
+  to {
+    transform: translate(-120%);
+    display: none;
+  }
+};

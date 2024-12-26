@@ -1,0 +1,51 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%,100%,'',0px,inherit);
+
+    .textWrapper {
+      @include  abstracts.boxProperty(100%,'','', 0px);
+      @include abstracts.spaceAround(column nowrap);
+      padding: 20px;
+      text-align: center;
+
+      h2 {
+        font-size: 1.5rem;
+      };
+      p {
+        font-size: 1rem;;
+      }
+    };
+
+    .cardWrapper {
+      @include abstracts.boxProperty(100%,80%,'',5px);
+      @include abstracts.displayFlex(center,center,row wrap);
+      padding: 20px;
+      gap: 20px;
+
+      .card1,.card2,.card3 {
+        @include abstracts.boxProperty(300px,250px,'',5px,abstracts.$white);
+        @include abstracts.displayFlex(space-around,center,column nowrap);
+        border-radius: 10px;
+
+        h4 {
+          height: 30px;
+          text-align: center;
+        };
+        p {
+          height: 60px;
+          text-align: center;
+        }
+      .layer1 {
+        border-bottom:1px solid grey;
+        @include abstracts.displayFlex(space-around,center,column nowrap);
+        padding-bottom: 15px;
+      };
+      .layer2 {
+        @include abstracts.displayFlex(center,center,column nowrap);
+      }
+      };
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@use '../../abstracts';
+
+.hamburger {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(abstracts.remsize(40),abstracts.remsize(40));
+    @include abstracts.displayFlex(center,center);
+    cursor:pointer;
+
+    &:hover {
+      background: abstracts.$dark;
+      border-radius: 5px;
+    }
+
+    .menuOpenIcon {
+      display:none;
+    };
+
+
+  };
+
+  @include abstracts.mq('tablet') {
+    display:none;
+
+    #menuOpenIcon,#menuIcon {
+    display:none;
+    }
+  };
+
+  @include abstracts.mq('laptop') {
+  };
+};
+
+.hamburgerActive {
+  @include abstracts.mq('mobileS') {
+
+    .menuOpenIcon {
+      display:inline-block;
+      cursor:pointer;
+    }
+    .menuIcon {
+      display:none;
+    }
+  }
+};

@@ -1,0 +1,49 @@
+@use '@/ui/abstracts';
+
+.imgContainer {
+  height: 100%;
+  width: 100%;
+  background: abstracts.$light;
+  // background: red;
+  border-radius: 50%;
+  padding: 5px;
+  @include abstracts.displayFlex(space-around, center, column nowrap);
+
+  .imgWrapper {
+    width: 120px;
+    height: 120px;
+    // background: blue;
+    border-radius: 50%;
+    position: relative;
+    border-radius: 50%;
+
+    .image {
+      width: 80px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  }
+
+  .inputImageIconWrapper {
+    .fileInput {
+      display: none;
+    }
+
+    .fileLabel {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 24px; /* Icon size */
+    }
+
+    .fileLabel:hover {
+      background-color: #0056b3;
+    }
+  }
+}

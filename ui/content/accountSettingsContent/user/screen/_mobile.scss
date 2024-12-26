@@ -1,0 +1,22 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%,100%,'',0px,abstracts.$white);
+      @include abstracts.displayFlex(space-between,center,column nowrap);
+
+    .section1 {
+      @include abstracts.boxProperty(100%, 40px,'',5px, inherit);
+      @include abstracts.displayCenter;
+    }
+
+    .section2 {
+      @include abstracts.boxProperty(100%, 150px,'',5px, inherit);
+    };
+
+    .section3 {
+      @include abstracts.boxProperty(100%, 400px,'',5px, inherit);
+    }
+
+  };
+}

@@ -1,0 +1,16 @@
+@mixin boxProperty($width, $height: null, $margin: null, $padding: null, $background: null) {
+  width: $width;
+  @if $height {
+    height: $height;
+  }
+  @if $margin {
+    margin: $margin;
+  }
+  @if $padding {
+    padding: $padding;
+  }
+  @if $background {
+    background: $background;
+  }
+}
+

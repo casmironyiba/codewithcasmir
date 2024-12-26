@@ -1,0 +1,35 @@
+@use '@/ui/abstracts';
+
+.wrapper {
+  display: grid;
+
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%, 2800px, auto, 0px, abstracts.$red);
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 80px auto 200px;
+    grid-template-areas:
+      'h h h h h h h h h h'
+      'm m m m m m m m m m'
+      'f f f f f f f f f f';
+  }
+
+  @include abstracts.mq('tablet') {
+    // grid-template-rows: 80px auto 400px;
+  }
+
+  @include abstracts.mq('laptop') {
+    @include abstracts.boxProperty(
+      100%,
+      abstracts.remsize(1500),
+      auto,
+      0px,
+      abstracts.$red
+    );
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 80px auto 200px;
+    grid-template-areas:
+      'h h h h h h h h h h'
+      'm m m m m m m m m m'
+      'f f f f f f f f f f';
+  }
+}

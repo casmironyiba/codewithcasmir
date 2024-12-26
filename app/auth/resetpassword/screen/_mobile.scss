@@ -1,0 +1,174 @@
+@use '@/ui//abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%, 400px, auto, 10px, abstracts.$white);
+    @include abstracts.displayFlex(space-between, center, column nowrap);
+    border: 1px solid abstracts.$light;
+    // background: red;
+
+    .textWrapper {
+      @include abstracts.boxProperty(100%, 100px, '', 0px, abstracts.$white);
+      @include abstracts.displayFlex(center, center);
+    }
+
+    .form {
+      width: 100%;
+      height: 250px;
+      @include abstracts.displayFlex(space-around, center, column nowrap);
+      font-size: 0.8rem;
+      // background: grey;
+
+      .error {
+        @include abstracts.boxProperty(
+          100%,
+          abstracts.remsize(60),
+          auto,
+          abstracts.remsize(5)
+        );
+        background: palevioletred;
+        @include abstracts.displayFlex(center, center);
+        display: none;
+      }
+
+      .inputContainer {
+        @include abstracts.boxProperty(100%, 100%, '', abstracts.remsize(0));
+        @include abstracts.displayFlex(space-between, center, column nowrap);
+        // background: red;
+
+        .passwordInputWrapper {
+          @include abstracts.boxProperty(100%, 40px, '', 5px);
+          // background: blue;
+          border-bottom: 1px solid abstracts.$black;
+          @include abstracts.displayFlex(
+            space-between,
+            flex-start,
+            column nowrap
+          );
+
+          .eyeContainer {
+            @include abstracts.boxProperty(
+              100%,
+              40px,
+              '',
+              2px,
+              abstracts.$white
+            );
+            @include abstracts.displayFlex(space-between, center, row nowrap);
+            // border-radius: 7px;
+            // border: 1px solid palevioletred;
+
+            .passwordEyeWrapper {
+              width: 30px;
+              height: 90%;
+              cursor: pointer;
+              color: palevioletred;
+              // background: green;
+              @include abstracts.displayFlex(center, center);
+              .passwordEyeOpen,
+              .comfirmPasswordEyeOpen {
+                display: none;
+              }
+            }
+
+            .input {
+              @include abstracts.boxProperty(
+                90%,
+                100%,
+                '',
+                abstracts.remsize(5),
+                abstracts.$white
+              );
+              font-size: 1rem;
+              border: none;
+              outline: none;
+              // background: red;
+              // border: 1px solid palevioletred;
+              // border-radius: 7px;
+            }
+          }
+        }
+
+        .comfirmPasswordInputWrapper {
+          @include abstracts.boxProperty(100%, 40px, '', abstracts.remsize(0));
+          // background: blue;
+          border-bottom: 1px solid abstracts.$black;
+          @include abstracts.displayFlex(
+            space-between,
+            flex-start,
+            column nowrap
+          );
+
+          .eyeContainer {
+            @include abstracts.boxProperty(
+              100%,
+              40px,
+              '',
+              2px,
+              abstracts.$white
+            );
+            @include abstracts.displayFlex(space-between, center, row nowrap);
+            border-radius: 7px;
+          }
+          .comfirmPasswordEyeWrapper {
+            width: 30px;
+            height: 90%;
+            cursor: pointer;
+            color: palevioletred;
+            @include abstracts.displayFlex(center, center);
+            #passwordEyeOpen,
+            #comfirmPasswordEyeOpen {
+              display: none;
+            }
+
+            .open {
+              #passwordEyeClose {
+                display: none;
+              }
+            }
+          }
+
+          .input {
+            width: 90%;
+            border: none;
+            height: 90%;
+          }
+
+          .passwordEyeOpen {
+            display: none;
+          }
+
+          .comfirmPasswordEyeOpen {
+            display: none;
+          }
+        }
+      }
+
+      .authButtonWrapper {
+        position: relative;
+        // top:10px;
+        width: 100%;
+        height: 40px;
+        background: blue;
+        border-radius: 10px;
+        padding: 2px;
+
+        .resetpasswordButton {
+          @include abstracts.boxProperty(100%, 100%);
+          padding: 0;
+          border: none;
+          background: inherit;
+          color: abstracts.$white;
+          font-size: 1rem;
+        }
+      }
+      .signinWrapper {
+        width: 100%;
+        height: 50px;
+        // background: green;
+        @include abstracts.displayFlex(flex-end, center);
+        padding: 10px;
+      }
+    }
+  }
+}

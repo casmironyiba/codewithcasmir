@@ -1,0 +1,6 @@
+@use '../../abstracts';
+
+.container {
+  @include abstracts.boxProperty(100%,100%,'',0px,inherit);
+
+}

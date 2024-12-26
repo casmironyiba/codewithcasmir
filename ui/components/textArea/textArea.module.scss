@@ -1,0 +1,5 @@
+@use '../../abstracts';
+
+.textArea {
+  @include abstracts.boxProperty(100%,100%,'', 0px, inherit);
+}

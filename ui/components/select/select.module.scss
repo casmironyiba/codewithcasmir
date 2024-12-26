@@ -1,0 +1,16 @@
+@use '@/ui/abstracts';
+
+.container {
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  @include abstracts.displayFlex(space-between, center, row nowrap);
+  padding: 2px;
+
+  .select {
+    width: 70%;
+    height: 100%;
+    outline: none;
+    border: none;
+  }
+}

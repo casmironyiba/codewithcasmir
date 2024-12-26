@@ -1,0 +1,13 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('laptop') {
+    @include abstracts.boxProperty(100%,200px,'',2px,abstracts.$purple);
+    @include abstracts.displayFlex(center,center);
+    background: inherit;
+
+    .text {
+      font-size: 35px;
+    }
+  }
+}

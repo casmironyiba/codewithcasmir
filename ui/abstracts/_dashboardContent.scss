@@ -1,0 +1,26 @@
+// @use '../abstracts/_boxProperty';
+
+
+@mixin container {
+  // @include boxProperty(100%,800px,'', 0px, inherit);
+  // @include abstracts.spaceBetween(column nowrap);
+  min-height: 900px;
+  max-height: 1500px;
+  gap: 10px;
+  // background: red;
+};
+
+  @mixin searchbarWrapper {
+    // @include boxProperty(100%,70px,'', 5px, abstracts.$primary);
+    border-radius: 5px;
+    color: abstracts.$white;
+  };
+
+  @mixin contentWrapper {
+    // @include boxProperty(100%,800px,'', 5px, abstracts.$primary);
+    min-height: 820px;
+    max-height: 83%;
+    border-radius: 5px;
+    color: white;
+
+  };

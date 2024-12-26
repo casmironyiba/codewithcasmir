@@ -1,0 +1,10 @@
+@use '../../abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(200px,40px,'',5px,abstracts.$yellow);
+    color: abstracts.$white;
+    text-align: center;
+  }
+
+}

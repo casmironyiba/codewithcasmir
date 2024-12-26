@@ -1,0 +1,24 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('laptop') {
+    width: 1400px;
+    // background: purple;
+    @include abstracts.spaceBetween(row nowrap);
+    margin:auto;
+    .imageWrapper {
+      margin:0;
+      width: 500px;
+      height: 400px;
+      border-radius: 10px;
+      // background: grey;
+    }
+
+    .textWrapper {
+      // background: red;
+      width: 600px;
+      height:400px;
+    }
+  }
+
+};

@@ -1,0 +1,45 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%, '', '', 10px, abstracts.$grey);
+
+    .form {
+      width: 100%;
+      height: 100%;
+      background: white;
+      // background: red;
+      @include abstracts.displayFlex(space-between, center, column nowrap);
+      gap: 10px;
+      padding: 20px;
+
+      .section1 {
+        height: 150px;
+        width: 150px;
+        padding: 3px;
+        // background: abstracts.$light;
+      }
+
+      .section2 {
+        width: 100%;
+      }
+
+      
+      .section3 {
+        width: 100%;
+      
+
+      }
+
+      .buttonWrapper {
+        width: 100%;
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+    }
+  }
+}

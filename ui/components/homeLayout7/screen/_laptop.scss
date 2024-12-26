@@ -1,0 +1,38 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('laptop') {
+    .textWrapper {
+      height: 130px;
+      padding: 30px;
+      h2 {
+
+      font-size: 2.5rem;
+      }
+    }
+    .cardWrapper {
+      background: abstracts.$white;
+      height: 450px;
+      gap: 60px;
+
+      .card1,
+      .card2,
+      .card3 {
+        width: 400px;
+        height: 300px;
+        border: 1px solid abstracts.$grey;
+        box-shadow: 1px 1px 3px;
+
+        .layer1,
+        .layer2,
+        .layer3 {
+          .iconWrapper {
+            .icon {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

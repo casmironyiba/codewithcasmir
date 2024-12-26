@@ -1,0 +1,11 @@
+@use '../../abstracts';
+
+.itemCard {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(abstracts.remsize(200), abstracts.remsize(200),auto,abstracts.remsize(5),abstracts.$white);
+    border-radius: 5px;
+    // border:1px solid abstracts.$dark;
+    box-shadow: 2px 2px 1px abstracts.$dark ;
+
+  }
+}

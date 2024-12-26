@@ -1,0 +1,27 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%, 100%, '', 0px, abstracts.$grey);
+    height: 100%;
+    margin-top:20px;
+    // background: abstracts.$light;
+    .textWrapper {
+      height: 80px;
+      // background: green;
+      text-align: center;
+      h1 {
+        font-size: 1.2rem;
+      }
+    }
+     .courseWrapper {
+      @include abstracts.boxProperty(100%, 90%, '', 0px, abstracts.$light);
+      @include abstracts.displayFlex(space-around,center,row wrap);
+       background: red;
+       gap: 50px;
+       padding-top: 20px;
+       padding-bottom: 20px;
+
+     }
+  }
+}

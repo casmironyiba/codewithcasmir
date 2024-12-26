@@ -1,0 +1,31 @@
+@use '../../abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(250px, 40px, auto, 10px, inherit);
+    background: grey;
+
+    .wrapper {
+      @include abstracts.boxProperty(100%,100%,'',0px);
+        @include abstracts.spaceAround(row nowrap);
+
+      &>li {
+        text-decoration: none;
+        list-style: none;
+
+        &>a {
+          color: abstracts.$white ;
+        }
+      }
+
+    }
+  }
+
+  @include abstracts.mq('mobileM') {
+    // width: 300px;
+  };
+
+  @include abstracts.mq('tablet') {
+    width: 250px;
+  };
+}

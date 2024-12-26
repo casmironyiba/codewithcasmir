@@ -1,0 +1,13 @@
+  @use '../../abstracts';
+
+.container {
+  @include abstracts.boxProperty(100%,100%,'',0px,inherit);
+  position: relative;
+
+  .image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; // Example style
+  }
+}
+

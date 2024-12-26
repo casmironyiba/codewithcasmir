@@ -1,0 +1,101 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%, 100%, auto, 0px, abstracts.$light);
+    background: inherit;
+
+    .wrapper {
+      @include abstracts.boxProperty(100%, 100%, auto, 0px, abstracts.$light);
+      @include abstracts.spaceAround(column nowrap);
+      background: inherit;
+      gap: 10px;
+
+      .layout1 {
+        @include abstracts.boxProperty(
+          100%,
+          700px,
+          auto,
+          0px,
+          abstracts.$primary
+        );
+        @include abstracts.displayFlex(center, center);
+        // background: red;
+        margin-top: 10px;
+      }
+
+      .layout2 {
+        @include abstracts.boxProperty(100%, 400px, auto, 0px);
+        @include abstracts.displayFlex(center, center);
+        background: inherit;
+      }
+
+      .layout3 {
+        @include abstracts.boxProperty(100%, 450px, auto, 0px);
+        @include abstracts.displayFlex(center, center);
+        background: red;
+        position: relative;
+      }
+
+      .layout4 {
+        @include abstracts.boxProperty(100%, 600px, '', 0px);
+        @include abstracts.displayFlex(center, center);
+        background: abstracts.$light;
+        position: relative;
+        background: abstracts.$black;
+
+        h2,
+        h3,
+        p {
+          color: abstracts.$white;
+        }
+
+        h2 {
+          font-size: 1.4rem;
+        }
+        h4 {
+          color: blue;
+          font-size: 1.2rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      .layout5 {
+        @include abstracts.boxProperty(100%, 550px, '', 5px);
+        @include abstracts.displayFlex(center, center);
+        background: abstracts.$light;
+      }
+
+      .layout6 {
+        @include abstracts.boxProperty(100%, '', '', 5px);
+        @include abstracts.displayFlex(center, center);
+        background: abstracts.$white;
+        gap: 10px;
+      }
+
+      .layout7 {
+        @include abstracts.boxProperty(100%, '', auto, 0px);
+        @include abstracts.displayFlex(space-around, center);
+        position: relative;
+        background: abstracts.$light;
+      }
+      .layout8 {
+        height: 400px;
+        width: 100%;
+        margin-top: 30px;
+        padding: 10px;
+        background: abstracts.$purple;
+      }
+
+      .layout9 {
+        height: 750px;
+        width: 100%;
+        // margin-top: 30px;
+        padding: 10px;
+        background: abstracts.$light;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use '../../abstracts';
+
+.container {
+  @include abstracts.boxProperty(80px,40px,auto,1px,abstracts.$grey);
+  @include abstracts.spaceAround(row nowrap);
+  border-radius: 5px;
+  color: abstracts.$white ;
+  
+  h6 {
+    font-size:.9rem;
+  }
+}

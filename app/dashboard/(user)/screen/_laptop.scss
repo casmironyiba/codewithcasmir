@@ -1,0 +1,28 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('laptop') {
+    .sidebarWrapper {
+      display: flex;
+      width: 200px;
+      height: 100%;
+      background: grey;
+      // flex: 1;
+    }
+
+    .content {
+      width: 84%;
+
+      .childrenWrapper {
+        width: 79%;
+      }
+
+      .newupdateWrapper {
+        width: 20%;
+        height: 100%;
+        background: abstracts.$primary;
+        display: flex;
+      }
+    }
+  }
+}

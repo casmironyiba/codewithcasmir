@@ -1,0 +1,10 @@
+
+@mixin spaceBetween($flow:null) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @if $flow {
+    flex-flow: $flow;
+  }
+}
+

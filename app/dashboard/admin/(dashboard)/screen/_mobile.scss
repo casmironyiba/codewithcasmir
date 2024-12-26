@@ -1,0 +1,26 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%,100%,'', 0px, inherit);
+    @include abstracts.displayFlex(flex-start, flex-start,column nowrap);
+    background: black;
+
+    .controlBar {
+      @include abstracts.boxProperty(100%,40px,'',0px);
+      @include abstracts.displayFlex(space-between, center,row nowrap);
+      background: lightblue;
+    };
+
+    .recentWrapper {
+      @include abstracts.boxProperty(100%,95%,'', 10px, abstracts.$primary);
+      border-radius: 5px;
+    }
+    .chartsWrapper {
+      @include abstracts.boxProperty(100%,300px,'', 0px, abstracts.$primary);
+      border-radius: 5px;
+      color: white;
+      background: red;
+    };
+  };
+};

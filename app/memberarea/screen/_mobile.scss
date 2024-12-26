@@ -1,0 +1,42 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%, 100vh, auto, 10px, abstracts.$white);
+    @include abstracts.displayFlex(center, center);
+    .wrapper {
+      @include abstracts.boxProperty(100%, 500px, auto, 10px, inherit);
+      // background: grey;
+      @include abstracts.displayFlex(space-between, center, column nowrap);
+      text-align: center;
+    border: 2px solid grey;
+      // gap: 10px;
+      .auth {
+        width: 100%;
+        height: 200px;
+        @include abstracts.displayFlex(space-around, center, column nowrap);
+        gap: 20px;
+        // background: abstracts.$light;
+        .signupWrapper,.signinWrapper {
+            width: 100%;
+            height: 100px;
+        @include abstracts.displayFlex(center, center, column nowrap);
+        gap: 10px;
+          color: purple;
+
+          h4 {
+
+          };
+
+          .linkWrapper {
+            width: 120px;
+            height: 30px;
+            background: yellow;
+            border-radius: 20px;
+            @include abstracts.displayFlex(space-around,center);
+          }
+        }
+      }
+    }
+  }
+}

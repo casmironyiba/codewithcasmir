@@ -1,0 +1,22 @@
+@use '../../abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(150px,130px,auto,5px,inherit);
+    @include abstracts.displayFlex(center,flex-end);
+
+    .imageWrapper {
+      @include abstracts.boxProperty(120px,100%,'',5px,inherit);
+      border-radius: 50%;
+      border: 1px solid abstracts.$dark ;
+      position: relative;
+      box-shadow: 1px 1px 5px ;
+    };
+
+    .imageIcon {
+      position: absolute;
+      margin-left:60px;
+      z-index: 10;
+    };
+  };
+}

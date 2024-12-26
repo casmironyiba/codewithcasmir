@@ -1,0 +1,30 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%, 100%, '', 0px, abstracts.$light);
+    @include abstracts.spaceBetween(row nowrap);
+    // @include abstracts.displayFlex(space-between,center,column nowrap);
+    // gap: 10px;
+
+    .sidebarWrapper {
+      @include abstracts.boxProperty(300px, 100%, '', 0px);
+      display: none;
+    }
+
+    .content {
+      @include abstracts.boxProperty(100%, 100%, '', 5px, inherit);
+      @include abstracts.displayFlex(space-between, center, row nowrap);
+
+      .childrenWrapper {
+        width: 100%;
+        height: 100%;
+        background: abstracts.$white;
+        // background: red;
+      }
+      .newupdateWrapper {
+        display: none;
+      }
+    }
+  }
+}

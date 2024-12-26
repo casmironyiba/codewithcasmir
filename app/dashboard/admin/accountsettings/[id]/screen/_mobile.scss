@@ -1,0 +1,37 @@
+@use '@/ui/abstracts';
+
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%,100%,'', 0px, inherit);
+    @include abstracts.displayFlex(flex-start, flex-start,column nowrap);
+    gap: 10px;
+
+    .controlBar {
+      @include abstracts.boxProperty(100%,40px,'',0px);
+      @include abstracts.displayFlex(space-between, center,row nowrap);
+      background: lightblue;
+    };
+
+    .contentWrapper {
+      @include abstracts.boxProperty(100%,95%,'', 0px, abstracts.$white);
+      @include abstracts.displayFlex(space-between,center,column nowrap);
+      border-radius: 5px;
+
+      .section1 {
+        @include abstracts.boxProperty(100%, 40px,'',5px, inherit);
+        @include abstracts.displayCenter;
+      }
+
+      .section2 {
+        @include abstracts.boxProperty(100%, 150px,'',5px, inherit);
+      };
+
+      .section3 {
+        @include abstracts.boxProperty(100%, 800px,'',5px,abstracts.$white);
+        
+      }
+    }
+  };
+
+  }

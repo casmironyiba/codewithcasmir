@@ -1,0 +1,57 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    display: none;
+  };
+
+  @include abstracts.mq('laptop') {
+    @include abstracts.boxProperty(100%, 100%, '', 0px, abstracts.$primary);
+    @include abstracts.displayFlex(flex-start, flex-start, column nowrap);
+    gap: 20px;
+
+    .userprofileWrapper {
+      @include abstracts.boxProperty(70px, 70px, '', 5px);
+      // border-bottom: 1px solid white;
+      // background: red;
+      margin-top:50px;
+      position: relative;
+      // border-radius: 50%;
+      .img {
+        border-radius: 50%;
+      }
+    }
+
+    .wrapper {
+      @include abstracts.boxProperty(100%, 700px, '', 10px);
+      min-height: 700px;
+      max-height: 800px;
+      list-style: none;
+      @include abstracts.displayFlex(space-around, flex-start, column nowrap);
+
+      .linkWrapper {
+        @include abstracts.boxProperty(100%, 45px, '', 8px);
+        border-radius: 10px;
+
+        .icon {
+          font-size: medium;
+        }
+        a {
+          @include abstracts.boxProperty(100%, 100%);
+          @include abstracts.displayFlex(flex-start, center, row nowrap);
+          gap: 10px;
+          text-decoration: none;
+          color: white;
+        }
+
+        &:hover {
+          background: abstracts.$grey;
+        }
+      }
+    }
+    .logout {
+      @include abstracts.boxProperty(100%, 100%);
+      padding: 0;
+    }
+  }
+}

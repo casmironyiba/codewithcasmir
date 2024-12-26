@@ -1,0 +1,26 @@
+@use '../../abstracts';
+
+.main {
+  grid-area: m;
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(
+      100%,
+      '',
+      '',
+      abstracts.remsize(0),
+      abstracts.$white
+    );
+    @include abstracts.displayFlex(space-between, center, column nowrap);
+    min-height: 100vh;
+    max-height: 9000px;
+    // max-height: 3000px;
+    // background: linear-gradient(to right, grey,palevioletred);
+  }
+
+  @include abstracts.mq('laptop') {
+    height: 100%;
+    // @include abstracts.displayFlex(center, center);
+    margin: auto;
+      // background: grey;
+  }
+}

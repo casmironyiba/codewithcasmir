@@ -1,0 +1,26 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('laptop') {
+    @include abstracts.boxProperty(100%, 100%, '', 5px, red);
+    @include abstracts.spaceAround(column nowrap);
+
+    .wrapper {
+      @include abstracts.boxProperty(100%, 80%, '', 5px, blue);
+      @include abstracts.displayFlex(space-around, flex-start, column nowrap);
+
+      .linkWrapper {
+        width: 150px;
+        height: 50px;
+
+        .link {
+          width: 100%;
+          height: 100%;
+          background: grey;
+          @include abstracts.displayFlex(flex-start, center, row nowrap);
+          gap: 10px;
+        }
+      }
+    }
+  }
+}

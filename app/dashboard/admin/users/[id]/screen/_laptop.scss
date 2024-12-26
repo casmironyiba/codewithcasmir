@@ -1,0 +1,17 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('laptop') {
+    @include abstracts.boxProperty(100%,100%,'', 0px);
+    @include abstracts.displayFlex(center,center);
+    background: red;
+
+    .contentWrapper {
+      width:7000px ;
+      height:800px ;
+
+    }
+
+  }
+
+}

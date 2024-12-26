@@ -1,0 +1,7 @@
+@use '../../abstracts';
+
+.container {
+  @include abstracts.mq("mobileS") {
+    @include abstracts.boxProperty()
+  };
+}

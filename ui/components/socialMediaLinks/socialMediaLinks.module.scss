@@ -1,0 +1,33 @@
+
+.socialMedia {
+  margin-top: 20px;
+  // background: grey;
+
+  h3 {
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 10px;
+
+      a {
+        color: #0070f3;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+
+        svg {
+          margin-right: 8px;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

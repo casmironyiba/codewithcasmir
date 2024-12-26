@@ -1,0 +1,51 @@
+@use '@/ui/abstracts';
+
+.container {
+  grid-area:h;
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%,60px,'auto',abstracts.remsize(5),abstracts.$dark);
+    // @include abstracts.displayFlex(space-between,center,column nowrap);
+    @include abstracts.displayFlex(center,center);
+    position: relative;
+    padding: 0;
+    font-size:1rem;
+    background-color:#0f1e2d;
+
+    .wrapper {
+      @include abstracts.boxProperty(98%,100%,'',abstracts.remsize(0));
+      @include abstracts.displayFlex(space-between,center,row nowrap);
+      // background: green;
+    };
+  };
+
+  @include abstracts.mq('mobileM') {
+    width: 100%;
+  };
+
+  @include abstracts.mq('mobileL') {
+    width: 100%;
+  };
+
+  @include abstracts.mq('tablet') {
+
+    .wrapper {
+      height:100%;
+    };
+  };
+
+  @include abstracts.mq('laptop') {
+    // #signIn:hover {
+    // position:relative;
+      // }
+
+    .wrapper {
+      width:100%;
+      height:100%;
+
+      .shoppingcartIcon {
+        display:none;
+      }
+
+    }
+  };
+};

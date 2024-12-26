@@ -1,0 +1,23 @@
+$breakpoints: (
+  mobileS: 320,
+  mobileM: 480,
+  mobileL: 600,
+  tablet: 768,
+  laptop: 1024,
+  laptopM: 1200,
+  laptopL: 1440,
+  desktop: 1920,
+);
+
+@mixin mq($key) {
+  $breakpoint-value: map-get($breakpoints, $key);
+
+  @if $breakpoint-value {
+    @media (min-width: #{$breakpoint-value}px) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$key}. Make sure it's defined in your breakpoints map.";
+  }
+}
+

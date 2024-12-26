@@ -1,0 +1,33 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('tablet') {
+    @include abstracts.boxProperty(150px,400px,'',0px, inherit);
+    @include abstracts.spaceBetween(column nowrap);
+    background:abstracts.$black;
+    gap: 10px;
+    position: absolute;
+    border-radius: 0px 40px;
+
+    .menuWrapper {
+      @include abstracts.spaceAround(column nowrap);
+      width: 100%; 
+      height: 100%; 
+      padding-right: 10px;
+      padding-left: 10px;
+      position: absolute; 
+      overflow-y: auto;
+      list-style: none;
+      gap: 5px;
+
+      li {
+        width: 100%;
+        height:35px;
+      }
+    };
+  };
+  @include abstracts.mq('laptop') {
+    display: none;
+  };
+};
+

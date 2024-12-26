@@ -1,0 +1,10 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('laptop') {
+    background: inherit;
+    height: 100%;
+    width: 100%;
+  }
+
+}

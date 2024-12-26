@@ -1,0 +1,87 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%, 100%, auto, 0px, abstracts.$white);
+
+    .formWrapper {
+      @include abstracts.boxProperty(100%, 500px, '', 10px, inherit);
+      @include abstracts.displayFlex(space-around, center, column nowrap);
+      margin-top: 90px;
+
+      .form {
+        @include abstracts.boxProperty(100%, 400px, '', 10px, inherit);
+        @include abstracts.displayFlex(space-around, center, column nowrap);
+        font-size: 1rem;
+
+        .image {
+          width: 100%;
+          height: auto;
+          border-radius: 4px;
+        }
+
+        .title {
+          width: 100%;
+          height: 40px;
+          padding: 10px;
+          outline: none;
+          border: 1px solid palevioletred;
+          border-radius: 3px;
+        }
+        .desc {
+          width: 100%;
+          height: 40px;
+          padding: 10px;
+          outline: none;
+          border-radius: 3px;
+          border: 1px solid palevioletred;
+        }
+
+        .imageWrapper,
+        .videoWrapper {
+          width: 100%;
+          height: 40px;
+          background: white;
+          @include abstracts.displayFlex(space-between, center, row nowrap);
+          border: 1px solid palevioletred;
+          border-radius: 5px;
+
+          label {
+            width: 50px;
+            height: 100%;
+            font-size: 0.8rem;
+            background: abstracts.$purple;
+            @include abstracts.displayCenter;
+            color: white;
+          }
+
+          .image,
+          .video {
+            width: 80%;
+            height: 40px;
+            padding: 10px;
+            outline: none;
+          }
+        }
+        .button {
+          width: 100%;
+          height: 40px;
+          background: blue;
+          border-radius: 10px;
+          border: none;
+          outline: none;
+          color: white;
+        }
+      }
+    }
+    .selectWrapper {
+      background: abstracts.$white;
+      padding: 2px;
+      width: 100%;
+      height: 40px;
+      @include abstracts.displayFlex(space-between, center, row nowrap);
+      border: 1px solid palevioletred;
+      border-radius: 5px;
+    }
+  }
+}

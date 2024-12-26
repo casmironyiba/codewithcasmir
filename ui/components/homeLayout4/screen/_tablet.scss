@@ -1,0 +1,17 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('tablet') {
+    padding-left: 50px;
+    padding-right: 50px;
+    @include abstracts.displayFlex(space-between,center,column nowrap);
+    .textWrapper {
+      // background: red;
+      width: 600px;
+    }
+    .videoWrapper {
+      width: 600px;
+    }
+
+  }
+}

@@ -1,0 +1,75 @@
+@use '@/ui/abstracts';
+// @use './_infoWrapper.scss';
+
+.mainContainer {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%, 100%, '', 0px, abstracts.$primary);
+    @include abstracts.displayFlex(center, center, column nowrap);
+    display: flex;
+    background: white;
+    gap: 5px;
+    // margin-top:5px;
+    position: relative;
+
+    .adminDashboardWrapper {
+      // flex: 2;
+      display: none;
+    }
+
+    .content {
+      width: 100%;
+      height: 100%;
+      @include abstracts.displayFlex(center, center, row nowrap);
+      // background: abstracts.$white;
+      flex: 4;
+      gap: 5px;
+
+      .childrenWrapper {
+        width: 79%;
+        height: 100%;
+        // background: abstracts.$primary;
+        flex: 4;
+      }
+    }
+    .newupdateWrapper {
+      display: none;
+    }
+  }
+
+  // @include abstracts.mq('tablet') {
+  //
+  //   // width: 400px;
+  //   background: grey;
+  // }
+  @include abstracts.mq('laptop') {
+    @include abstracts.boxProperty(100%, 100%, '', 0px);
+    @include abstracts.displayFlex(space-between, center, row nowrap);
+    // background: grey;
+    margin-top: 2px;
+
+    .adminDashboardWrapper {
+      width: 250px;
+      height: 100%;
+      display: flex;
+    }
+
+    .content {
+      width: 800px;
+      min-width: 800px;
+      max-width: 1600px;
+      height: 100%;
+      display: flex;
+      background: abstracts.$white;
+      @include abstracts.displayFlex(space-between, center, row nowrap);
+      flex: 4;
+      gap: 5px;
+
+      .childrenWrapper {
+        width: 79%;
+        height: 100%;
+        // background: abstracts.$primary;
+        flex: 4;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%, 100%);
+    @include abstracts.displayFlex(space-around, center, column nowrap);
+    padding: 15px;
+    .textWrapper {
+      // width: 96%;
+      @include abstracts.boxProperty(100%, 200px, '', 0px);
+      @include abstracts.displayFlex(space-around, center, column nowrap);
+      text-align: center;
+    }
+  }
+}

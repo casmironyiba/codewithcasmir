@@ -1,0 +1,13 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('tablet') {
+    @include abstracts.boxProperty(100%,100%,0px,);
+
+    .section3 {
+      height: 500px;
+      // background: yellow;
+
+    }
+  }
+}

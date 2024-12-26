@@ -1,0 +1,21 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    max-width: 800px;
+    margin: 0 auto;
+    // background: red;
+    padding: 20px;
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .contactWrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+}

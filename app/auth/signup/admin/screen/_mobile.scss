@@ -1,0 +1,136 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%, 500px, auto, 0px, abstracts.$white);
+    @include abstracts.displayFlex(space-between, center, column nowrap);
+    // border-radius: 50px 5px;
+    border: 1px solid abstracts.$light;
+    // box-shadow: 2px 2px 3px;
+
+    .authTextWrapper {
+      @include abstracts.boxProperty(100%, 100px, '', 0px, inherit);
+      @include abstracts.displayFlex(space-between, center,column nowrap);
+    }
+
+    .form {
+      @include abstracts.boxProperty(100%, 400px, auto, 0px, inherit);
+      @include abstracts.displayFlex(center, center, column nowrap);
+      font-size: 0.9rem;
+
+      .errorWrapper {
+        @include abstracts.boxProperty(100%, 40px, auto, 5px, inherit);
+        @include abstracts.displayFlex(center, center);
+        color: abstracts.$white;
+        // background: grey;
+
+        .success,
+        .error {
+          color: abstracts.$black;
+        }
+      }
+
+      .inputContainer {
+        @include abstracts.boxProperty(100%, 500px, '', abstracts.remsize(5));
+        @include abstracts.displayFlex(space-around, center, column nowrap);
+
+        .inputWrapper {
+          @include abstracts.boxProperty(100%, 40px, '', abstracts.remsize(0));
+          @include abstracts.displayFlex(
+            space-arpound,
+            flex-start,
+            column nowrap
+          );
+          border-bottom: 1px solid abstracts.$light;
+          // background: blue;
+
+          .input {
+            @include abstracts.boxProperty(
+              100%,
+              40px,
+              '',
+              abstracts.remsize(5)
+            );
+            color: abstracts.$black;
+            font-size: 0.9rem;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+          }
+
+          .eyeContainer {
+            @include abstracts.boxProperty(
+              100%,
+              40px,
+              '',
+              0px,
+              // abstracts.$light
+            );
+            @include abstracts.displayFlex(space-between, center, row nowrap);
+            border-radius: 7px;
+
+            .passwordEyeWrapper {
+              width: 30px;
+              height: 90%;
+              cursor: pointer;
+              color: abstracts.$black;
+              @include abstracts.displayFlex(center, center);
+              #passwordEyeOpen,
+              #comfirmPasswordEyeOpen {
+                display: none;
+              }
+            }
+
+            .comfirmPasswordEyeWrapper {
+              width: 30px;
+              height: 90%;
+              cursor: pointer;
+              color: abstracts.$black;
+              @include abstracts.displayFlex(center, center);
+              #passwordEyeOpen,
+              #comfirmPasswordEyeOpen {
+                display: none;
+              }
+
+              .open {
+                #passwordEyeClose {
+                  display: none;
+                }
+              }
+            }
+
+            .input {
+              width: 90%;
+              border: none;
+              height: 90%;
+            }
+
+            .passwordEyeOpen {
+              display: none;
+            }
+
+            .comfirmPasswordEyeOpen {
+              display: none;
+            }
+          }
+        }
+      }
+      .signupAuthButtonWrapper {
+        width: 100%;
+        height: 40px;
+        background: abstracts.$black;
+        border-radius: 10px;
+        padding: 10px;
+      }
+
+      .alreadyWrapper {
+        @include abstracts.boxProperty(100%, 30px, '', 5px, inherit);
+        color: abstracts.$black;
+        text-align: center;
+        a {
+          color: abstracts.$blue;
+        }
+      }
+    }
+  }
+}

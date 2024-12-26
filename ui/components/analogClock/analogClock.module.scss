@@ -1,0 +1,117 @@
+@use '../../abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    width: 270px;
+    height: 270px;
+    // padding: 10px;
+    border: 10px solid #333;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    background: #fff;
+    box-shadow: 2px 2px 5px abstracts.$dark;
+
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      @include abstracts.displayFlex(center, center);
+      position: relative;
+
+      .centerDot {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #333;
+        border-radius: 50%;
+        z-index: 10;
+      }
+
+      .hand {
+        position: absolute;
+        bottom: 50%;
+        background-color: #333;
+        transform-origin: bottom center;
+        background: blue;
+        width: 300px;
+        height: 400px;
+      }
+
+      .hourHand {
+        height: 60px;
+        width: 6px;
+        background-color: #e74c3c;
+        z-index: 9;
+        background: purple;
+      }
+
+      .minuteHand {
+        height: 80px;
+        width: 4px;
+        background-color: #3498db;
+        z-index: 8;
+      }
+
+      .secondHand {
+        height: 100px;
+        width: 2px;
+        background-color: #f39c12;
+        z-index: 7;
+      }
+
+      .numberContainer {
+        @include abstracts.boxProperty(100%, 100%);
+        position: absolute;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 6;
+        color: black;
+        transform: rotate(30deg);
+
+        .numberWrapper {
+          @include abstracts.boxProperty(30px, 100%);
+          position: absolute;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+
+          .number {
+            position: absolute;
+            transform: translateY(-80px);
+            font-size: 36px;
+            color: #333;
+            color: red;
+            @include abstracts.displayFlex(space-round, center);
+            margin: auto;
+          }
+        }
+      }
+      &::before {
+        content: 'techLinage.com';
+        position: absolute;
+        top: 80px;
+        width: 150px;
+        height: 20px;
+        background: abstracts.$purple;
+        color: white;
+        font-size: 1rem;
+        @include abstracts.displayFlex(center, center);
+        border-radius: 0px 20px;
+      }
+
+      &::after {
+        content: 'Coding oclock';
+        position: absolute;
+        bottom: 80px;
+        width: 150px;
+        height: 20px;
+        background: abstracts.$palevioletred;
+        color: white;
+        font-size: 1rem;
+        @include abstracts.displayFlex(center, center);
+        border-radius: 0px 20px;
+      }
+    }
+  }
+}

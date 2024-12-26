@@ -1,0 +1,16 @@
+// _opacityKeyframe.scss
+//
+// $opacity-keyframe: (
+//   0% { opacity: 0; display: none; }
+//   50% { opacity: 0.5; }
+//   100% { opacity: 1; display: inline-block; }
+// );
+//
+// @keyframes OpacityKeyframe {
+//   @each $key, $value in $opacity-keyframe {
+//     #{$key} {
+//       #{$value}
+//     }
+//   }
+// }
+

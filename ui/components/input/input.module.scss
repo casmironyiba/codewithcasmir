@@ -1,0 +1,8 @@
+@use '../../abstracts';
+
+.input {
+  @include abstracts.boxProperty(100%,100%,'',5px);
+  border: none;
+  outline:none;
+
+}
