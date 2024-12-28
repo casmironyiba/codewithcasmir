@@ -9,7 +9,26 @@
       @include abstracts.displayFlex(space-around, flex-start, column nowrap);
       gap: 10px;
 
-      .layer1 {
+      .layout1 {
+        @include abstracts.boxProperty(150px,130px,auto,5px,inherit);
+        @include abstracts.displayFlex(center,flex-end);
+
+        .imageWrapper {
+          @include abstracts.boxProperty(120px,100%,'',5px,inherit);
+          border-radius: 50%;
+          border: 1px solid abstracts.$dark ;
+          position: relative;
+          box-shadow: 1px 1px 5px ;
+        };
+
+        .imageIcon {
+          position: absolute;
+          margin-left:60px;
+          z-index: 10;
+        };
+      };
+
+      .layer2 {
         @include abstracts.boxProperty(100%, 60px,'',2px, inherit);
         @include abstracts.displayFlex(space-between, center, row nowrap);
         // background-color: blue;
@@ -45,7 +64,7 @@
         }
       };
 
-      .layer2 {
+      .layer3 {
         @include abstracts.boxProperty(100%, 65px,'',2px, inherit);
         // background-color: blue;
         .emailWrapper {
@@ -64,7 +83,7 @@
 
       };
 
-      .layer3 {
+      .layer4 {
         @include abstracts.boxProperty(100%, 75px,'',2px, inherit);
         @include abstracts.displayFlex(space-between, center, row nowrap);
 
@@ -96,7 +115,7 @@
         }
       };
       
-      .layer4 {
+      .layer5 {
         @include abstracts.boxProperty(100%, 65px,'',2px, inherit);
         @include abstracts.displayFlex(space-between, center, row nowrap);
 
@@ -115,7 +134,7 @@
         }
       };
 
-      .layer5 {
+      .layer6 {
         @include abstracts.boxProperty(100%, '','',5px, inherit);
         @include abstracts.displayFlex(space-between, center, row nowrap);
 
@@ -134,7 +153,7 @@
         }
       };
 
-      .layer6 {
+      .layer7 {
         @include abstracts.boxProperty(100%, 65px,'',5px, inherit);
         @include abstracts.displayFlex(space-between, center, row nowrap);
 
@@ -153,7 +172,7 @@
         }
       };
 
-      .layer7 {
+      .layer8 {
         @include abstracts.boxProperty(100%, 40px,'',0px, inherit);
         .button {
           width: 100%;

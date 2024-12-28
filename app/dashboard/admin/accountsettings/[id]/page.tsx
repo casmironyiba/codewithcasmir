@@ -43,12 +43,6 @@ const AccountSettings: FC<DashboardNavigationInterface> = ({ params }) => {
         </div>
       </div>
       <div className={styles.contentWrapper}>
-        <div className={styles.section1}>
-          <h3>Edit Profile</h3>
-        </div>
-        <div className={styles.section2}>
-          <ProfileImage userImg={userImg} setUserImg={setUserImg} />
-        </div>
         <div className={styles.section3}>
           <UserCredentials user={user} />
         </div>

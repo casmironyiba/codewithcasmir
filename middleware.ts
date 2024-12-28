@@ -45,9 +45,9 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL('/auth/signin/email', request.nextUrl))
   };
 
-  //   if (!isPublicPath && token) {
-  //     return NextResponse.redirect(new URL('/dashboard', request.nextUrl))
-  //   }
+    if (!isPublicPath && token) {
+      return NextResponse.redirect(new URL('/dashboard', request.nextUrl))
+    }
 }
 
 
