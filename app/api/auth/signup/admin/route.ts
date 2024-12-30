@@ -52,7 +52,7 @@ export async function POST(req: Request) {
       name,
       username,
       email,
-      isAdmin: true,
+      role: 'admin',
       createdAt: new Date(),
     })
 

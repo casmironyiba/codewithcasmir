@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 import DontHaveAnAccount from '@/ui/components/DontHaveAnAccount'
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff'
 import VisibilityIcon from '@mui/icons-material/Visibility'
-import AuthButton from '@/ui/components//authButton/AuthButton'
+import AuthButton from '@/ui/components/authButton/AuthButton'
 import styles from './signin.module.scss'
 import ForgotpasswordLink from '@/ui/components/forgotPasswordLink/ForgotpasswordLink'
 import { auth } from '@/firebaseConfig'
@@ -35,15 +35,14 @@ export default function SigninPage() {
       const user = getUserByEmail(users,email)
 
       console.log(user)
-      // console.log(userr?.email)
 
       if (user?.email !== email) {
-        setError('Inavlid User')
+        setError('Invalid User')
         console.log('Invalid User')
         return
-      } else if (user?.email === email && user?.isAdmin === true) {
-        setError('User not exist')
-        console.log('User not exist')
+      } else if (user?.email === email && user?.role === 'admin') {
+        // router.push('/admin/dashboard')
+        console.log('admin credentails identified')
         return
       } else if (user?.email === undefined || null) {
         setError('Network error')
@@ -60,7 +59,7 @@ export default function SigninPage() {
       console.log(user)
       setEmail('')
       setPassword('')
-      router.push(`/dashboard/${userCredential.user.uid}`)
+      router.push(`/admin/dashboard`)
       // ...
     } catch (error) {
       setError('Invalid email or password')
@@ -72,6 +71,7 @@ export default function SigninPage() {
     const loadUsers = async () => {
       const fetchedData = await getUsers()
       setUsers(fetchedData)
+      console.log(fetchedData)
     }
     const togglePasswordVisibility = () => {
       setPasswordVisible((prev) => !prev)
@@ -91,7 +91,7 @@ export default function SigninPage() {
     }
   }, [passwordVisible])
 
-console.log(user)
+// console.log(user)
 console.log(users)
   return (
     <div className={styles.container}>

@@ -50,7 +50,7 @@ export async function POST(req: Request) {
       name,
       username,
       email,
-      isAdmin: false,
+      role: 'student',
       createdAt: new Date(),
     })
 

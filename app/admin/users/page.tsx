@@ -46,7 +46,7 @@ const [users, setUsers] = useState<IUser[] | undefined>(undefined);
       user.username.toLowerCase().includes(query) ||
       user.email.toLowerCase().includes(query)
     );
-    setFilteredUsers(filtered);
+    setFilteredUsers(filteredUsers);
   };
 
   if (error) {

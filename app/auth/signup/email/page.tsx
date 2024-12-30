@@ -91,14 +91,7 @@ export default function EmailSignup() {
           setPassword,
           setComfirmPassword,
         )
-        // (function(){
-        //   setFullName('');
-        //   setUsername('');
-        //   setEmail('');
-        //   setPassword('');
-        //   setComfirmPassword('');
-        // }())
-        // router.push('/auth/signin/email')
+
         return
       } else {
         setMessage({

@@ -9,7 +9,6 @@ export default interface IUser {
   coursesEnrolled:any[]
   courseProgress:any
   lastLogin:string
-  isAdmin: boolean
   role:string
   subscriptions:any;
   password: string
