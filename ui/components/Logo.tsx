@@ -1,13 +1,12 @@
 import React from 'react'
 import SiteInfo from '@/ui/components/siteInfo/SiteInfo'
-import Link from 'next/link'
 import styled from 'styled-components'
 import Icon from '@/public/icons/logo.svg'
 import Image from 'next/image'
-import mq from '@/fp/mediaQueries'
-import boxProperty from '@/fp/boxProperty'
-import remsize from '@/fp/remsize'
-import displayFlex from '@/fp/displayFlex'
+import mq from '@/helpers/mediaQueries'
+import boxProperty from '@/helpers/boxProperty'
+import remsize from '@/helpers/remsize'
+import displayFlex from '@/helpers/displayFlex'
 
 export function LogoIcon() {
   return (

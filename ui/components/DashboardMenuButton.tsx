@@ -1,8 +1,7 @@
 import React, { FC, useRef, useEffect, useState } from 'react'
-import DashboardNavigationInterface from '@/ui/interface/DashboardNavigationInterface'
+import DashboardNavigationInterface from '@/types/DashboardNavigationInterface'
 import styled from 'styled-components'
-import mq from '@/fp/mediaQueries'
-import MenuIcon, { MenuOpenIcon } from './MenuIcon'
+import mq from '@/helpers/mediaQueries'
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
 import MenuOpenRoundedIcon from '@mui/icons-material/MenuOpenRounded'
 

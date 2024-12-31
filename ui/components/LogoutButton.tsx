@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation"
 import { FC } from "react"
 import { signOut } from "firebase/auth"
-import { auth } from '@/firebaseConfig'
+import { auth } from '@/libs/firebaseConfig'
 
 const LogoutButton: FC = () => {
   const router = useRouter();

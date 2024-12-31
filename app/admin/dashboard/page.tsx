@@ -4,7 +4,7 @@ import styles from './dashboard.module.scss'
 import Charts from '@/ui/components/charts/Charts'
 import DashboardNavigationInterface from '@/ui/interface/DashboardNavigationInterface'
 import DashboardNavigation from '@/ui/components/dashboardNavigation/DashboardNavigation'
-import AdminMobileMenu from '@/ui/components/dashboardMobileMenu/admin/AdminMobileMenu'
+// import AdminMobileMenu from '@/ui/components/dashboardMobileMenu/admin/AdminMobileMenu'
 import MobileMenu from '@/ui/components/dashboardMobileMenu/user/MobileMenu'
 import AdminGuard from '@/ui/components/hoc/AdminGaurd'
 

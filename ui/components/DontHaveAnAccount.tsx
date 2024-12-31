@@ -1,9 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
-import boxProperty from '@/fp/boxProperty'
-import remsize from '@/fp/remsize'
-import displayFlex from '@/fp/displayFlex'
+import boxProperty from '@/helpers/boxProperty'
+import displayFlex from '@/helpers/displayFlex'
 
 export default function DontHaveAnAccount(props: any) {
   if (props.admin) {

@@ -3,9 +3,8 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from '@/firebaseConfig';
+import { auth,db } from '@/libs/firebaseConfig';
 import { getDoc, doc } from 'firebase/firestore';
-import { db } from '@/firebaseConfig'; // Firestore instance
 
 const AdminGuard: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const router = useRouter();
