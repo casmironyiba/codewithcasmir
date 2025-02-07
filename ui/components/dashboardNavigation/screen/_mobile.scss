@@ -2,17 +2,23 @@
 
 .container {
   @include abstracts.mq('mobileS') {
-    width: 100%;
+    width: 40px;
     height: 30px;
     @include abstracts.displayFlex(flex-start, flex-start, column nowrap);
-    background: abstracts.$light;
+    // background: abstracts.$light;
     // gap: 10px;
+    .buttonWrapper {
+      width: 40px;
+      height: 100%;
+      // background: blue;
+      // padding: 2px;
+    }
 
     .mobilemenuWrapper {
       height: 30px;
       width: 80px;
       margin-top: 5px;
-      background: red;
+      // background: red;
     }
   }
 }

@@ -1,10 +1,9 @@
 'use client'
 import styles from './addCourses.module.scss'
-import DashboardNavigationInterface from '@/ui/interface/DashboardNavigationInterface'
 import DashboardNavigation from '@/ui/components/dashboardNavigation/DashboardNavigation'
 import MobileMenu from '@/ui/components/dashboardMobileMenu/user/MobileMenu'
 import { ChangeEvent, FC, useState } from 'react'
-import { storage } from '@/firebaseConfig'
+import { storage } from '@/lib/helpers/firebaseConfig'
 import {
   ref,
   uploadBytesResumable,
@@ -12,8 +11,8 @@ import {
   UploadTaskSnapshot,
 } from 'firebase/storage'
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
-import { db } from '@/firebaseConfig' // Ensure Firestore is imported from your config
-import Select from '@/ui/components/select/Select'
+import { db } from '@/lib/helpers/firebaseConfig' // Ensure Firestore is imported from your config
+import Select from '@/ui/components/inputs/Select'
 
 const AddCourse: FC = () => {
   const options = [

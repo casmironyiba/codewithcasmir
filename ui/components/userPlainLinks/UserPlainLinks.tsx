@@ -1,4 +1,4 @@
-import Linker from "../linker/Linker"
+import Linker from "../common/Linker"
 import styles from './userPlainLinks.module.scss'
 
 export default function UserPlainLinks() {

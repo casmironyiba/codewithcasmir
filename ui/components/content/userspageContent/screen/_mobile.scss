@@ -1,0 +1,67 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%,300px,'',0px,inherit);
+    font-size: .5rem;
+    min-height:100px;
+    max-height:100%;
+    color: abstracts.$white ;
+
+    .tableHead {
+      height:50px;
+      text-align: center;
+      background: grey;
+
+      .tableRow {
+      };
+    };
+
+    .tableBody {
+      height:100px;
+      padding: 5px;
+      text-align: center;
+      font-size: .5rem;
+      
+      .tableRow {
+        td {
+          height:40px;
+          padding: 2px;
+
+          .buttons {
+            display:flex;
+            gap: 6px;
+            width: 100%;
+            height: 100%;
+            @include abstracts.displayFlex(space-around,center, row nowrap);
+
+
+            .viewLink,button {
+              padding: 2px;
+              width:40px;
+              height:20px;
+              @include abstracts.displayFlex(center,center);
+              border-radius: 5px;
+              background-color: abstracts.$white;
+              background: white;
+              color: abstracts.$white ;
+              font-size:.6rem;
+            };
+
+            .viewLink {
+              background: blue;
+            };
+
+            .deleteButton {
+              outline: none;
+              border: none;
+              color: abstracts.$red;
+            }
+
+          }
+        };
+      };
+    };
+  };
+};
+

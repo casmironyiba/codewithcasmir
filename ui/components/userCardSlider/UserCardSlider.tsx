@@ -1,7 +1,6 @@
 import { useState, useEffect, FC } from 'react'
 import styles from './UserCardSlider.module.scss'
-import Imager from '../imager/Imager'
-import Image from 'next/image'
+import Imager from '../common/Imager'
 
 type User = {
   id: number

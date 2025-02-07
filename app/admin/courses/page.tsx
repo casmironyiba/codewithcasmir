@@ -1,23 +1,20 @@
 'use client'
 import React, { useState, useEffect, ChangeEvent } from 'react'
-// import  Pagination  from "@/app/auth/dashboard/pagination/pagination";
-import getUsersFromDB from '@/libs/getUsersFromDB'
-import { UserType } from '@/ui/components/userTypes/UserTypes'
-import Linker from '@/ui/components/linker/Linker'
-import SearchBar from '@/ui/components/searchBar/SearchBar'
-import CoursespageContent from '@/ui/content/coursespageContent/CoursespageContent'
-import DashboardNavigationInterface from '@/ui/interface/DashboardNavigationInterface'
+import IUser  from '@/types/IUser'
+import Linker from '@/ui/components/common/Linker'
+import SearchBar from '@/ui/components/common/SearchBar'
+import DashboardNavigationInterface from '@/types/DashboardNavigationInterface'
 import DashboardNavigation from '@/ui/components/dashboardNavigation/DashboardNavigation'
 import styles from './courses.module.scss'
 import MobileMenu from '@/ui/components/dashboardMobileMenu/user/MobileMenu'
 import { collection, getDocs } from 'firebase/firestore'
-import { db } from '@/firebaseConfig' // Ensure Firestore is imported
+import { db } from '@/lib/helpers/firebaseConfig'
 import CoursesList from '@/ui/components/coursesList/CoursesList'
 import CourseInterface from '@/ui/interface/CourseInterface'
 
 
 const Courses: React.FC<DashboardNavigationInterface> = () => {
-  const [filteredUsers, setFilteredUsers] = useState<UserType[]>([])
+  const [filteredUsers, setFilteredUsers] = useState<IUser[]>([])
   const [error, setError] = useState<string | null>(null)
   const [courses, setCourses] = useState<Course[]>([])
   const [loading, setLoading] = useState(true)

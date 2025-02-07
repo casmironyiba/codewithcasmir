@@ -1,0 +1,103 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%,600px,'',0px, abstracts.$primary);
+    @include abstracts.displayFlex(space-between,center,column nowrap);
+    padding: 5px;
+    background-color: inherit;
+
+    .textWrapper {
+      @include abstracts.boxProperty(100%,40px,'',0px);
+      text-align: center;
+      font-size: .5rem;
+      color: black;
+      margin-bottom: 30px
+    };
+
+    .userWrapper {
+      @include abstracts.boxProperty(100%,500px);
+      @include abstracts.displayFlex(space-between,center,column wrap);
+      // background: abstracts.$white;
+
+      .imageWrapper {
+        @include abstracts.boxProperty(80px,80px,'',5px);
+        border-radius: 50%;
+
+        img {
+          border-radius: 50%;
+          width: 100%;
+          height: 100%;
+        };
+
+      };
+        
+      .credentialsWrapper {
+        @include abstracts.boxProperty(100%,400px,'',5px,inherit);
+        @include abstracts.displayFlex(space-around,center,row wrap);
+        font-size:.9rem;
+        color:black;
+        // background:red;
+
+        .inputWrapper {
+          @include abstracts.boxProperty(100%,50px,'',2px);
+          @include abstracts.displayFlex(space-between,flex-start,column nowrap);
+          // background: red;
+          // border-radius: 5px;
+          border-bottom: 1px solid black;
+          color:black;
+          label {
+            color: purple;
+            font-size: 1.1rem;
+          };
+
+          input {
+            width:100%;
+            height: 30px;
+            font-size: 1rem;
+            border:none;
+            text-align:center;
+          }
+        };
+
+        .roleWrapper {
+          text-align:center;
+          height:60px;
+          @include abstracts.displayFlex(center,center);
+
+          select {
+            height: 30px;
+            width:60%;
+            font-size: 1rem;
+            border-right:1px solid black;
+          text-align:center;
+            // text-align:center;
+          }
+        }
+
+        .updateButtonWrapper {
+          width: 100%;
+          height:40px;
+
+          button {
+            width: 100%;
+            height:100%;
+            background:blue;
+            border-radius: 5px;
+            color: white;
+          }
+        }
+
+        .createdAt {
+         @include abstracts.boxProperty(100%,100px);
+         min-height: 100px;
+         max-height: 200px;
+          .textareaWrapper {
+            @include abstracts.boxProperty(100%,90%,'');
+            background: yellow;
+          }
+        }
+      }
+    }
+  };
+};

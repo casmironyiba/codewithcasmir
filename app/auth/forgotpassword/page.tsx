@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 import SiginLink from '@/ui/components/links/signinLink/SigninLink'
 import styles from './forgotpassword.module.scss'
 import { sendPasswordResetEmail } from 'firebase/auth';
-import { auth } from '@/firebaseConfig';
+import { auth } from '@/lib/helpers/firebaseConfig';
 import ResetFormData from '@/ui/components/resetFormData/ResetFormData'
 
 export default function SigninPage() {

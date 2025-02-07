@@ -13,12 +13,6 @@ interface Props {
 };
 
 
-// import styles from './profileImage.module.scss'
-import { ImageSharp } from '@mui/icons-material';
-import { auth } from '@/firebaseConfig';
-import { onAuthStateChanged, updateProfile, User } from 'firebase/auth';
-
-
 const UserCredentials: FC<Props> = () => {
   const [dob, setDob] = useState<Date | any>(undefined)
   const [country, setCountry] = useState<string>('')

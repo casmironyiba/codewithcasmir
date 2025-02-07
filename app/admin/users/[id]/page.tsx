@@ -1,14 +1,18 @@
-import getUserById from '@/actions/getUserById';
+import getUserById from '@/lib/helpers/getUserById';
 import React from 'react';
-import styles from './user.module.scss'
+import styles from './updateUser.module.scss'
 import AdminMobileController from '@/ui/components/dashboardMobileController/admin/AdminMobileController';
-import UserpageContent from '@/ui/content/userpageContent/UserpageContent';
+import UpdateUserForm from '@/ui/components/forms/updateUserForm/UpdateUserForm';
+import getData from '@/lib/helpers/getData';
+import IUser from '@/types/IUser';
 
-export default async function UserPage({ params }: any) {
+export default async function UserPage({ params }:any) {
 
   const { id } = params;
-
-  const user = await getUserById(id);
+  const users:any = await getData('users');
+  const user = users.find((user:IUser) =>user.id ===id)
+    //getUserById(users, id);
+  console.log(user)
   if (!user) {
     return <p>User not found</p>;
   }
@@ -21,7 +25,7 @@ export default async function UserPage({ params }: any) {
       </div>
 
       <div className={styles.contentWrapper}>
-        <UserpageContent user={user} />
+        <UpdateUserForm user={user} />
       </div>
     </div>
   );

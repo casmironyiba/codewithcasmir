@@ -1,0 +1,20 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileM') {
+    .form {
+      width: 400px;
+      // background:blue;
+
+
+      .inputsContainer {
+        width: 100%;
+
+        .inputWrapper {
+          height:45px;
+
+        }
+      }
+    }
+  };
+};

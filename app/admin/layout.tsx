@@ -1,13 +1,11 @@
 'use client'
 import React, { FC, useRef, useState, useEffect } from 'react'
 import styles from './layout.module.scss'
-// import Imager from '@/ui/components/imager/Imager'
-import Main from '@/ui/layout/main/Main'
-// import AdminDashboardSidebar from '@/ui/components/adminDashboardSidebar/AdminDashboardSidebar'
+import Main from '@/ui/components/layout/Main'
 import NewUpdate from '@/ui/components/newUpdate/NewUpdate'
-// import MobileMenu from '@/ui/components/mobileMenu/MobileMenu';
-// import DashboardMenu from '@/ui/components/dashboardMenu/DashboardMenu';
-import AdminLinks from '@/ui/components/dashboardLinks/adminLinks/AdminLinks'
+import AdminLinks from '@/ui/components/links/dashboard/adminLinks/AdminLinks'
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/context/AuthContext";
 
 interface Props {
   children: React.ReactNode
@@ -15,7 +13,24 @@ interface Props {
 const Layout: FC<Props> = ({ children }) => {
   const menuRef = useRef<any>(null)
   const [isMenuOpen, setIsMenuOpen] = useState<any>('')
+  const { user, role, loading } = useAuth();
+  const router = useRouter();
 
+  useEffect(() => {
+    if (!loading) {
+      if (!user) {
+        router.push("/auth/signin/email");
+      } else if (role !== "admin") {
+        // router.push("/unauthorized");
+      }
+    }
+  }, [user, role, loading, router]);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  // if (user && role === "admin") {
   return (
     <Main>
       <div className={styles.mainContainer}>
@@ -35,4 +50,8 @@ const Layout: FC<Props> = ({ children }) => {
   )
 }
 
+// return null;
+// }
+
 export default Layout
+

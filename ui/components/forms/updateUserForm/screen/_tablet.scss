@@ -1,0 +1,7 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('tablet') {
+    width: 400px;
+  }
+}

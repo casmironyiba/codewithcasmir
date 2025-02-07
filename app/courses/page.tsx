@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './courses.module.scss'
-import CourseCard from '@/ui/components/coursesCard/CoursesCard'
+import CourseCard from '@/ui/components/cards/coursesCard/CoursesCard'
 
 
 const courses = [

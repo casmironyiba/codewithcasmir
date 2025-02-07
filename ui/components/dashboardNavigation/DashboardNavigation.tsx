@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import styles from "./dashboardNavigation.module.scss";
 // import AdminMobileMenu from '@/ui/components/dashboardMobileMenu/AdminMobileMenu';
 import { DashboardMenuButton } from '../DashboardMenuButton';
-import DashboardNavigationInterface from '@/ui/interface/DashboardNavigationInterface'
+import DashboardNavigationInterface from '@/types/DashboardNavigationInterface'
 import AdminPlainLinks from '../adminPlainLinks/AdminPlainLinks';
 
 // <AdminMobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />

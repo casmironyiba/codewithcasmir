@@ -1,5 +1,5 @@
-import boxProperty from '@/helpers/boxProperty';
-import displayFlex from '@/helpers/displayFlex';
+import boxProperty from '@/lib/utilities/boxProperty';
+import displayFlex from '@/lib/utilities/displayFlex';
 import React, {FC} from 'react'
 import styled from 'styled-components'
 

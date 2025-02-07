@@ -1,4 +1,4 @@
-import { auth, db } from '@/firebaseConfig' // Adjust import path
+import { auth, db } from '@/lib/helpers/firebaseConfig' // Adjust import path
 import {
   collection,
   query,
@@ -12,7 +12,7 @@ import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
 } from 'firebase/auth'
-import IUser from '@/ui/interface/IUser'
+import IUser from '@/types/IUser'
 
 
 export async function POST(req: Request) {

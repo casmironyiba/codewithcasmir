@@ -1,6 +1,5 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
-import { redirect, useRouter } from 'next/navigation'
 import AuthButton from '@/ui/components/authButton/AuthButton'
 import KeyDown from '@/ui/components/keyDown/keyDown'
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff'
@@ -9,19 +8,16 @@ import styles from './email.module.scss'
 import AlreadyHaveAnAccount from '@/ui/components/AlreadyHaveAnAccount'
 import ResetFormData from '@/ui/components/resetFormData/ResetFormData'
 import AuthText from '@/ui/components/AuthText'
+import { signupAction } from '@/actions/signup'
+import IUser from '@/types/IUser'
+import resetFormFields from '@/lib/utilities/resetFormInput'
 
 export default function EmailSignup() {
-  // const session = await getServerSession(authOptions)
 
-  // if (session) {
-  //   redirect('/dashboard');
-  // };
-
-  const router = useRouter()
   const [name, setName] = useState('')
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [password, setPassword] = useState<string>('')
   const [comfirmPassword, setComfirmPassword] = useState('')
   const [passwordVisible, setPasswordVisible] = useState(false)
   const [comfirmPasswordVisible, setComfirmPasswordVisible] = useState(false)
@@ -30,12 +26,6 @@ export default function EmailSignup() {
     content: string
     type: 'success' | 'error'
   } | null>(null)
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    comfirmPassword: '',
-  })
   const nameRef = useRef<any>(null)
   const usernameRef = useRef<any>(null)
   const emailRef = useRef<any>(null)
@@ -52,60 +42,54 @@ export default function EmailSignup() {
   const passwordKeyDown = KeyDown(comfirmPasswordRef)
   const comfirmPasswordKeyDown = KeyDown(buttonRef)
 
-  const handleSubmit = async (event: any) => {
-    event.preventDefault()
-    setMessage(null)
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setMessage(null);
 
     const userInput = {
       name,
       username,
       email,
       password,
-    }
+    };
 
     try {
       if (password !== comfirmPassword) {
-        setMessage({ content: 'Password does not match', type: 'error' })
-        console.log('password does not matched')
-        return
+        setMessage({ content: 'Password does not match', type: 'error' });
+        console.log('Password does not match');
+        return;
       }
 
-      const response = await fetch('/api/auth/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ userInput }),
-      })
+      // Call the server action directly
+      'use server'
+      const response = await signupAction(userInput);
+      console.log(response)
 
-      const data = await response.json()
+      if (response.success) {
+        setMessage({ content: response.message, type: 'success' });
+        console.log('Signup successful', response);
 
-      if (response.ok) {
-        setMessage({ content: data.message, type: 'success' })
-        console.log('Signup success', response)
-
-        ResetFormData(
+        const fields = {
           setName,
           setUsername,
           setEmail,
           setPassword,
-          setComfirmPassword,
-        )
-
-        return
+          setComfirmPassword
+        }
+        // Reset form data
+        resetFormFields(fields);
       } else {
         setMessage({
-          content: data.message || 'Invalid Credentilas',
+          content: response.message || 'Invalid Credentials',
           type: 'error',
-        })
+        });
+        console.log('Signup failed:', response.message);
       }
-
-      // Optionally, you can redirect the user or show other messages.
-    } catch (error: any) {
-      setMessage({ content: 'An unexpected Error occured.', type: 'error' })
-      console.log('Signup failed', error.message)
+    } catch (error) {
+      setMessage({ content: 'An unexpected error occurred.', type: 'error' });
+      console.error('Signup failed:', error);
     }
-  }
+  };
 
   useEffect(() => {
     nameRef.current?.focus()
@@ -126,6 +110,7 @@ export default function EmailSignup() {
       toggleComfirmPasswordVisibility,
     )
 
+    console.log(name)
     return () => {
       passwordEyeWrapperRef?.current?.removeEventListener(
         'click',

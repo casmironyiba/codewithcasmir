@@ -3,7 +3,7 @@ import React, { FC, useRef } from 'react'
 import styles from './mobileMenu.module.scss'
 import DashboardNavigationInterface from '@/types/DashboardNavigationInterface'
 import UserPlainLinks from '../../userPlainLinks/UserPlainLinks'
-import AdminPlainLinks from '../../adminPlainLinks/AdminPlainLinks'
+import AdminPlainLinks from '@/ui/components/links/dashboard/adminPlainLinks/AdminPlainLinks'
 import {LogoIcon} from '@/ui/components/Logo'
 
 const MobileMenu: FC<DashboardNavigationInterface> = ({

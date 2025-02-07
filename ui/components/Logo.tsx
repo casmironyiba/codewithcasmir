@@ -3,10 +3,10 @@ import SiteInfo from '@/ui/components/siteInfo/SiteInfo'
 import styled from 'styled-components'
 import Icon from '@/public/icons/logo.svg'
 import Image from 'next/image'
-import mq from '@/helpers/mediaQueries'
-import boxProperty from '@/helpers/boxProperty'
-import remsize from '@/helpers/remsize'
-import displayFlex from '@/helpers/displayFlex'
+import mq from '@/lib/utilities/mediaQueries'
+import boxProperty from '@/lib/utilities/boxProperty'
+import remsize from '@/lib/utilities/remsize'
+import displayFlex from '@/lib/utilities/displayFlex'
 
 export function LogoIcon() {
   return (

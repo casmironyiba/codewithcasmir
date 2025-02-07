@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './personalSkills.module.scss'
-import Imager from '../imager/Imager'
+import Imager from '../common/Imager'
 
 export default function PersonalSkills() {
   return (

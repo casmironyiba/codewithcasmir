@@ -1,7 +1,0 @@
-@use '../../abstracts';
-
-.button {
-  @include abstracts.boxProperty(100%, 100%,'', 0px, inherit);
-  border:none;
-  outline: none;
-};

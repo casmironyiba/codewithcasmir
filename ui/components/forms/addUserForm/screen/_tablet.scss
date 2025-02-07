@@ -1,0 +1,18 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('tablet') {
+    .form {
+      width: 400px;
+
+      .inputsContainer {
+        width: 100%;
+
+        .inputWrapper {
+          height:45px;
+
+        }
+      }
+    }
+  };
+};

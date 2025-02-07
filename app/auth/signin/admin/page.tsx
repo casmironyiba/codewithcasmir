@@ -7,13 +7,13 @@ import VisibilityIcon from '@mui/icons-material/Visibility'
 import AuthButton from '@/ui/components//authButton/AuthButton'
 import styles from './admin.module.scss'
 import ForgotpasswordLink from '@/ui/components/forgotPasswordLink/ForgotpasswordLink'
-import { auth } from '@/libs/firebaseConfig'
+import { auth } from '@/lib/helpers/firebaseConfig'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import AuthText from '@/ui/components/AuthText'
 // import { doc, getDoc } from 'firebase/firestore'
-import getUsers from '@/helpers/getUsers'
+import getUsers from '@/lib/helpers/getUsers'
 import IUser from '@/types/IUser'
-import getUserByEmail from '@/helpers/getUserByEmail'
+import getUserByEmail from '@/lib/helpers/getUserByEmail'
 
 export default function AdminSignin() {
   const [email, setEmail] = useState('')

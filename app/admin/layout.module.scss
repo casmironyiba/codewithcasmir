@@ -4,25 +4,22 @@
 .mainContainer {
   @include abstracts.mq('mobileS') {
     @include abstracts.boxProperty(100%, 100%, '', 0px, abstracts.$primary);
-    @include abstracts.displayFlex(center, center, column nowrap);
     display: flex;
-    background: white;
     gap: 5px;
-    // margin-top:5px;
     position: relative;
 
     .adminDashboardWrapper {
-      // flex: 2;
       display: none;
     }
 
     .content {
-      width: 100%;
+      width: 60%;
       height: 100%;
-      @include abstracts.displayFlex(center, center, row nowrap);
-      // background: abstracts.$white;
+      @include abstracts.displayFlex(center, center);
+      // background: abstracts.$red;
       flex: 4;
       gap: 5px;
+      font-size: .8rem;
 
       .childrenWrapper {
         width: 79%;
@@ -42,10 +39,9 @@
   //   background: grey;
   // }
   @include abstracts.mq('laptop') {
-    @include abstracts.boxProperty(100%, 100%, '', 0px);
+    @include abstracts.boxProperty(100%, 100vh, '', 0px);
     @include abstracts.displayFlex(space-between, center, row nowrap);
-    // background: grey;
-    margin-top: 2px;
+    background: grey;
 
     .adminDashboardWrapper {
       width: 250px;
@@ -59,7 +55,7 @@
       max-width: 1600px;
       height: 100%;
       display: flex;
-      background: abstracts.$white;
+      // background: abstracts.$white;
       @include abstracts.displayFlex(space-between, center, row nowrap);
       flex: 4;
       gap: 5px;
@@ -67,7 +63,7 @@
       .childrenWrapper {
         width: 79%;
         height: 100%;
-        // background: abstracts.$primary;
+        background: abstracts.$red;
         flex: 4;
       }
     }

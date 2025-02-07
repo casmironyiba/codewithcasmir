@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
-import boxProperty from '@/helpers/boxProperty'
+import boxProperty from '@/lib/utilities/boxProperty'
 
 const Container = styled.div`
   ${boxProperty('100%', '100%', '', '0px', 'inherit')};

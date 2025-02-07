@@ -1,9 +1,9 @@
 'use client'
 import React, { FC, useRef } from 'react'
-import Linker from '@/ui/components/linker/Linker';
+import Linker from '@/ui/components/common/Linker';
 import styles from './adminMobileMenu.module.scss'
-import DashboardNavigationInterface from '@/ui/interface/DashboardNavigationInterface'
-
+import DashboardNavigationInterface from '@/types/DashboardNavigationInterface'
+import Logout from '@/ui/components/common/Logout'
 
 const AdminMobileMenu: FC<DashboardNavigationInterface> = ({ isMenuOpen, setIsMenuOpen }) => {
   const menuRef = useRef<any>(null)
@@ -15,35 +15,35 @@ const AdminMobileMenu: FC<DashboardNavigationInterface> = ({ isMenuOpen, setIsMe
     <div className={`${styles.container} ${containerClass}`} ref={menuRef}>
       <ul className={styles.menuWrapper}>
         <li>
-          <Linker href='/auth/dashboard/admin'>Dashboard</Linker>
+          <Linker href='/admin/dashboard'>Dashboard</Linker>
         </li>
 
         <li>
-          <Linker href='/auth/dashboard/admin/users'>Users</Linker>
+          <Linker href='/admin/users'>Users</Linker>
         </li>
 
         <li>
-          <Linker href='/auth/dashboard/admin/userenrols'>User Enrolls</Linker>
+          <Linker href='/admin/userenrols'>User Enrolls</Linker>
         </li>
 
         <li>
-          <Linker href='/auth/dashboard/admin/transactions'>Transactions</Linker>
+          <Linker href='/admin/transactions'>Transactions</Linker>
         </li>
 
         <li>
-          <Linker href='/auth/dashboard/admin/reports'>Reports</Linker>
+          <Linker href='/admin/reports'>Reports</Linker>
         </li>
 
         <li>
-          <Linker href='/auth/dashboard/admin/accountsettings'>Account Settings</Linker>
+          <Linker href='/admin/accountsettings'>Account Settings</Linker>
         </li>
 
         <li>
-          <Linker href='/auth/dashboard/admin/helpcenter'>Help Center</Linker>
+          <Linker href='/admin/helpcenter'>Help Center</Linker>
         </li>
 
         <li>
-          <Linker href='/auth/logout'>Logout</Linker>
+          <Logout />
         </li>
       </ul>
 

@@ -1,5 +1,5 @@
 // services/firebaseService.ts
-import { db } from '../firebaseConfig'
+import { db } from '../lib/firebaseConfig'
 import { collection, addDoc } from 'firebase/firestore' // import addDoc from Firestore
 
 interface Course {

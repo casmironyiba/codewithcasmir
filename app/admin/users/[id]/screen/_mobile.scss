@@ -2,16 +2,23 @@
 
 .container {
   @include abstracts.mq('mobileS') {
-    @include abstracts.boxProperty(100%,100%,'',0);
+  @include abstracts.boxProperty(100%,100%,'',0);
+  @include abstracts.displayFlex(space-between,center, column nowrap);
+  background: abstracts.$white;
+
+    .controlBar {
+      @include abstracts.boxProperty(100%,40px,0,0);
+      background: abstracts.$dark;
+    }
 
     .contentWrapper {
-      @include abstracts.boxProperty(100%,900px,'', 0px);
-      @include abstracts.displayFlex(center,center);
+      @include abstracts.boxProperty(100%,100vh,'', 0px);
+      margin-top:10px;
     }
   };
 
   @include abstracts.mq('mobileM') {
-    width: 400px;
+    // width: 400px;
   }
 
 }

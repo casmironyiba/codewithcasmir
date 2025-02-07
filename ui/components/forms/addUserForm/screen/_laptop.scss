@@ -1,0 +1,16 @@
+@use '@/ui/abstracts';
+@use '../_inputWrapper.scss';
+
+.container {
+  @include abstracts.mq('laptop') {
+      width: 400px;
+    height: 100%;
+    // @include bstracts.displayFlex(flex-start, flex-start);
+    background: white;
+    .form {
+    height: 100%;
+    width: 100%;
+      margin-top: 50px;
+    }
+  }
+};

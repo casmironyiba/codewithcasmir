@@ -1,7 +1,7 @@
 import React from 'react'
 import Imager from '../imager/Imager'
 import styles from './homeLayout6.module.scss'
-import CourseCard from '../coursesCard/CoursesCard'
+import CourseCard from '../cards/coursesCard/CoursesCard'
 
 const courses = [
   {

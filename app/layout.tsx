@@ -1,17 +1,18 @@
 'use client'
-import Header from '@/ui/layout/header/Header'
-import Footer from '@/ui/layout/footer/Footer'
+import Header from '@/ui/components/layout/header/Header'
+import Footer from '@/ui/components/layout/footer/Footer'
 import type { Metadata } from 'next'
 // import StyledComponentsRegistry from '@/libs/styledRegistry'
-import Main from '@/ui/layout/main/Main'
+import Main from '@/ui/components/layout/Main'
 // import styles from './page.module.scss';
 import '../ui/globals.scss'
 import styles from './layout.module.scss'
 // import GlobalStyle from '@/components/Globaltyle';
-import { AuthProvider } from '@/Provider'
-import StyledComponentsRegistry from '@/libs/styledRegistry'
+// import { AuthProvider } from '@/Provider'
+import StyledComponentsRegistry from '@/lib/helpers/styledRegistry'
 import { Open_Sans, Roboto } from 'next/font/google'
 import { usePathname } from 'next/navigation'
+import { AuthProvider } from '@/context/AuthContext'
 
 const openSans = Open_Sans({
   subsets: ['latin'],
@@ -28,17 +29,21 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   const pathname = usePathname()
-  const isDashboard = pathname.startsWith('/dashboard')
+  const isAdmin = pathname.startsWith('/admin')
+  const isInstructor = pathname.startsWith('/instructor')
+  const isStudent = pathname.startsWith('/student')
   return (
     <html lang='en'>
       <body>
-        <StyledComponentsRegistry>
-          <div className={styles.wrappe}>
-            {!isDashboard && <Header />}
-            <Main>{children}</Main>
-            {!isDashboard && <Footer />}
-          </div>
-        </StyledComponentsRegistry>
+        <AuthProvider>
+          <StyledComponentsRegistry>
+            <div className={styles.wrappe}>
+              {!isAdmin || !isInstructor || !isStudent && <Header />}
+              <Main>{children}</Main>
+              {!isAdmin || !isInstructor || !isStudent && <Footer />}
+            </div>
+          </StyledComponentsRegistry>
+        </AuthProvider>
       </body>
     </html>
   )

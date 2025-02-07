@@ -1,10 +1,8 @@
 import React, { FC, useRef, useEffect, useState } from 'react'
 import DashboardNavigationInterface from '@/types/DashboardNavigationInterface'
 import styled from 'styled-components'
-import mq from '@/helpers/mediaQueries'
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
-import MenuOpenRoundedIcon from '@mui/icons-material/MenuOpenRounded'
-
+import mq from '@/lib/utilities/mediaQueries'
+import {MenuIcon,MenuOpenIcon} from '@/ui/components/common/MenuIcon'
 export const DashboardMenuButton: FC<DashboardNavigationInterface> = ({
   isMenuOpen,
   setIsMenuOpen,
@@ -31,11 +29,11 @@ export const DashboardMenuButton: FC<DashboardNavigationInterface> = ({
   return (
     <Container className={containerClass} ref={menuRef}>
       <div className='menuOpenIconWrapper' ref={menuOpenIconRef}>
-        <MenuOpenRoundedIcon className='menuOpenIcon' ref={menuOpenIconRef} />
+        <MenuOpenIcon sx={{fontSize:'30px',color:'white'}} className='menuOpenIcon' ref={menuOpenIconRef} />
       </div>
 
-      <div className='menuIconWrapper' ref={menuIconRef}>
-        <MenuRoundedIcon sx={{fontSize:'30px'}} className='menuIcon' />
+      <div className='menuIconWrapper' >
+        <MenuIcon sx={{fontSize:'30px', color:'white'}} className='menuIcon' ref={menuIconRef}/>
       </div>
     </Container>
   )
@@ -43,9 +41,9 @@ export const DashboardMenuButton: FC<DashboardNavigationInterface> = ({
 
 const Container = styled.div`
   ${mq('mobileS')(`
-    width: 60px;
+    width: 100%;
     height:100%;
-    padding-left:10px;
+    // padding-left:10px;
     z-index:10;
 
     .menuOpenIconWrapper {
@@ -61,6 +59,7 @@ const MenuClose = styled.div`
     height:100%;
     padding: 0px;
     position: relative; 
+    background:red;
     
 
     .menuIconWrapper {
