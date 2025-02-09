@@ -1,0 +1,23 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('laptopM') {
+    @include abstracts.boxProperty(100%, 100%, '', 0px, abstracts.$white);
+    @include abstracts.displayFlex(space-between, center, column nowrap);
+    padding: 5px;
+    background: red;
+
+    .textWrapper {
+      @include abstracts.boxProperty(100%, 100px, '', 0px, inherit);
+      margin-top: 0px;
+      height: 45px;
+      font-size: 1.2rem;
+    }
+
+    .userWrapper {
+      @include abstracts.displayFlex(space-between, flex-start, row nowrap);
+      @include abstracts.boxProperty(100%, 100%, '', 0px, inherit);
+      padding: 50px;
+    }
+  }
+}

@@ -2,12 +2,18 @@
 
 .container {
   @include abstracts.mq('laptop') {
-      width: 100%;
+    width: 100%;
+
+    .controlBar {
+      padding-left: 10px;
+      .searchbarWrapper {
+        background: red;
+      }
+    }
 
     .contentWrapper {
-      @include abstracts.boxProperty(100%,100vh,'', 5px, inherit);
-      @include abstracts.displayFlex('center','center');
-
+      @include abstracts.boxProperty(100%, 100vh, '', 5px, inherit);
+      @include abstracts.displayFlex('center', 'center');
     }
   }
 }

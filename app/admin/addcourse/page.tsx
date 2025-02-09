@@ -1,7 +1,7 @@
 'use client'
 import styles from './addCourses.module.scss'
 import DashboardNavigation from '@/ui/components/dashboardNavigation/DashboardNavigation'
-import MobileMenu from '@/ui/components/dashboardMobileMenu/user/MobileMenu'
+import MobileMenu from '@/ui/components/dashboardMobileMenu/MobileMenu'
 import { ChangeEvent, FC, useState } from 'react'
 import { storage } from '@/lib/helpers/firebaseConfig'
 import {

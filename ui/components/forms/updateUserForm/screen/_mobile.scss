@@ -6,17 +6,19 @@
     @include abstracts.displayFlex(space-between,center,column nowrap);
     padding: 5px;
     background-color: inherit;
+    margin-top: 50px;
 
     .textWrapper {
       @include abstracts.boxProperty(100%,40px,'',0px);
       text-align: center;
-      font-size: .5rem;
-      color: black;
-      margin-bottom: 30px
+      font-size: .7rem;
+      color: blue;
+      margin-bottom: 30px;
+      border-bottom: 1px solid black;
     };
 
     .userWrapper {
-      @include abstracts.boxProperty(100%,500px);
+      @include abstracts.boxProperty(100%,550px);
       @include abstracts.displayFlex(space-between,center,column wrap);
       // background: abstracts.$white;
 
@@ -83,6 +85,7 @@
             width: 100%;
             height:100%;
             background:blue;
+            font-size: 1rem;
             border-radius: 5px;
             color: white;
           }

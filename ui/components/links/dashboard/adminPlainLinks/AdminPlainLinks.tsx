@@ -3,6 +3,7 @@ import { DashboardOutlined } from "@mui/icons-material"
 import Linker from "@/ui/components/common/Linker"
 import styles from './adminPlainLinks.module.scss'
 import LogoutButton from '@/ui/components/LogoutButton'
+
 export default function AdminPlainLinks() {
   return (
 

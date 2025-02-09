@@ -6,7 +6,7 @@ import SearchBar from '@/ui/components/common/SearchBar'
 import DashboardNavigationInterface from '@/types/DashboardNavigationInterface'
 import DashboardNavigation from '@/ui/components/dashboardNavigation/DashboardNavigation'
 import styles from './courses.module.scss'
-import MobileMenu from '@/ui/components/dashboardMobileMenu/user/MobileMenu'
+import MobileMenu from '@/ui/components/dashboardMobileMenu/MobileMenu'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '@/lib/helpers/firebaseConfig'
 import CoursesList from '@/ui/components/coursesList/CoursesList'
@@ -83,7 +83,7 @@ const Courses: React.FC<DashboardNavigationInterface> = () => {
         </div>
 
         <div className={styles.adduserWrapper}>
-          <Linker href='/dashboard/admin/addcourse'>Add Course</Linker>
+          <Linker href='/admin/addcourse'>Add Course</Linker>
         </div>
       </div>
 

@@ -2,45 +2,64 @@
 
 .container {
   @include abstracts.mq('laptop') {
-    @include abstracts.boxProperty(100%,100%,'',0px, abstracts.$primary);
-    @include abstracts.displayFlex(space-between,center,column nowrap);
+    @include abstracts.boxProperty(100%, 100%, '', 0px, abstracts.$white);
+    @include abstracts.displayFlex(space-between, center, column nowrap);
     padding: 5px;
-    .textWrapper {
-      @include abstracts.boxProperty(100%,100px,'',0px, abstracts.$primary);
 
+    .textWrapper {
+      @include abstracts.boxProperty(100%, 100px, '', 0px, inherit);
+      margin-top: 0px;
+      height: 45px;
+      font-size: 1.2rem;
     }
 
     .userWrapper {
-      @include abstracts.displayFlex(space-between,flex-start,row nowrap);
-      @include abstracts.boxProperty(100%,100%,'',0px, abstracts.$primary);
-      // background: purple;
+      @include abstracts.displayFlex(space-between, flex-start, row nowrap);
+      @include abstracts.boxProperty(100%, 100%, '', 0px, inherit);
+      // padding: 50px;
+        // background: blue;
 
       .imageContainer {
         padding: 0;
-        @include abstracts.boxProperty(20%,150px,'',0px, inherit);
-        @include abstracts.displayFlex(center,center);
-        background: blue;
-        .imageWrapper {
-          width: 130px;
-          height: 100%;
-        }
-      };
-
-      .credentialsWrapper {
-        @include abstracts.boxProperty(600px,100%,'',0px, abstracts.$primary);
-        @include abstracts.displayFlex(space-between,flex-start,column nowrap);
+        @include abstracts.boxProperty(200px, 200px, '', 0px, inherit);
+        @include abstracts.displayFlex(center, center);
         // background: blue;
-        .inputWrapper {
-          width: 300px;
-          border: 1px solid white;
-          @include abstracts.displayFlex(flex-start,center,row nowrap);
-          
-          // background: red;
+        border-radius: 50%;
+        .imageWrapper {
+          // width: 130px;
+          // height: 100%;
         }
-
       }
 
-    }
-  };
-};
+      .credentialsWrapper {
+        @include abstracts.boxProperty(500px, 100%, '', 10px, inherit);
+        // background: blue;
+        @include abstracts.displayFlex(space-between, center, column nowrap);
+        gap: 40px;
 
+        .inputWrapper {
+          width: 100%;
+          height: 40px;
+          border-bottom: 1px solid abstracts.$black;
+          @include abstracts.displayFlex(flex-start, center, row nowrap);
+        }
+
+        .messageWrapper {
+          @include abstracts.boxProperty(80%, 80px, auto, 5px);
+          @include abstracts.displayFlex(center, center);
+            border-radius: 10px;
+            position: relative;
+            bottom: 50px;
+
+          p {
+            // background: abstracts.$light;
+            width: 100%;
+            height: 100%;
+            background: abstracts.$light;
+          @include abstracts.displayFlex(center, center);
+          }
+        }
+      }
+    }
+  }
+}

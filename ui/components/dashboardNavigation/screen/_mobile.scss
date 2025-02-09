@@ -5,7 +5,6 @@
     width: 40px;
     height: 30px;
     @include abstracts.displayFlex(flex-start, flex-start, column nowrap);
-    // background: abstracts.$light;
     // gap: 10px;
     .buttonWrapper {
       width: 40px;
@@ -17,7 +16,7 @@
     .mobilemenuWrapper {
       height: 30px;
       width: 80px;
-      margin-top: 5px;
+      margin-top: 2px;
       // background: red;
     }
   }
