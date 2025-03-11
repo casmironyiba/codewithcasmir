@@ -9,6 +9,7 @@ import MobileMenu from '@/ui/components/dashboardMobileMenu/MobileMenu'
 import AdminGuard from '@/ui/components/hoc/AdminGaurd'
 import Card from '@/ui/components/cards/InfoCard'
 import { withRole } from '@/ui/components/hoc/WithRole'
+import AdminMobileController from '@/ui/components/dashboardMobileController/admin/AdminMobileController'
 
 const AdminDashboard: FC<DashboardNavigationInterface | any> = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<any>('')
@@ -16,16 +17,7 @@ const AdminDashboard: FC<DashboardNavigationInterface | any> = () => {
   return (
     <div className={styles.container}>
       <div className={styles.controlBar}>
-        <DashboardNavigation
-          isMenuOpen={isMenuOpen}
-          setIsMenuOpen={setIsMenuOpen}
-        >
-          <MobileMenu
-            isMenuOpen={isMenuOpen}
-            setIsMenuOpen={setIsMenuOpen}
-            adminLinks={true}
-          />
-        </DashboardNavigation>
+        <AdminMobileController />
       </div>
 
       <div className={styles.wrapper}>

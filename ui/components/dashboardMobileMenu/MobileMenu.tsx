@@ -1,16 +1,18 @@
 'use client'
 import React, { FC, useRef } from 'react'
 import styles from './mobileMenu.module.scss'
-import DashboardNavigationInterface from '@/types/DashboardNavigationInterface'
-import UserPlainLinks from '../userPlainLinks/UserPlainLinks'
+import IDashboardNavigation from '@/types/IDashboardNavigation'
 import AdminPlainLinks from '@/ui/components/links/dashboard/adminPlainLinks/AdminPlainLinks'
+import InstructorPlainLinks from '../links/dashboard/instructorPlainLinks/InstructorPlainLinks'
+import StudentPlainLinks from '../links/dashboard/studentPlainLinks/StudentPlainLinks'
 import {LogoIcon} from '@/ui/components/Logo'
 
-const MobileMenu: FC<DashboardNavigationInterface> = ({
+const MobileMenu: FC<IDashboardNavigation> = ({
   isMenuOpen,
   setIsMenuOpen,
   adminLinks,
-  userLinks,
+  studentLinks,
+  instructorLinks,
 }) => {
   const menuRef = useRef<any>(null)
 
@@ -24,13 +26,22 @@ const MobileMenu: FC<DashboardNavigationInterface> = ({
         <AdminPlainLinks />
       </div>
     )
-  } else if (userLinks) {
+  } else if (studentLinks) {
     return (
       <div className={`${styles.container} ${containerClass}`} ref={menuRef}>
         <div className={styles.logoWrapper}>
           <LogoIcon />
         </div>
-        <UserPlainLinks />
+        <StudentPlainLinks />
+      </div>
+    )
+  }  else if (instructorLinks) {
+    return (
+      <div className={`${styles.container} ${containerClass}`} ref={menuRef}>
+        <div className={styles.logoWrapper}>
+          <LogoIcon />
+        </div>
+        <InstructorPlainLinks />
       </div>
     )
   }

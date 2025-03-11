@@ -1,28 +1,29 @@
 "use client";
-import AdminMobileMenu from '@/ui/components/dashboardMobileMenu/admin/AdminMobileMenu';
+import AdminMobileController from '@/ui/components/dashboardMobileController/admin/AdminMobileController';
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import DashboardNavigation from '@/ui/components/dashboardNavigation/DashboardNavigation';
 // import Pagination from "@/app/auth/dashboard/pagination/pagination";
-import { UserType } from '@/ui/components/userTypes/UserTypes';
+import IUser from '@/types/IUser';
 import styles from "./transactions.module.scss";
-import TransactionsContent from '@/ui/content/transactionsContent/TransactionsContent';
-import DashboardNavigationInterface from '@/ui/interface/DashboardNavigationInterface'
+import TransactionsContent from '@/ui/components/content/transactionsContent/TransactionsContent';
+import DashboardNavigationInterface from '@/types/DashboardNavigationInterface'
 import Search from '@/ui/components/search/Search';
-import SearchBar from '@/ui/components/searchBar/SearchBar';
-import getUsersFromDB from '@/libs/getUsersFromDB';
+import SearchBar from '@/ui/components/common/SearchBar';
+// import getUsers from '@/lib/helpers/getUsers';
+import getData from '@/lib/helpers/getData';
 // import getUserByUsername from '@/libs/getUserByUsername';
 
 const Transaction: React.FC<DashboardNavigationInterface> = ({ searchParams }) => {
   const q = searchParams?.q || ""
-  const [users, setUsers] = useState<UserType[]>([]);
-  const [filteredUsers, setFilteredUsers] = useState<UserType[]>([]);
+  const [users, setUsers] = useState<IUser[] | any>(undefined);
+  const [filteredUsers, setFilteredUsers] = useState<IUser[] | any>(undefined);
   const [error, setError] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState<any>('');
 
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const fetchedUsers = await getUsersFromDB();
+        const fetchedUsers = await getData('users');
 
         setUsers(fetchedUsers);
         setFilteredUsers(fetchedUsers);
@@ -39,7 +40,7 @@ const Transaction: React.FC<DashboardNavigationInterface> = ({ searchParams }) =
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     const query = e.target.value.toLowerCase();
-    const filtered = users.filter(user =>
+    const filtered = users.filter((user:any) =>
       user.name.toLowerCase().includes(query) ||
       user.username.toLowerCase().includes(query) ||
       user.email.toLowerCase().includes(query)
@@ -58,7 +59,7 @@ const Transaction: React.FC<DashboardNavigationInterface> = ({ searchParams }) =
         <div className={styles.dbNavigationWrapper}>
           <DashboardNavigation isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}>
 
-            <AdminMobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+            <AdminMobileController />
           </DashboardNavigation>
         </div>
 

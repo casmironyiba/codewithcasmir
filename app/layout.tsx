@@ -35,15 +35,15 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <AuthProvider>
-          <StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <AuthProvider>
             <div className={styles.wrappe}>
-              {!isAdmin || !isInstructor || !isStudent && <Header />}
+              {!isAdmin || !isInstructor || (!isStudent && <Header />)}
               <Main>{children}</Main>
-              {!isAdmin || !isInstructor || !isStudent && <Footer />}
+              {!isAdmin || !isInstructor || (!isStudent && <Footer />)}
             </div>
-          </StyledComponentsRegistry>
-        </AuthProvider>
+          </AuthProvider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   )

@@ -7,8 +7,9 @@ import {
   HelpCenter,
   VerifiedUser,
   Report,
+  LogoutSharp,
 } from '@mui/icons-material'
-import Logout from '@/ui/components/LogoutButton'
+import LogoutButton from '@/ui/components/LogoutButton'
 
 export default function AdminLinks() {
   return (
@@ -53,10 +54,7 @@ export default function AdminLinks() {
         </div>
 
         <div className={`${styles.transactionsWrapper} ${styles.linkWrapper}`}>
-          <Linker
-            href='/admin/transactions'
-            className={styles.link}
-          >
+          <Linker href='/admin/transactions' className={styles.link}>
             <Dashboard className={styles.icon} />
             Transactions
           </Linker>
@@ -70,27 +68,22 @@ export default function AdminLinks() {
         </div>
 
         <div className={`${styles.accountSettings} ${styles.linkWrapper}`}>
-          <Linker
-            href='/admin/accountsettings'
-            className={styles.link}
-          >
+          <Linker href='/admin/accountsettings' className={styles.link}>
             <Dashboard className={styles.icon} />
             Account Settings
           </Linker>
         </div>
 
         <div className={`${styles.helpWrapper} ${styles.linkWrapper}`}>
-          <Linker
-            href='/admin/helpcenter'
-            className={styles.link}
-          >
+          <Linker href='/admin/helpcenter' className={styles.link}>
             <HelpCenter className={styles.icon} />
             help center
           </Linker>
         </div>
 
         <div className={`${styles.logout} ${styles.linkWrapper}`}>
-          <Logout />
+        <LogoutSharp className={styles.icon}/>
+          <LogoutButton background='none' />
         </div>
       </ul>
     </div>

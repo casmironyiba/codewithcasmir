@@ -1,12 +1,9 @@
+
 import React, { FC, useEffect, useState } from 'react'
 import FileUploadList from '@/ui/components/fileUploadList/FileUploadList'
-import styles from './addMore.module.scss'
-import Button from '@/ui/components/button/Button'
-import fetchCourse from '@/helpers/fetchCourse'
+import fetchCourse from '@/lib/helpers/fetchCourse'
 import styled from 'styled-components'
-import displayFlex from '@/lib/helpers/displayFlex'
-
-
+import displayFlex from '@/lib/utilities/displayFlex'
 
 const Container = styled.div`
   ${displayFlex('space-around', 'center', 'column nowrap')};
@@ -14,18 +11,18 @@ const Container = styled.div`
   padding: 5px;
   width: 100%;
 
-  .addVideos,
-  .addMaterials,
-  .assignments {
-    width: 100%;
-    // min-height: 100%;
-    background: white;
-    padding: 5px;
-    ${displayFlex('center', 'center')};
+  }
+`
 
-    button {
-      ${displayFlex('center', 'center')};
-    }
+const Wrapper = styled.div`
+  width: 100%;
+  // min-height: 100%;
+  background: white;
+  padding: 5px;
+  ${displayFlex('center', 'center')};
+
+  button {
+    ${displayFlex('center', 'center')};
   }
 `
 interface Props {
@@ -85,11 +82,10 @@ const AddMore: FC<Props> = ({
 
     loadCourse()
   }, [])
-  console.log(`from admore ==> ${course}`);
+  console.log(`from admore ==> ${course}`)
   return (
     <Container>
-
-      <div className={styles.addVideos}>
+      <Wrapper>
         <FileUploadList
           files={videos}
           onAddFile={() => addFileInput('videos')}
@@ -106,9 +102,9 @@ const AddMore: FC<Props> = ({
             </li>
           ))}
         </ul>
-      </div>
+      </Wrapper>
 
-      <div className={styles.addMaterials}>
+      <Wrapper>
         <FileUploadList
           files={materials}
           onAddFile={() => addFileInput('materials')}
@@ -117,9 +113,9 @@ const AddMore: FC<Props> = ({
           }
           label='Material'
         />
-      </div>
+      </Wrapper>
 
-      <div className={styles.assignments}>
+      <Wrapper>
         <FileUploadList
           files={assignments}
           onAddFile={() => addFileInput('assignments')}
@@ -128,7 +124,7 @@ const AddMore: FC<Props> = ({
           }
           label='Assignment'
         />
-      </div>
+      </Wrapper>
     </Container>
   )
 }

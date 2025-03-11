@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import SiteInfo from '@/ui/components/siteInfo/SiteInfo'
 import styled from 'styled-components'
 import Icon from '@/public/icons/logo.svg'
@@ -8,11 +8,14 @@ import boxProperty from '@/lib/utilities/boxProperty'
 import remsize from '@/lib/utilities/remsize'
 import displayFlex from '@/lib/utilities/displayFlex'
 
-export function LogoIcon() {
+interface Props {
+  width?: string
+  height?: string
+}
+
+export const LogoIcon: FC<Props> = ({ width, height }) => {
   return (
-    <Wrapper>
-      <Image src={Icon} alt={'logo'} />
-    </Wrapper>
+      <Image src={Icon} alt={'logo'} style={{ width, height }} />
   )
 }
 
@@ -25,11 +28,13 @@ export default function Logo() {
   )
 }
 
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-
-`
+// const Wrapper = styled.div`
+//   width: 100%;
+//   height: 100%;
+//   @include abstracts.displayFlex(center, center);
+//   background:blue;
+//   border-bottom: 1px solid white;
+// `
 
 const Container = styled.div`
   ${mq('mobileS')(`

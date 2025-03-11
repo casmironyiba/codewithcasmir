@@ -13,6 +13,11 @@ import {
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import { db } from '@/lib/helpers/firebaseConfig' // Ensure Firestore is imported from your config
 import Select from '@/ui/components/inputs/Select'
+import GoBackButton from '@/ui/components/goBackButton/GoBackButton'
+import Themes from '@/lib/utilities/themes'
+import Input from '@/ui/components/common/Input'
+import Label from '@/ui/components/common/Label'
+import  CourseSections  from '@/ui/components/courseSections/CourseSections'
 
 const AddCourse: FC = () => {
   const options = [
@@ -24,11 +29,12 @@ const AddCourse: FC = () => {
   const [description, setDescription] = useState('')
   const [image, setImage] = useState<File | null>(null)
   const [video, setVideo] = useState<File | null>(null)
-  const [price, setPrice] = useState('')
+  const [price, setPrice] = useState<any>(0)
   const [selectCategory, setSelectedCategory] = useState('')
   const [uploading, setUploading] = useState(false) // Track upload state
   const [progress, setProgress] = useState(0) // Track progress
   const [isMenuOpen, setIsMenuOpen] = useState<any>('')
+  const [sections, setSections] = useState<any[]>([]) // Track progress
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement>,
@@ -138,7 +144,6 @@ const AddCourse: FC = () => {
     }
   }
 
-
   return (
     <div className={styles.container}>
       <div className={styles.controlBar}>
@@ -155,65 +160,91 @@ const AddCourse: FC = () => {
       </div>
 
       <div className={styles.formWrapper}>
-        <h1>Add COurse</h1>
+        <div className={styles.section1}>
+          <div className={styles.gobackWrapper}>
+            <GoBackButton>Back to Courses</GoBackButton>
+          </div>
+
+          <div className={styles.textHeading}>
+            <h1>Course Setup</h1>
+            <p>Complete all fields and save your course</p>
+          </div>
+        </div>
         <form onSubmit={handleUpload} className={styles.form}>
-          <input
-            type='text'
-            placeholder='Course Title'
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
-            className={styles.title}
-          />
-          <textarea
-            placeholder='Course Description'
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            required
-            className={styles.desc}
-          />
-          <div className={styles.imageWrapper}>
-            <label htmlFor='file'>Image</label>
-            <input
-              type='file'
-              accept='image/*'
-              placeholder='video'
-              onChange={(e) => handleChange(e, 'image')}
-              required
-              className={styles.image}
-            />
+          <div className={styles.section2}>
+            <div className={`${styles.inputWrapper} ${styles.title}`}>
+              <Label htmlFor='title'>Course Title</Label>
+              <Input
+                type='text'
+                placeholder='Write your course title'
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                required
+                className={styles.title}
+              />
+            </div>
+
+            <div className={`${styles.inputWrapper} ${styles.description}`}>
+              <Label htmlFor='description'>Course Description</Label>
+              <textarea
+                placeholder='Write your course description'
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                required
+                className={styles.desc}
+              />
+            </div>
+
+            <div className={`${styles.inputWrapper} ${styles.imageWrapper}`}>
+              <Label htmlFor='file'>Image</Label>
+              <input
+                type='file'
+                accept='image/*'
+                placeholder='video'
+                onChange={(e) => handleChange(e, 'image')}
+                required
+                className={styles.image}
+              />
+            </div>
+
+            <div className={`${styles.inputWrapper} ${styles.videoWrapper}`}>
+              <Label htmlFor='file'>Video</Label>
+              <input
+                type='file'
+                accept='video/*'
+                onChange={(e) => handleChange(e, 'video')}
+                required
+                className={styles.video}
+              />
+            </div>
+
+            <div className={`${styles.inputWrapper} ${styles.priceWrapper}`}>
+              <Label htmlFor='price'>Course Price</Label>
+              <input
+                type='text'
+                placeholder='Price'
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+                required
+                className={styles.title}
+              />
+            </div>
+
+            <div className={styles.selectWrapper}>
+              <Select
+                // onChange={(e) => setCategory(e.target.value)}
+                options={options}
+                value={selectCategory}
+                onChange={handleSelectChange}
+                label='Category:'
+                className={styles.title}
+                required
+              />
+            </div>
           </div>
 
-          <div className={styles.videoWrapper}>
-            <label htmlFor='file'>Video</label>
-            <input
-              type='file'
-              accept='video/*'
-              onChange={(e) => handleChange(e, 'video')}
-              required
-              className={styles.video}
-            />
-          </div>
-
-          <input
-            type='text'
-            placeholder='Price'
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-            required
-            className={styles.title}
-          />
-
-          <div className={styles.selectWrapper}>
-            <Select
-              // onChange={(e) => setCategory(e.target.value)}
-              options={options}
-              value={selectCategory}
-              onChange={handleSelectChange}
-              label='Category:'
-              className={styles.title}
-              required
-            />
+          <div className={styles.courseSectionsWrapper}>
+            <CourseSections sections={sections}/>
           </div>
 
           <button type='submit' disabled={uploading} className={styles.button}>

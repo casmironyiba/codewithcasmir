@@ -1,6 +1,6 @@
 import { doc, updateDoc, getDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { db, storage } from '@/firebaseConfig';
+import { db, storage } from '@/lib/helpers/firebaseConfig';
 
 export async function uploadFiles(files: { file: File | null; name: string }[], folder: string) {
   const urls = [];

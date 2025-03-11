@@ -1,17 +1,16 @@
 import React, { FC } from 'react'
 
 interface Props {
-  name: string;
-  text: string;
   className?: string | undefined
+  htmlFor?: string
+  children: React.ReactNode
 }
-const Label: FC<Props> = ({ name, text, className = '' }) => {
+const Label: FC<Props> = ({ children, className, htmlFor }) => {
   return (
-    <label htmlFor={name} className={className}>
-      {text}
+    <label htmlFor={htmlFor} className={className}>
+      {children}
     </label>
-
   )
-};
+}
 
-export default Label;
+export default Label

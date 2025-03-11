@@ -1,0 +1,12 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('tablet') {
+
+    .contentWrapper {
+      width: 600px;
+      height: 700px;
+      margin: auto;
+    }
+  }
+}

@@ -4,7 +4,7 @@
   @include abstracts.mq('mobileS') {
     width: 40px;
     height: 30px;
-    @include abstracts.displayFlex(flex-start, flex-start, column nowrap);
+    @include abstracts.displayFlex(space-between, flex-start, column nowrap);
     // gap: 10px;
     .buttonWrapper {
       width: 40px;
@@ -14,9 +14,9 @@
     }
 
     .mobilemenuWrapper {
-      height: 30px;
-      width: 80px;
-      margin-top: 2px;
+      height: 450px;
+      width: 150px;
+      margin-top: 10px;
       // background: red;
     }
   }

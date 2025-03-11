@@ -1,9 +1,9 @@
 import React, { FC, useRef, useEffect, useState } from 'react'
-import DashboardNavigationInterface from '@/types/DashboardNavigationInterface'
+import IDashboardNavigation from '@/types/IDashboardNavigation'
 import styled from 'styled-components'
 import mq from '@/lib/utilities/mediaQueries'
 import {MenuIcon,MenuOpenIcon} from '@/ui/components/common/MenuIcon'
-export const DashboardMenuButton: FC<DashboardNavigationInterface> = ({
+export const DashboardMenuButton: FC<IDashboardNavigation> = ({
   isMenuOpen,
   setIsMenuOpen,
 }) => {
@@ -29,11 +29,11 @@ export const DashboardMenuButton: FC<DashboardNavigationInterface> = ({
   return (
     <Container className={containerClass} ref={menuRef}>
       <div className='menuOpenIconWrapper' ref={menuOpenIconRef}>
-        <MenuOpenIcon sx={{fontSize:'30px',color:'white'}} className='menuOpenIcon' ref={menuOpenIconRef} />
+        <MenuOpenIcon sx={{fontSize:'30px',color:'black'}} className='menuOpenIcon' ref={menuOpenIconRef} />
       </div>
 
       <div className='menuIconWrapper' >
-        <MenuIcon sx={{fontSize:'30px', color:'white'}} className='menuIcon' ref={menuIconRef}/>
+        <MenuIcon sx={{fontSize:'30px', color:'black'}} className='menuIcon' ref={menuIconRef}/>
       </div>
     </Container>
   )

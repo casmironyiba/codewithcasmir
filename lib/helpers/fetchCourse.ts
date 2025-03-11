@@ -1,6 +1,6 @@
 import { doc, getDoc } from 'firebase/firestore'
-import { db } from '@/firebaseConfig'
-import CourseInterface from '@/ui/interface/CourseInterface'
+import { db } from '@/lib/helpers/firebaseConfig'
+import CourseInterface from '@/types/CourseInterface'
 
 interface FetchCourseResponse {
   courseData?: CourseInterface;

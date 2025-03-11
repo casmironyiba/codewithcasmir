@@ -1,26 +1,25 @@
 import React, { FC } from 'react'
-import styles from "./dashboardNavigation.module.scss";
-// import AdminMobileMenu from '@/ui/components/dashboardMobileMenu/AdminMobileMenu';
-import { DashboardMenuButton } from '../DashboardMenuButton';
-import DashboardNavigationInterface from '@/types/DashboardNavigationInterface'
-import AdminPlainLinks from '../adminPlainLinks/AdminPlainLinks';
+import styles from './dashboardNavigation.module.scss'
+import { DashboardMenuButton } from '../DashboardMenuButton'
+import IDashboardNavigation from '@/types/IDashboardNavigation'
 
-// <AdminMobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-
-const AdminDashboardNavigation: FC<DashboardNavigationInterface> = ({ isMenuOpen, setIsMenuOpen, children }) => {
-
-  // const [isMenuOpen, setIsMenuOpen] = useState<any>('');
+const AdminDashboardNavigation: FC<IDashboardNavigation> = ({
+  isMenuOpen,
+  setIsMenuOpen,
+  children,
+}) => {
   return (
     <div className={styles.container}>
       <div className={styles.buttonWrapper}>
-        <DashboardMenuButton isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+        <DashboardMenuButton
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
+        />
       </div>
 
-      <div className={styles.mobilemenuWrapper}>
-        {children}
-      </div>
+      <div className={styles.mobilemenuWrapper}>{children}</div>
     </div>
   )
 }
 
-export default AdminDashboardNavigation;
+export default AdminDashboardNavigation

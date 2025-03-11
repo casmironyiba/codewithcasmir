@@ -2,6 +2,7 @@
 
 .container {
   @include abstracts.mq('laptop') {
+    font-size: 1rem;
 
     .tableHead {
       background: grey;
@@ -9,41 +10,42 @@
 
     .tableBody {
       // background: red;
-        // @include abstracts.displayFlex(center,center);
+      // @include abstracts.displayFlex(center,center);
+      font-size: 1rem;
 
       .tableRow {
         // background: grey;
 
-      td {
-        // background: pink;
+        td {
+          // background: pink;
           width: 10%;
           height: 50px;
 
+          .buttons {
+            width: 100%;
+            height: 100%;
+            // background-color: red;
+            @include abstracts.displayFlex(space-around, center, row nowrap);
 
-        .buttons {
-          width: 100%;
-          height: 100%;
-          // background-color: red;
-          @include abstracts.displayFlex(space-around,center, row nowrap);
+            .viewLink,
+            button {
+              width: 80px;
+              height: 30px;
+              @include abstracts.displayFlex(center, center);
+              border-radius: 5px;
+              // color: abstracts.$red;
+              font-size: .8rem;
+            }
 
-          .viewLink, button {
-            width: 80px;
-            height: 30px;
-          @include abstracts.displayFlex(center,center);
-          border-radius: 5px;
+            .deleteButton {
+              outline: none;
+              border: none;
+              // color: abstracts.$red;
+              font-size: .8rem;
+            }
           }
-
-          .deleteButton {
-            outline: none;
-            border: none;
-            color: abstracts.$red;
-
-          }
-
         }
       }
-      }
-
     }
   }
 }

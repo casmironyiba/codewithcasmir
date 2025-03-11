@@ -1,32 +1,33 @@
 'use client'
 import React, { useState, useEffect, ChangeEvent } from 'react'
-import IUser  from '@/types/IUser'
+// import IUser from '@/types/IUser'
 import Linker from '@/ui/components/common/Linker'
 import SearchBar from '@/ui/components/common/SearchBar'
-import DashboardNavigationInterface from '@/types/DashboardNavigationInterface'
+import IDashboardNavigation from '@/types/IDashboardNavigation'
 import DashboardNavigation from '@/ui/components/dashboardNavigation/DashboardNavigation'
 import styles from './courses.module.scss'
-import MobileMenu from '@/ui/components/dashboardMobileMenu/MobileMenu'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '@/lib/helpers/firebaseConfig'
 import CoursesList from '@/ui/components/coursesList/CoursesList'
-import CourseInterface from '@/ui/interface/CourseInterface'
+import ICourse from '@/types/ICourse'
+import PageLoader from '@/ui/components/Loader'
 
-
-const Courses: React.FC<DashboardNavigationInterface> = () => {
-  const [filteredUsers, setFilteredUsers] = useState<IUser[]>([])
+const Courses: React.FC<IDashboardNavigation> = () => {
+  const [filteredCourses, setFilteredCourses] = useState<ICourse[]>([])
   const [error, setError] = useState<string | null>(null)
-  const [courses, setCourses] = useState<Course[]>([])
+  const [courses, setCourses] = useState<ICourse[]>([])
   const [loading, setLoading] = useState(true)
   const [isMenuOpen, setIsMenuOpen] = useState<any>('')
 
+console.log(filteredCourses)
+console.log(courses)
   const fetchCourses = async () => {
     try {
       const querySnapshot = await getDocs(collection(db, 'courses'))
-      const fetchedCourses: Course[] = querySnapshot.docs.map((doc) => ({
+      const fetchedCourses: ICourse[] = querySnapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(), // Spread the course data (title, description, imageURL)
-      })) as Course[]
+      })) as ICourse[]
 
       setCourses(fetchedCourses)
       setLoading(false)
@@ -43,13 +44,13 @@ const Courses: React.FC<DashboardNavigationInterface> = () => {
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
     const query = e.target.value.toLowerCase()
-    const filtered = users.filter(
-      (user) =>
-        user.name.toLowerCase().includes(query) ||
-        user.username.toLowerCase().includes(query) ||
-        user.email.toLowerCase().includes(query),
+    const filtered = courses.filter(
+      (course) =>
+        course?.title.toLowerCase().includes(query) ||
+        course?.price.toLowerCase().includes(query) ||
+        course?.category?.toLowerCase().includes(query),
     )
-    setFilteredUsers(filtered)
+    setFilteredCourses(filtered)
   }
 
   if (error) {
@@ -57,7 +58,7 @@ const Courses: React.FC<DashboardNavigationInterface> = () => {
   }
 
   if (loading) {
-    return <p>Loading courses...</p>
+    return <PageLoader />
   }
 
   if (courses.length === 0) {
@@ -67,16 +68,6 @@ const Courses: React.FC<DashboardNavigationInterface> = () => {
   return (
     <div className={styles.container}>
       <div className={styles.controlBar}>
-        <DashboardNavigation
-          isMenuOpen={isMenuOpen}
-          setIsMenuOpen={setIsMenuOpen}
-        >
-          <MobileMenu
-            isMenuOpen={isMenuOpen}
-            setIsMenuOpen={setIsMenuOpen}
-            adminLinks
-          />
-        </DashboardNavigation>
 
         <div className={styles.searchbarWrapper}>
           <SearchBar placeholder='Search users...' onChange={handleSearch} />
@@ -88,7 +79,7 @@ const Courses: React.FC<DashboardNavigationInterface> = () => {
       </div>
 
       <div className={styles.contentWrapper}>
-      <CoursesList courses={courses} />
+        <CoursesList courses={courses} />
       </div>
     </div>
   )

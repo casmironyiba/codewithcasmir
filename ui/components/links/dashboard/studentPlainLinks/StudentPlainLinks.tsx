@@ -1,5 +1,5 @@
-import Linker from "../common/Linker"
-import styles from './userPlainLinks.module.scss'
+import Linker from "@/ui/components/common/Linker"
+import styles from './studentPlainLinks.module.scss'
 
 export default function UserPlainLinks() {
   return (

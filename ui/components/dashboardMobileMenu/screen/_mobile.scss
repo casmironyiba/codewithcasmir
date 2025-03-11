@@ -4,18 +4,18 @@
 
 .container {
   @include abstracts.mq('mobileS') {
-    @include abstracts.boxProperty(150px, 450px, '', 0px, inherit);
+    @include abstracts.boxProperty(150%, 450px, '', 0px, inherit);
     @include abstracts.displayFlex(space-between, center, column nowrap);
-    background: abstracts.$grey;
+    background: abstracts.$black;
     gap: 10px;
   }
 }
 .menuOpen {
-  @include abstracts.boxProperty(150px, 80vh, '', 15px, inherit);
+  @include abstracts.boxProperty(150px, 100vh, '', 15px, inherit);
   animation: SlideIn 0.5s forwards;
   @include abstracts.displayFlex(space-between, center, column nowrap);
   background: abstracts.$black;
-  margin-top: 10px;
+  // margin-top: 40px;
 
   .logoWrapper {
     width: 100%;
@@ -27,11 +27,11 @@
 }
 
 .menuClose {
-  @include abstracts.boxProperty(150px, 80vh, '', 5px, inherit);
+  @include abstracts.boxProperty(150px, 100vh, '', 15px, inherit);
   animation: SlideOut 0.5s forwards;
   @include abstracts.displayFlex(space-between, center, column nowrap);
   background: abstracts.$black;
-  margin-top: 10px;
+  // margin-top: 40px;
 
   .logoWrapper {
     width: 100%;

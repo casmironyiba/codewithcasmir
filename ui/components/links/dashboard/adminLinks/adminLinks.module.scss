@@ -3,7 +3,7 @@
 .container {
   @include abstracts.mq('mobileS') {
     display: none;
-  };
+  }
 
   @include abstracts.mq('laptop') {
     @include abstracts.boxProperty(100%, 100%, '', 0px, abstracts.$primary);
@@ -28,6 +28,7 @@
       .linkWrapper {
         @include abstracts.boxProperty(100%, 45px, '', 8px);
         border-radius: 10px;
+        color: white;
 
         .icon {
           font-size: medium;
@@ -44,10 +45,10 @@
           background: abstracts.$grey;
         }
       }
-    }
-    .logout {
-      @include abstracts.boxProperty(100%, 100%);
-      padding: 0;
+      .logout {
+        @include abstracts.boxProperty(100px, 45px);
+        @include abstracts.displayFlex(flex-start, center, row nowrap);
+      }
     }
   }
 }

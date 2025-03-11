@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import styles from './updateCourseImage.module.scss'
-import Imager from '@/ui/components/imager/Imager'
+import Imager from '@/ui/components/common/Imager'
 import ImageIcon from '@mui/icons-material/Image'
 
 interface Image {

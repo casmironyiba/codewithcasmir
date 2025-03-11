@@ -7,11 +7,25 @@ import Main from '@/ui/components/layout/Main';
 import UserLinks from '@/ui/components/links/dashboard/studentLinks/StudentLinks';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
+import PageLoader from '@/ui/components/Loader'
 
 export default function layout({ children }: { children: React.ReactNode }) {
+
+  const { user, isVerified, loading } = useAuth()
   const router = useRouter();
 
-  const { loading, user } = useAuth()
+  useEffect(() => {
+    if (!loading) {
+      if (!user) {
+        router.push('/auth/signin/email')
+      } else if (!isVerified) {
+        router.push('/auth/emailverify')
+      }
+    }
+  }, [user, isVerified, loading, router])
+  if (loading || !user || !isVerified) {
+    return <PageLoader />
+  }
 
   // useEffect(() => {
   //   if (!loading && !user) {

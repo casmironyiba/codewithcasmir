@@ -6,15 +6,17 @@ import IUser from '@/types/IUser'
 import Linker from '@/ui/components/common/Linker'
 import SearchBar from '@/ui/components/common/SearchBar'
 import UserspageContent from '@/ui/components/content/userspageContent/UserpageContent'
-import DashboardNavigation from '@/ui/components/dashboardNavigation/DashboardNavigation'
-import MobileMenu from '@/ui/components/dashboardMobileMenu/MobileMenu'
+// import DashboardNavigation from '@/ui/components/dashboardNavigation/DashboardNavigation'
+// import MobileMenu from '@/ui/components/dashboardMobileMenu/MobileMenu'
 import AdminMobileController from '@/ui/components/dashboardMobileController/admin/AdminMobileController'
+import { Audio } from 'react-loader-spinner'
 
 const UsersPage = () => {
   const [users, setUsers] = useState<IUser[] | any>(undefined)
-  const [filteredUsers, setFilteredUsers] = useState<IUser[] | null>([])
+  const [filteredUsers, setFilteredUsers] = useState<IUser[] | any>([])
   const [error, setError] = useState<string | null>(null)
-  const [isMenuOpen, setIsMenuOpen] = useState<any>('')
+  const [loading, setLoading] = useState<boolean>(false)
+  // const [isMenuOpen, setIsMenuOpen] = useState<any>('')
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -54,7 +56,11 @@ const UsersPage = () => {
         <AdminMobileController />
 
         <div className={styles.searchbarWrapper}>
-          <SearchBar placeholder='Search users...' onChange={handleSearch} />
+          <SearchBar
+            className={styles.searchBar}
+            placeholder='Search users...'
+            onChange={handleSearch}
+          />
         </div>
 
         <div className={styles.adduserWrapper}>

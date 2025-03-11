@@ -2,49 +2,106 @@
 
 .container {
   @include abstracts.mq('mobileS') {
-    @include abstracts.boxProperty(100%, 100%, auto, 0px, abstracts.$white);
+    @include abstracts.boxProperty(100%, 100%, auto, 0px, abstracts.$dark);
 
+    .controlBar {
+      background: abstracts.$dark;
+    }
     .formWrapper {
-      @include abstracts.boxProperty(100%, 500px, '', 10px, inherit);
+      @include abstracts.boxProperty(100%, 900px, '', 5px, inherit);
       @include abstracts.displayFlex(space-around, center, column nowrap);
-      margin-top: 90px;
+      margin-top: 5px;
+      gap: 5px;
+
+      .section1 {
+        @include abstracts.boxProperty(100%, 150px, '', 10px, abstracts.$white);
+        @include abstracts.displayFlex(
+          space-between,
+          flex-start,
+          column nowrap
+        );
+
+        .gobackWrapper {
+          @include abstracts.boxProperty(140px, 35px, '', 2px, inherit);
+          @include abstracts.displayFlex(center, center);
+          border-radius: 5px;
+          color: abstracts.$black;
+          font-size: 0.8rem;
+          background: abstracts.$light;
+        }
+
+        .textHeading {
+          @include abstracts.boxProperty(100%, 100px, '', 5px);
+          // background: blue;
+
+          h1 {
+            height: 50px;
+            width: 100%;
+            @include abstracts.displayFlex(flex-start, center);
+          }
+
+          p {
+            height: 30px;
+            width: 100%;
+            @include abstracts.displayFlex(flex-start, center);
+            // background: grey;
+          }
+        }
+      }
 
       .form {
-        @include abstracts.boxProperty(100%, 400px, '', 10px, inherit);
+        @include abstracts.boxProperty(100%, 700px, '', 0px, inherit);
         @include abstracts.displayFlex(space-around, center, column nowrap);
         font-size: 1rem;
+        color: abstracts.$white;
+        gap:10px;
 
+        .section2 {
+          @include abstracts.displayFlex(space-around,center,column nowrap);
+          gap:10px;
+          // background: red;
+        }
         .image {
           width: 100%;
           height: auto;
           border-radius: 4px;
         }
 
-        .title {
-          width: 100%;
-          height: 40px;
-          padding: 10px;
+        input,textarea {
+          background: abstracts.$black;
+          color: abstracts.$white;
+          border: none;
           outline: none;
-          border: 1px solid palevioletred;
-          border-radius: 3px;
         }
-        .desc {
+
+        .inputWrapper {
           width: 100%;
-          height: 40px;
-          padding: 10px;
-          outline: none;
-          border-radius: 3px;
-          border: 1px solid palevioletred;
+          height: 60px;
+          @include abstracts.displayFlex(space-between,flex-start,column nowrap);
+          // border-bottom: 1px solid abstracts.$white;
+
+          .title,
+          .desc {
+            width: 100%;
+            height: 35px;
+            padding: 10px;
+            outline: none;
+            border: none;
+          }
+          
+          label {
+            height: 20px;
+          }
         }
 
         .imageWrapper,
         .videoWrapper {
           width: 100%;
           height: 40px;
-          background: white;
+          background: black;
+          // padding: 5px;
           @include abstracts.displayFlex(space-between, center, row nowrap);
-          border: 1px solid palevioletred;
-          border-radius: 5px;
+          // border-bottom: 1px solid abstracts.$white;
 
           label {
             width: 50px;
@@ -58,7 +115,7 @@
           .image,
           .video {
             width: 80%;
-            height: 40px;
+            height: 35px;
             padding: 10px;
             outline: none;
           }
@@ -82,6 +139,11 @@
       @include abstracts.displayFlex(space-between, center, row nowrap);
       border: 1px solid palevioletred;
       border-radius: 5px;
+    }
+
+    .courseSectionsWrapper {
+
+      @include abstracts.boxProperty(100%,200px,'',3px,grey);
     }
   }
 }

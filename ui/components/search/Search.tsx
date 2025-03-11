@@ -1,7 +1,7 @@
 
 "use client";
-import React, { useState, useEffect, ChangeEvent, FC } from 'react';
-import SearchBar from '../searchBar/SearchBar';
+import React, { FC } from 'react';
+import SearchBar from '../common/SearchBar';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 interface Props {
@@ -13,7 +13,7 @@ const Search: FC<Props> = ({setFilteredUsers}) => {
   const searchParams = useSearchParams();
   const pathName = usePathname()
   const { replace } = useRouter()
-  const [user,setuser] = useState('')
+  // const [user,setuser] = useState('')
 
   const handleSearch = (event: any) => {
     const params = new URLSearchParams(searchParams)

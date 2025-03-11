@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Button from '../button/Button'
+import Button from '../Button'
 
 const AddMoreButton = styled(Button)`
   width: 100%;

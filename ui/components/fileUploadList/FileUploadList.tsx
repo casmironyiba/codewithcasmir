@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from './fileUploadList.module.scss'
 import { CancelSharp } from '@mui/icons-material'
-import Button, { AddMoreButton } from '../button/Button'
+import AddMoreButton  from '../common/button/AddMoreButton'
 import ViewButton from '../button/ViewButton'
 import ViewLink from '../links/ViewLink'
 

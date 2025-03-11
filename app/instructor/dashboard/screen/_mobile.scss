@@ -1,0 +1,22 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%, 100%, '', 0px, inherit);
+    @include abstracts.displayFlex(flex-start, flex-start, column nowrap);
+    gap: 10px;
+
+    // .controlBar {
+    //   @include abstracts.boxProperty(100%, 40px, '', 0px);
+    //   @include abstracts.displayFlex(space-between, center, row nowrap);
+    //   background: purple;
+    // }
+
+    .contentWrapper {
+      @include abstracts.boxProperty(100%, 100vh, '', 10px, abstracts.$primary);
+      border-radius: 5px;
+      color: white;
+      // background: red;
+    }
+  }
+}

@@ -33,7 +33,7 @@ const CoursesList = ({ courses }: any) => {
             <td>
               <div className={styles.buttons}>
                 <Link
-                  href={`/dashboard/admin/courses/${course.id}`}
+                  href={`/admin/courses/${course.id}`}
                   className={`${styles.link} ${styles.viewLink}`}
                 >
                   <button className={`${styles.button} ${styles.viewButton}`}>
@@ -41,7 +41,7 @@ const CoursesList = ({ courses }: any) => {
                   </button>
                 </Link>
                 <Link
-                  href={`/dashboard/admin/courses/${course.id}`}
+                  href={`/admin/courses/${course.id}`}
                   className={`${styles.link} ${styles.deleteLink}`}
                 >
                   <button className={`${styles.button} ${styles.deleteButton}`}>

@@ -1,14 +1,15 @@
 'use client'
-import React from "react";
+import React from 'react'
 import styled from 'styled-components'
 
 interface InputFieldProps {
-  type: string;
-  name?: string|undefined;
-  value?: string|undefined;
-  placeholder?: string|undefined;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  className?: string|undefined;
+  type: string
+  name?: string | undefined
+  value?: string | undefined
+  placeholder?: string | undefined
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+  className?: string | undefined
+  required?: boolean | undefined
 }
 
 const Input: React.FC<InputFieldProps> = ({
@@ -17,6 +18,7 @@ const Input: React.FC<InputFieldProps> = ({
   value,
   placeholder,
   onChange,
+  required,
   className,
 }) => {
   return (
@@ -26,17 +28,17 @@ const Input: React.FC<InputFieldProps> = ({
       id={name}
       value={value}
       placeholder={placeholder}
+      required={required}
       onChange={onChange}
       className={className}
     />
-  );
-};
+  )
+}
 
-export default Input;
-
+export default Input
 
 const InputStyle = styled.input`
-outline:none;
-with:100%;
-height:100%;
+  outline: none;
+  with: 100%;
+  height: 100%;
 `

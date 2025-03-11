@@ -5,7 +5,8 @@ import UserCredentials from '@/ui/components/userCredentials/UserCredentials'
 import { auth } from '@/firebaseConfig'
 import { onAuthStateChanged, updateProfile, User } from 'firebase/auth'
 import { useRouter } from 'next/navigation';
-import IUser from '@/ui/interface/IUser'
+import IUser from '@/types/IUser'
+import ProfilePicture from '@/ui/components/profilePicture/ProfilePicture'
 
 interface Props {
   user: IUser;
@@ -17,6 +18,8 @@ const AccountSettingsContent: FC<Props> = ({ user, userImg, setUserImg }) => {
     <div className={styles.container}>
       <div className={styles.section1}>
         <h3>Edit Profile</h3>
+
+        <ProfilePicture />
       </div>
       <div className={styles.section2}>
         <ProfileImage userImg={userImg} setUserImg={setUserImg} />

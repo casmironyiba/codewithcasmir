@@ -1,0 +1,35 @@
+@use '@/ui/abstracts';
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%, 100%, '', 0px, inherit);
+    @include abstracts.displayFlex(flex-start, flex-start, column nowrap);
+    gap: 10px;
+    // background: blue;
+    .section1 {
+      width: 100%;
+      height: 200px;
+      // background: blue;
+      // @include abstracts.displayFlex(flex-start, center);
+    }
+
+    .form {
+      @include abstracts.boxProperty(100%, 500px, '', 0px, grey);
+      @include abstracts.displayFlex(space-around, flex-start, column nowrap);
+
+      .imageWrapper {
+        width: 100%;
+        height: 100px;
+        @include abstracts.displayFlex(center,center);
+        // border-radius:50px;
+        background: green;
+
+        img {
+          background: red;
+          width: 100px;
+          height: 100px;
+        }
+
+      }
+    }
+  }
+}

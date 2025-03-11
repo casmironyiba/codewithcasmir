@@ -1,14 +1,25 @@
 @use '@/ui/abstracts';
 
 .container {
-
   @include abstracts.mq('tablet') {
-    height:100%;
-    background: yellow;
-    .chartsWrapper {
-      height: 400px;
-      background: grey;
-      padding: 20px;
+    height: 100%;
+    // background: yellow;
+
+    .wrapper {
+      // background: red;
+      @include abstracts.displayFlex(flex-start, center, column nowrap);
+      gap: 20px;
+      height: 100vh;
+
+      .cardWrapper {
+        @include abstracts.displayFlex(space-around, center, row nowrap);
+        height: 300px;
+      }
+      .chartsWrapper {
+        height: 600px;
+        background: grey;
+        // padding: 20px;
+      }
     }
-  };
-};
+  }
+}

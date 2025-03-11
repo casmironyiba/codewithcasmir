@@ -1,0 +1,25 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%,100%,'', 0px, inherit);
+    @include abstracts.displayFlex(flex-start, flex-start,column nowrap);
+    gap: 10px;
+    // background: red;
+
+    .searchbarWrapper {
+      @include abstracts.boxProperty(100%,70px,'', 5px, abstracts.$primary);
+      border-radius: 5px;
+      color: abstracts.$white;
+    };
+
+    .contentWrapper {
+      @include abstracts.boxProperty(100%,95%,'', 5px, abstracts.$primary);
+      border-radius: 5px;
+      color: white;
+
+    }
+  };
+
+}
+

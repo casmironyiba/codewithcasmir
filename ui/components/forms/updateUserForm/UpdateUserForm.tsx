@@ -11,7 +11,7 @@ import Image from 'next/image'
 import Input from '../../common/Input'
 import Label from '../../common/Label'
 import { updateRole } from '@/actions/updateRole'
-import { UserIcon } from '../../common/UserIcon'
+import ProfilePicture from '../../profilePicture/ProfilePicture'
 
 interface UserProps {
   user: IUser
@@ -40,7 +40,7 @@ const UserCard: React.FC<UserProps> = ({ user }) => {
       <form onSubmit={handleSubmit} className={styles.userWrapper}>
         <div className={styles.imageContainer}>
           <div className={styles.imageWrapper}>
-            <UserIcon sx={{ fontSize: '120px' }} />
+          <ProfilePicture />
           </div>
         </div>
 

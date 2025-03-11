@@ -1,0 +1,6 @@
+@use '@/ui/abstracts';
+
+.container {
+  // @include abstracts.boxProperty(100%,100%,'',5px, abstracts.$grey);
+  @include abstracts.displayFlex(space-between,center,column nowrap);
+}

@@ -1,7 +1,6 @@
 import styled from 'styled-components'
-import link from 'next/link';
-import boxProperty from '@/fp/boxProperty';
-import displayFlex from '@/fp/displayFlex';
+import boxProperty from '@/lib/utilities/boxProperty';
+import displayFlex from '@/lib/utilities/displayFlex';
 
 const ViewLink = styled.a`
   ${boxProperty('100%','100%','0px','0px','inherit')};

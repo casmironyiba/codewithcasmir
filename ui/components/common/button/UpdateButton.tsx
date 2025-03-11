@@ -1,6 +1,6 @@
 import React from 'react'
-import ButtonInterface from '@/ui/interface/ButtonInterface'
-import Button from './Button'
+import ButtonInterface from '@/types/ButtonInterface'
+import Button from '../Button'
 
 const UpdateButton: React.FC<ButtonInterface> = ({
   label,

@@ -1,0 +1,6 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.boxProperty(100%,100%,'',0px,   abstracts.$primary);
+  // background: red;
+}

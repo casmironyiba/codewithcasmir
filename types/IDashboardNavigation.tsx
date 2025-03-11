@@ -1,10 +1,11 @@
 
-export default interface MobileNavigationInterface {
+export default interface IMobileNavigation {
   children?:React.ReactNode;
   isMenuOpen: boolean;
   setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
   searchParams?:any;
-  userLinks?:boolean;
   adminLinks?:boolean;
+  studentLinks?:boolean;
+  instructorLinks?:boolean;
   params?:any
 }

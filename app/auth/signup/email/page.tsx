@@ -13,11 +13,10 @@ import IUser from '@/types/IUser'
 import resetFormFields from '@/lib/utilities/resetFormInput'
 
 export default function EmailSignup() {
-
-  const [name, setName] = useState('')
-  const [username, setUsername] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState<string>('')
+  const [name, setName] = useState<string | undefined>('')
+  const [username, setUsername] = useState<string | undefined>('')
+  const [email, setEmail] = useState<string>('')
+  const [password, setPassword] = useState('')
   const [comfirmPassword, setComfirmPassword] = useState('')
   const [passwordVisible, setPasswordVisible] = useState(false)
   const [comfirmPasswordVisible, setComfirmPasswordVisible] = useState(false)
@@ -43,53 +42,53 @@ export default function EmailSignup() {
   const comfirmPasswordKeyDown = KeyDown(buttonRef)
 
   const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
-    setMessage(null);
+    event.preventDefault()
+    setMessage(null)
 
     const userInput = {
       name,
       username,
       email,
       password,
-    };
+    }
 
     try {
       if (password !== comfirmPassword) {
-        setMessage({ content: 'Password does not match', type: 'error' });
-        console.log('Password does not match');
-        return;
+        setMessage({ content: 'Password does not match', type: 'error' })
+        console.log('Password does not match')
+        return
       }
 
       // Call the server action directly
-      'use server'
-      const response = await signupAction(userInput);
+      ; ('use server')
+      const response = await signupAction(userInput)
       console.log(response)
 
       if (response.success) {
-        setMessage({ content: response.message, type: 'success' });
-        console.log('Signup successful', response);
+        setMessage({ content: response.message, type: 'success' })
+        console.log('Signup successful', response)
 
         const fields = {
           setName,
           setUsername,
           setEmail,
           setPassword,
-          setComfirmPassword
+          setComfirmPassword,
         }
         // Reset form data
-        resetFormFields(fields);
+        resetFormFields(fields)
       } else {
         setMessage({
           content: response.message || 'Invalid Credentials',
           type: 'error',
-        });
-        console.log('Signup failed:', response.message);
+        })
+        console.log('Signup failed:', response.message)
       }
     } catch (error) {
-      setMessage({ content: 'An unexpected error occurred.', type: 'error' });
-      console.error('Signup failed:', error);
+      setMessage({ content: 'An unexpected error occurred.', type: 'error' })
+      console.error('Signup failed:', error)
     }
-  };
+  }
 
   useEffect(() => {
     nameRef.current?.focus()

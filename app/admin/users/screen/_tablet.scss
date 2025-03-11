@@ -1,0 +1,31 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('tablet') {
+    width: 100%;
+    // background-color: abstracts.$primary;
+
+    .controlBar {
+      padding-left: 10px;
+      .searchbarWrapper {
+        width: 300px;
+        font-size: 1rem;
+
+        .searchBar {
+          // background: red;
+        }
+      }
+
+      .adduserWrapper {
+        a {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .contentWrapper {
+      @include abstracts.boxProperty(100%, 100vh, '', 5px);
+      @include abstracts.displayFlex('center', 'center');
+    }
+  }
+}

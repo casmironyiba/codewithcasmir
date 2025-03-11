@@ -1,5 +1,5 @@
 
-export default interface Course {
+export default interface ICourse {
   id: string
   title: string
   description: string

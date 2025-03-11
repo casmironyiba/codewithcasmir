@@ -1,29 +1,23 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, use } from 'react'
 import styles from './coursesID.module.scss'
-import { updateCourseData } from '@/helpers/updateCourse'
-import CourseInterface from '@/ui/interface/CourseInterface'
-import { doc, getDoc } from 'firebase/firestore'
-import { db } from '@/firebaseConfig'
-import { fetchCourseVideos } from '@/helpers/fetchCourseVideos'
-import { Select } from '@mui/material'
+import { updateCourseData } from '@/lib/helpers/updateCourse'
+import CourseInterface from '@/types/CourseInterface'
 import ViewCourseData from '@/ui/components/viewCourseData/ViewCourseData'
 import MobileControlBar from '@/ui/components/mobileControlBar/MobileControlBar'
 import UpdateCourseImage from '@/ui/components/updateCourseImage/UpdateCourseImage'
 import { UpdateCourseProperties } from '@/ui/components/updateCourseProperties/UpdateCourseProperties'
-import AddMore from '@/ui/components/addMore/AddMore'
-import UpdateButton from '@/ui/components/button/UpdateButton'
-import fetchCourse from '@/helpers/fetchCourse'
+import AddMore from '@/ui/components/AddMore'
+import UpdateButton from '@/ui/components/common/button/UpdateButton'
+import fetchCourse from '@/lib/helpers/fetchCourse'
 
 interface CoursePageProps {
-  params: {
-    id: string
-  }
+  params: Promise<{ id: string }>
 }
 
 export default function CoursePage({ params }: CoursePageProps) {
-  const { id } = params
+  const { id } = use(params)
 
   const [videos, setVideos] = useState<{ file: File | null; name: string }[]>(
     [],
@@ -114,7 +108,6 @@ export default function CoursePage({ params }: CoursePageProps) {
             courseVideos={courseVideos}
           />
         </div>
-        <ViewCourseData />
         <div className={styles.buttonWrapper}>
           <UpdateButton type='submit' label='Update Course' />
         </div>
