@@ -5,12 +5,7 @@ import {
   Dashboard,
   HelpCenter,
   School,
-  Assignment,
-  Grade,
-  CastForEducation,
-  LocalActivity,
   Settings,
-  Explore,
 } from '@mui/icons-material'
 import Logout from '@/ui/components/common/Logout'
 import {LogoIcon} from '@/ui/components/Logo'
@@ -24,51 +19,16 @@ export default function InstructorLinks() {
 
       <ul className={styles.wrapper}>
         <div className={`${styles.dashboard} ${styles.linkWrapper}`}>
-          <Linker href='/dashboard/user' className={styles.link}>
+          <Linker href='/instructor/dashboard' className={styles.link}>
             <Dashboard className={styles.icon} />
             <h4>Dashboard </h4>
           </Linker>
         </div>
 
         <div className={`${styles.mycourses} ${styles.linkWrapper}`}>
-          <Linker href='/dashboard/user/mycourses' className={styles.link}>
+          <Linker href='/instructor/courses' className={styles.link}>
             <School className={styles.icon} />
-            <h4>My Courses</h4>
-          </Linker>
-        </div>
-
-        <div className={`${styles.assignments} ${styles.linkWrapper}`}>
-          <Linker href='/dashboard/user/assignments' className={styles.link}>
-            <Assignment className={styles.icon} />
-            <h4>Assignments</h4>
-          </Linker>
-        </div>
-
-        <div className={`${styles.grades} ${styles.linkWrapper}`}>
-          <Linker href='/dashboard/user/grades' className={styles.link}>
-            <Grade className={styles.icon} />
-            <h4>Grades</h4>
-          </Linker>
-        </div>
-
-        <div className={`${styles.certificates} ${styles.linkWrapper}`}>
-          <Linker href='/dashboard/user/certificates' className={styles.link}>
-            <Assignment className={styles.icon} />
-            <h4>Certificates</h4>
-          </Linker>
-        </div>
-
-        <div className={`${styles.learningPlan} ${styles.linkWrapper}`}>
-          <Linker href='/dashboard/user/learningplan' className={styles.link}>
-            <CastForEducation className={styles.icon} />
-            <h4>Learning Plan</h4>
-          </Linker>
-        </div>
-
-        <div className={`${styles.activityFeed} ${styles.linkWrapper}`}>
-          <Linker href='/dashboard/user/activityfeeds' className={styles.link}>
-            <LocalActivity className={styles.icon} />
-            <h4>Activity Feeds</h4>
+            <h4>Courses</h4>
           </Linker>
         </div>
 
@@ -89,12 +49,6 @@ export default function InstructorLinks() {
           </Linker>
         </div>
 
-        <div className={`${styles.explore} ${styles.linkWrapper}`}>
-          <Linker href='/dashboard/user/explore' className={styles.link}>
-            <Explore className={styles.icon} />
-            <h4>Explore</h4>
-          </Linker>
-        </div>
 
         <div className={`${styles.logout} ${styles.linkWrapper}`}>
           <Logout />

@@ -31,7 +31,9 @@
             width: 100px;
             height: 100%;
             // background: grey;
+            padding: 2px;
             @include abstracts.displayFlex(center, center);
+            // margin-right: 10px;
           }
         }
       }

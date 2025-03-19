@@ -1,63 +1,46 @@
-import React from 'react';
-import { UserType } from '../userTypes/UserTypes';
+import React from 'react'
 import styles from './coursesCard.module.scss'
 import Image from 'next/image'
+import ICourse from '@/types/ICourse'
 
 interface UserProps {
-  user: UserType;
+  course: ICourse
 }
 
-const CoursesCard: React.FC<UserProps> = ({ user }) => {
+const CoursesCard: React.FC<UserProps> = ({ course }) => {
   // <VerifiedUser sx={{ fontSize: '2rem' }} />
   return (
     <div className={styles.container}>
-      <div className={styles.textWrapper}>
-        <h1 className={styles.text}>User Credentials</h1>
-      </div>
       <div className={styles.userWrapper}>
-
-        <div className={styles.imageContainer}>
-          <div className={styles.imageWrapper}>
-            <Image src='/images/image4.jpg' width={100} height={100} alt='user image' />
-          </div>
+        <div className={styles.imageWrapper}>
+          <Image
+            src='/images/image4.jpg'
+            width={100}
+            height={100}
+            alt='user image'
+          />
         </div>
 
         <div className={styles.credentialsWrapper}>
           <div className={`${styles.inputWrapper} ${styles.name}`}>
-           Name: {user?.name}
+            {course?.title}
           </div>
 
           <div className={`${styles.inputWrapper} ${styles.username}`}>
-            {user?.username}
+            {course?.category}
           </div>
 
           <div className={`${styles.inputWrapper} ${styles.email}`}>
-            {user?.email}
+            {course?.status}
           </div>
 
           <div className={`${styles.inputWrapper} ${styles.phone}`}>
-            {user?.phone}
-          </div>
-
-          <div className={`${styles.inputWrapper} ${styles.role}`}>
-            {user?.role}
-          </div>
-
-          <div className={`${styles.inputWrapper} ${styles.contry}`}>
-            {user?.country}
-          </div>
-
-          <div className={`${styles.inputWrapper} ${styles.role}`}>
-            {user?.role}
-          </div>
-
-          <div className={`${styles.inputWrapper} ${styles.address}`}>
-            {user?.address}
+            {course?.noOfStudentEnrolled}
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CoursesCard;
+export default CoursesCard

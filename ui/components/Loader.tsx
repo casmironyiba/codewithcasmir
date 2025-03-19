@@ -2,6 +2,16 @@ import displayFlex from '@/lib/utilities/displayFlex'
 import React from 'react'
 import { ThreeCircles,Bars } from 'react-loader-spinner'
 import styled from 'styled-components'
+import { Loader2 } from "lucide-react";
+
+export const Loading = () => {
+  return (
+    <Container>
+      <Loader2 className="loading__spinner" />
+      <span className="loading__text">Loading...</span>
+    </Container>
+  );
+};
 
 export default function PageLoader() {
   return (
@@ -34,5 +44,5 @@ export function fileLoader() {
  width:100%;
  height:100vh;
  ${displayFlex('center','center')};
- background:red;
+ background:white;
  `

@@ -11,9 +11,9 @@ export default function InstructorPlainLinks() {
         </li>
 
         <li>
-          <Linker href='/instructor/mycourses'>My Courses</Linker>
+          <Linker href='/instructor/courses'>Courses</Linker>
         </li>
-
+        
         <li>
           <Linker href='/instructor/accountsettings'>Account Settings</Linker>
         </li>

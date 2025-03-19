@@ -1,0 +1,55 @@
+
+// CustomFormField.module.scss
+
+.customFormField {
+  &__container {
+    border-radius: 8px;
+    position: relative;
+  }
+
+  &__label {
+    font-size: 14px;
+    color: var(--customgreys-dirtyGrey);
+  }
+
+  &__input {
+    border: none;
+    background-color: var(--customgreys-primarybg);
+    padding: 16px;
+    border-radius: 4px;
+  }
+
+  &__textarea {
+    @extend .customFormField__input;
+    background-color: var(--customgreys-darkGrey);
+  }
+
+  &__select {
+    @extend .customFormField__input;
+    background-color: var(--customgreys-primarybg);
+  }
+
+  &__switchContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__file {
+    background-color: var(--customgreys-primarybg);
+    border: 1px solid var(--customgreys-dirtyGrey);
+  }
+
+  &__multiInput {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__button {
+    background-color: transparent;
+    color: var(--customgreys-dirtyGrey);
+    border: none;
+    cursor: pointer;
+  }
+}

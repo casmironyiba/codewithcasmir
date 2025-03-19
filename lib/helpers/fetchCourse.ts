@@ -1,9 +1,9 @@
 import { doc, getDoc } from 'firebase/firestore'
 import { db } from '@/lib/helpers/firebaseConfig'
-import CourseInterface from '@/types/CourseInterface'
+import ICourse from '@/types/ICourse'
 
 interface FetchCourseResponse {
-  courseData?: CourseInterface;
+  courseData?: ICourse;
 }
 
 // export default async function fetchCourse({ id }: any) {
@@ -13,7 +13,7 @@ export default async function fetchCourse({ id }:{id :any}): Promise<FetchCourse
     let courseSnap = await getDoc(courseRef)
 
     if (courseSnap.exists()) {
-      const courseData = courseSnap.data() as CourseInterface
+      const courseData = courseSnap.data() as ICourse
       return {courseData};
     } else {
       return { courseData: undefined };
