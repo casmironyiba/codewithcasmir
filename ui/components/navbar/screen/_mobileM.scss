@@ -1,0 +1,66 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileM') {
+    .wrapper {
+      .layout1 {
+        // background: grey;
+        width: 250px;
+        .logoWrapper {
+          .logoLink {
+            .iconLogo {
+            }
+            .logo {
+            }
+          }
+        }
+
+        .searchInputWrapper {
+          width: 120px;
+          .searchIcon {
+          }
+
+          .searchinputLink {
+            .textMobile {
+            }
+
+            .textbigScreen {
+            }
+          }
+        }
+      }
+
+      .layout2 {
+        @include abstracts.boxProperty(190px, 100%, '', 0px, red);
+        background: inherit;
+
+
+        .actions {
+          @include abstracts.boxProperty(100%, 45px, '', '');
+          @include abstracts.displayFlex(space-between, center, row nowrap);
+          // background: blue;
+
+          .notificationButton {
+            // font-size: 30px;
+          }
+
+          .authWrapper {
+            width: 160px;
+            // height: 100%;
+
+            .authButtonLogin,
+            .authButtonSignup {
+              width: 85px;
+              height: 40px;
+            }
+            .authButtonLogin {
+            }
+
+            .authButtonSignup {
+            }
+          }
+        }
+      }
+    }
+  }
+}

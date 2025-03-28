@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, forwardRef } from 'react'
 import SiteInfo from '@/ui/components/siteInfo/SiteInfo'
 import styled from 'styled-components'
 import Icon from '@/public/icons/logo.svg'
@@ -9,54 +9,58 @@ import remsize from '@/lib/utilities/remsize'
 import displayFlex from '@/lib/utilities/displayFlex'
 
 interface Props {
-  width?: string
-  height?: string
+  width?: string | number
+  height?: string | number
+  className?: any
+  style?: any
 }
 
-export const LogoIcon: FC<Props> = ({ width, height }) => {
+export const LogoIcon: FC<Props> = ({ width, height, className, style }) => {
   return (
-      <Image src={Icon} alt={'logo'} style={{ width, height }} />
+    <Wrapper>
+      <Image className={className} src={Icon} style={style} alt='logo' />
+    </Wrapper>
   )
 }
 
-export default function Logo() {
+const Logo: FC<Props> = ({ width, height, className }) => {
   return (
-    <Container>
+    <Container className={className} style={{ width, height }}>
       <Image src={Icon} alt={'logo'} />
-      {SiteInfo.name}
+      <span> {SiteInfo.name} </span>
     </Container>
   )
 }
 
-// const Wrapper = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   @include abstracts.displayFlex(center, center);
-//   background:blue;
-//   border-bottom: 1px solid white;
-// `
+export default Logo
 
 const Container = styled.div`
   ${mq('mobileS')(`
-    ${boxProperty(remsize(130), remsize(50), '', remsize(0))};
+      display:none;
+`)}
 
-    a {
-      width:100%;
+  ${mq('tablet')(`
+    ${displayFlex('space-between', 'flex-end', 'row nowrap')};
+    width:100%;
+    gap:5px;
+    height:100%;
+    position:relative;
+    font-size:1rem;
+    padding: 3px;
+    // background:red;
+
+    img {
+      width:40%;
       height:100%;
-      ${displayFlex('space-between', 'center', 'row nowrap')};
-      position:relative;
-      font-size:1rem;
-      padding: 3px;
-      display:flex;
+      }
 
-      img {
-        width:30%;
-        height:100%;
+    color:white;
+    text-decoration: none;
+`)}
+`
 
-        }
-
-      color:white;
-      text-decoration: none;
-    }
+const Wrapper = styled.div`
+  ${mq('tablet')(`
+display:none;
 `)}
 `

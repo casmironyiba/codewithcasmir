@@ -9,6 +9,7 @@ import mq from '@/lib/utilities/mediaQueries'
 import boxProperty from '@/lib/utilities/boxProperty'
 import displayFlex from '@/lib/utilities/displayFlex'
 import themes from '@/lib/utilities/themes'
+import { SettingsInputSvideo } from '@mui/icons-material'
 
 interface Props {
   className?: any
@@ -23,7 +24,7 @@ const Header: FC<Props> = () => {
     <Container className={` ${roboto.className}`}>
       <div className='wrapper'>
         <Logo />
-        <NavBar isNavBarOpen={isNavBarOpen} />
+        <NavBar isNavBarOpen={isNavBarOpen} setIsNavBarOpen={setIsNavBarOpen} />
         <Hamburger
           isNavBarOpen={isNavBarOpen}
           setIsNavBarOpen={setIsNavBarOpen}
