@@ -6,6 +6,7 @@ import themes from '@/lib/utilities/themes'
 import displayFlex from '@/lib/utilities/displayFlex'
 import boxProperty from '@/lib/utilities/boxProperty'
 import {motion} from 'framer-motion';
+import Themes from '@/lib/utilities/themes'
 
 // interface Props extends HTMLProps<HTMLDivElement> {
 //   children: React.ReactNode
@@ -29,14 +30,13 @@ const Main = styled(motion.main)`
     max-height: 9000px;
     // max-height: 3000px;
     // background: linear-gradient(to right, grey,palevioletred);
-  }
+    background: ${Themes.$special};
 `)};
 
   ${mq('laptop')(`
     height: 100%;
     // @include abstracts.displayFlex(center, center);
     margin: auto;
-      // background: grey;
   }
 `)}
 `

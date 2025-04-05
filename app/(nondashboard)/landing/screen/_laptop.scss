@@ -2,21 +2,20 @@
 
 .container {
   @include abstracts.mq('laptop') {
-    @include abstracts.boxProperty(100%, 100%, '', 0px, abstracts.$light);
-    // background: green;
+    @include abstracts.boxProperty(100%, 100%, '', 0px, abstracts.$special);
+    background: #16161B;
 
     .wrapper {
-      @include abstracts.boxProperty(100%, 100%, '', 0px, abstracts.$light);
+      @include abstracts.boxProperty(100%, 100%, '', 0px, abstracts.$special);
+    // background: #16161B;
       gap: 20px;
       margin: 0;
-      // background: blue;
 
       .layout1 {
-        height: 400px;
         width: 100%;
-        background: abstracts.$primary;
-        // background: green;
-        margin-top: 10px;
+        background: inherit;
+        // background: abstracts.$blue;
+        // margin-top: 10px;
       }
 
       .layout2 {

@@ -2,11 +2,11 @@
 
 .container {
   @include abstracts.mq('mobileS') {
-    @include abstracts.boxProperty(100%, 100%, auto, 0px, abstracts.$light);
-    background: inherit;
+    @include abstracts.boxProperty(100%, 100%, auto, 0px, abstracts.$special);
+        font-size:.8rem;
 
     .wrapper {
-      @include abstracts.boxProperty(100%, 100%, auto, 0px, abstracts.$light);
+      @include abstracts.boxProperty(100%, 100%, auto, 0px);
       @include abstracts.spaceAround(column nowrap);
       background: inherit;
       gap: 10px;
@@ -14,13 +14,12 @@
       .layout1 {
         @include abstracts.boxProperty(
           100%,
-          700px,
+          500px,
           auto,
           0px,
-          abstracts.$primary
+          abstracts.$special
         );
         @include abstracts.displayFlex(center, center);
-        // background: red;
         margin-top: 10px;
       }
 

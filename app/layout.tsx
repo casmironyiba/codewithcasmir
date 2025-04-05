@@ -1,5 +1,5 @@
 'use client'
-import Footer from '@/ui/components/layout/footer/Footer'
+// import Footer from '@/ui/components/layout/Footer'
 import type { Metadata } from 'next'
 // import StyledComponentsRegistry from '@/libs/styledRegistry'
 import Main from '@/ui/components/layout/Main'
@@ -45,12 +45,7 @@ export default function RootLayout({
         <StyledComponentsRegistry>
           <AuthProvider>
             <Container>
-              <Navbar
-                isNavBarOpen={isNavBarOpen}
-                setIsNavBarOpen={setIsNavBarOpen}
-              />
               <Main>{children}</Main>
-              <Footer />
             </Container>
           </AuthProvider>
         </StyledComponentsRegistry>
@@ -75,9 +70,9 @@ const Container = styled.div`
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: 80px auto 80px;
     grid-template-areas:
-      'n n n n n n n n n n'
       'm m m m m m m m m m'
-      'f f f f f f f f f f';
+      'm m m m m m m m m m'
+      'm m m m m m m m m m'
   `)}
 
   ${mq('tablet')(`
@@ -86,19 +81,19 @@ const Container = styled.div`
 
   ${mq('laptop')(`
     ${boxProperty('100%', '', 'auto', '0px')};
-    padding-left:100px;
-    padding-right:100px;
+    // padding-left:100px;
+    // padding-right:100px;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: 70px auto 50px;
     grid-template-areas:
-      'n n n n n n n n n n'
       'm m m m m m m m m m'
-      'f f f f f f f f f f';
+      'm m m m m m m m m m'
+      'm m m m m m m m m m';
   `)}
 
   ${mq('laptopL')(`
-    padding-left:200px;
-    padding-right:200px;
+    // padding-left:200px;
+    // padding-right:200px;
 
   `)}
 `

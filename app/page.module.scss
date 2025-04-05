@@ -1,19 +1,7 @@
-
-@use "@/ui/abstracts";
+@use '@/ui/abstracts';
 
 .home {
-  @include abstracts.mq("mobileS") {
-    @include abstracts.boxProperty(100%,100%,auto,0px,#0f1e2d);
-    // grid-area:m;
-
-    .homeWrapper {
-      @include abstracts.boxProperty(100%,100%,auto,0px,inherit);
-      // position: relative;
-      background: red;
-
-    }
-
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%, 100%, auto, 0px, abstracts.$special);
   }
-};
-
-
+}

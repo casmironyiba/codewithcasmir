@@ -2,27 +2,82 @@
 
 .container {
   @include abstracts.mq('mobileS') {
-    @include abstracts.boxProperty(100%, 400px, '', 0px, abstracts.$white);
+    @include abstracts.boxProperty(100%, 100%, '', 20px, inherit);
     @include abstracts.displayFlex(space-between, center, column nowrap);
     font-size: 0.8rem;
-    border: 1px solid abstracts.$light;
-    min-height: 400px;
-    max-height: 500px;
+    color: white;
+    // background: grey;
+    // gap: 20px;
 
-    .authTextWrapper {
-      @include abstracts.boxProperty(100%, 100px, '', 0px, inherit);
+    .section1 {
+      @include abstracts.boxProperty(100%, '', '', 0px, inherit);
       @include abstracts.displayFlex(space-between, center, column nowrap);
+    // font-size: 0.7rem;
+      // margin-bottom: 10px;
+      // background: blue;
+        position: relative;
+        bottom:20px;
+
+      .signinText {
+        @include abstracts.boxProperty(100%, 55px, '', 0px, inherit);
+        @include abstracts.displayFlex(space-between, center, column nowrap);
+        // background:grey;
+
+        .header {
+          width: 100%;
+          height: 30px;
+          @include abstracts.displayFlex(center, center);
+          // background: green;
+          font-size: 0.9rem;
+        }
+
+        .subHeader {
+          width: 100%;
+          height: 20px;
+          @include abstracts.displayFlex(center, center);
+          // background: grey;
+          font-size: 0.8rem;
+        }
+      }
+
+      .googleLoginWrapper {
+        width: 100%;
+        height: 40px;
+        @include abstracts.displayFlex(center, center);
+        // background: red;
+      }
+
+      .separator {
+        width: 100%;
+        height: 10px;
+        @include abstracts.displayFlex(space-between, flex-end, row nowrap);
+        position: relative;
+
+        .before {
+          width: 50%;
+          height: 1px;
+          background: abstracts.$light;
+        }
+
+        .after {
+          width: 50%;
+          height: 1px;
+          background: abstracts.$light;
+        }
+      }
     }
 
     .form {
-      @include abstracts.boxProperty(100%, 250px, auto, 0px, abstracts.$white);
-      @include abstracts.displayFlex(center, center, column nowrap);
-      font-size: 0.9rem;
+      @include abstracts.boxProperty(100%, 230px, '', 0px, inherit);
+      @include abstracts.displayFlex(space-around, center, column nowrap);
+      font-size: 0.8rem;
+      // background: abstracts.$red;
 
       .errorWrapper {
-        @include abstracts.boxProperty(100%, 40px, auto, 5px, inherit);
+        @include abstracts.boxProperty(100%, 40px, '', 3px, inherit);
         @include abstracts.displayFlex(center, center);
         color: abstracts.$black;
+        // background: grey;
         // margin: 10px;
 
         .error {
@@ -32,56 +87,69 @@
           background: #eeeeee;
           color: black;
           padding: 10px;
+          border-radius: 5px;
         }
       }
 
       .inputContainer {
-        @include abstracts.boxProperty(100%, 300px, '', abstracts.remsize(5));
+        @include abstracts.boxProperty(100%, 200px, '', 5px);
         @include abstracts.displayFlex(space-around, center, column nowrap);
         // background: blue;
+        min-height: 200px;
+        max-height: 300px;
+        gap: 20px;
+
 
         .emailInputWrapper {
-          @include abstracts.boxProperty(100%, 50px, '', '0', 'white' );
+          @include abstracts.boxProperty(100%, 55px, '', 0);
           @include abstracts.displayFlex(
             space-between,
             flex-start,
             column nowrap
           );
+          // background: blue;
+
+          .emailLabel {
+            font-size: 0.8rem;
+          }
 
           .input {
             @include abstracts.boxProperty(
               100%,
-              40px,
+              30px,
               '',
-              abstracts.remsize(5),
+              5px,
               abstracts.$light
             );
-            font-size: 1rem;
+            // font-size: 1rem;
             border: none;
             border-bottom: 1px solid;
+            border-radius: 7px;
             outline: none;
             font-size: 0.9rem;
-            background: abstracts.$white;
           }
         }
 
         .passwordInputWrapper {
-          @include abstracts.boxProperty(100%, 40px, '', abstracts.remsize(0));
+          @include abstracts.boxProperty(100%, 55px, '', abstracts.remsize(0));
           border-bottom: 1px solid abstracts.$black;
           @include abstracts.displayFlex(
             space-between,
             flex-start,
             column nowrap
           );
-          // background: red;
+          .passwordLabel {
+            font-size: 0.8rem;
+          }
           .eyeContainer {
             @include abstracts.boxProperty(
-              90%,
+              100%,
               abstracts.remsize(30),
               '',
-              abstracts.remsize(0),
+              5px,
               abstracts.$white
             );
+            border-radius: 7px;
             @include abstracts.displayFlex(space-between, center, row nowrap);
             .signinInput,
             .signupInput {
@@ -98,7 +166,7 @@
             .input {
               @include abstracts.boxProperty(
                 90%,
-                40px,
+                30px,
                 '',
                 abstracts.remsize(5),
                 abstracts.$white
@@ -107,7 +175,6 @@
               color: abstracts.$black;
               font-size: 0.9rem;
               outline: none;
-              // background: abstracts.$white;
             }
 
             .passwordEyeWrapper {
@@ -121,27 +188,24 @@
           }
         }
 
-        .forgotpasswordWrapper {
-          width: 100%;
-          height: 30px;
-          // background: red;
-        }
-
         .authButtonWrapper {
           width: 100%;
-          height: 40px;
-          background: abstracts.$black;
-          border-radius: 10px;
-          padding: 10px;
+          height: 35px;
+          // padding: 10px;
         }
+      }
+    }
+    .section3 {
+       @include abstracts.boxProperty(100%,80px,'',5px, inherit);
+      .forgotpasswordWrapper {
+        width: 100%;
+        height: 30px;
+      }
 
-        .accountWrapper {
-          @include abstracts.boxProperty(100%, 40px, '', 0px, none);
-          @include abstracts.displayFlex(space-between, center, row nowrap);
-          color: abstracts.$black;
-          text-align: center;
-          // background: red;
-        }
+      .accountWrapper {
+        @include abstracts.boxProperty(100%, 40px, '', 0px, none);
+        @include abstracts.displayFlex(center, center);
+        color: abstracts.$black;
       }
     }
   }

@@ -1,0 +1,126 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('tablet') {
+    @include abstracts.boxProperty(100%, 100%, '', 2px, abstracts.$special);
+
+    .wrapper {
+      @include abstracts.boxProperty(100%, 100%, '', 0px);
+      @include abstracts.displayFlex(space-between center, row nowrap);
+      // padding-left: 30px;
+
+      .layout1 {
+        @include abstracts.boxProperty(400px, 100%, '', 0px);
+        @include abstracts.displayFlex(space-between, center, row nowrap);
+        // background: red;
+        .logoWrapper {
+          .logoLink {
+            @include abstracts.displayFlex(space-between center, row nowrap);
+            .iconLogo {
+              display: none;
+            }
+            .logo {
+              display: none;
+            }
+          }
+        }
+
+        .searchInputWrapper {
+          @include abstracts.boxProperty(170px, 45px, '', '', abstracts.$dark);
+          @include abstracts.displayFlex(space-around, center, row nowrap);
+          border-radius: 10px;
+
+          .searchIcon {
+            color: abstracts.$light;
+          }
+
+          .searchinputLink {
+            color: abstracts.$light;
+            font-size: 0.8rem;
+            .textMobile {
+              display: none;
+            }
+
+            .textbigScreen {
+              display: inline-block;
+            }
+          }
+        }
+      }
+
+      .layout2 {
+        // width: 500px;
+        @include abstracts.boxProperty(209px, 100%, '', 0px, red);
+        @include abstracts.displayFlex(space-around, center, row nowrap);
+        background: inherit;
+        // background: grey;
+
+        .actions {
+          @include abstracts.boxProperty(100%, 80%, '', '', abstracts.$dark);
+          @include abstracts.displayFlex(space-between, center, row nowrap);
+          background: inherit;
+
+          .notificationButton {
+            background: inherit;
+            border: none;
+            color: abstracts.$light;
+            position: relative;
+
+            .notificationIndicator {
+              position: absolute;
+              top: -7px;
+              right: 0;
+              background-color: abstracts.$lightblue;
+              height: 0.375rem;
+              width: 0.375rem;
+              border-radius: 50%;
+              display: inline-block;
+            }
+            .bellWrapper {
+              height: 25px;
+              width: 25px;
+              top: 0;
+              right: 0;
+              background-color: black;
+              border-radius: 50%;
+              @include abstracts.displayFlex(center, center);
+
+              .notificationIcon {
+                // position: absolute;
+                height: 20px;
+                width: 20px;
+              }
+            }
+          }
+
+          .authWrapper {
+            width: 180px;
+            height: 100%;
+            @include abstracts.displayFlex(space-between, center, row nowrap);
+            // padding: 5px;
+            // gap: 10px;
+            // background: red;
+
+            .authButtonLogin,
+            .authButtonSignup {
+              width: 120px;
+              height: 85%;
+              @include abstracts.displayFlex(center, center);
+              border-radius: 8px;
+              color: abstracts.$light;
+            }
+            .authButtonLogin {
+              border: 1px solid abstracts.$light;
+              background: abstracts.$dark;
+            }
+
+            .authButtonSignup {
+              background: abstracts.$blue;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

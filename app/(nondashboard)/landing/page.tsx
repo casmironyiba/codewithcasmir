@@ -1,7 +1,7 @@
 
 import React from 'react'
 import styles from './landing.module.scss'
-import HomeLayout1 from '@/ui/components/homeLayout1/HomeLayout1'
+import HeroSection from '@/ui/components/HeroSection'
 import HomeLayout2 from '@/ui/components/homeLayout2/HomeLayout2'
 import HomeLayout3 from '@/ui/components/homeLayout3/HomeLayout3'
 import HomeLayout4 from '@/ui/components/homeLayout4/HomeLayout4'
@@ -16,7 +16,7 @@ export default function Landing() {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.layout1}>
-          <HomeLayout1 />
+          <HeroSection />
         </div>
 
         <div className={styles.layout4}>

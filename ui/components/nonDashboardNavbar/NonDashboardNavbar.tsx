@@ -9,7 +9,7 @@ interface NavBarProps {
   setIsNavBarOpen: any
 }
 
-const NavBar: FC<NavBarProps> = ({ isNavBarOpen }) => {
+const NonDashboardNavbar: FC<NavBarProps> = ({ isNavBarOpen }) => {
   // const [isNavBarOpen, setIsNavBarOpen] = useState(false)
   useEffect(() => {
     console.log('NavBar isNavBarOpen:', isNavBarOpen)
@@ -69,5 +69,4 @@ const NavBar: FC<NavBarProps> = ({ isNavBarOpen }) => {
     </nav>
   )
 }
-
-export default NavBar
+ export default NonDashboardNavbar

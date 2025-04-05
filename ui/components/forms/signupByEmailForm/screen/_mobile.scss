@@ -1,0 +1,207 @@
+@use '@/ui/abstracts';
+
+.container {
+  @include abstracts.mq('mobileS') {
+    @include abstracts.boxProperty(100%, 100%, '', 10px, inherit);
+    @include abstracts.displayFlex(space-between, center, column nowrap);
+    // border: 1px solid abstracts.$light;
+    font-size: 0.8rem;
+    color: white;
+      gap: 20px;
+
+    .section1 {
+      @include abstracts.boxProperty(100%, '', '', 0px, inherit);
+      @include abstracts.displayFlex(space-between, center, column nowrap);
+      position: relative;
+      bottom: 10px;
+      gap: 20px;
+      // background: red;
+
+      .signinText {
+        @include abstracts.boxProperty(100%, 50px, '', 0px, inherit);
+        @include abstracts.displayFlex(space-between, center, column nowrap);
+
+        .header {
+          width: 100%;
+          height: 30px;
+          @include abstracts.displayFlex(center, center);
+          // background: green;
+          font-size: 0.9rem;
+        }
+
+        .subHeader {
+          width: 100%;
+          height: 20px;
+          @include abstracts.displayFlex(center, center);
+          // background: grey;
+          font-size: 0.8rem;
+        }
+      }
+
+      .errorWrapper {
+        @include abstracts.boxProperty(100%, '', auto, 0px, inherit);
+        @include abstracts.displayFlex(center, center);
+        color: abstracts.$white;
+        // display: none;
+
+        .success,
+        .error {
+          @include abstracts.boxProperty(100%, 100%);
+          color: abstracts.$red;
+          @include abstracts.displayFlex(center, center);
+          background: inherit;
+          border: 0.5px solid abstracts.$red;
+          border-radius: 7px;
+          font-size: 0.8rem;
+          padding: 15px;
+        }
+      }
+
+      .googleLoginWrapper {
+        width: 100%;
+        height: 40px;
+        @include abstracts.displayFlex(center, center);
+        // background: red;
+      }
+
+      .separator {
+        width: 100%;
+        height: 10px;
+        @include abstracts.displayFlex(space-between, flex-end, row nowrap);
+        position: relative;
+
+        .before {
+          width: 50%;
+          height: 1px;
+          background: abstracts.$light;
+        }
+
+        .after {
+          width: 50%;
+          height: 1px;
+          background: abstracts.$light;
+        }
+      }
+    }
+
+    .form {
+      @include abstracts.boxProperty(100%, 430px, '', 0px, inherit);
+      @include abstracts.displayFlex(space-between, center, column nowrap);
+      font-size: 0.9rem;
+      // background: abstracts.$grey;
+
+      .inputContainer {
+        @include abstracts.boxProperty(100%, 100%, '', abstracts.remsize(5));
+        @include abstracts.displayFlex(space-between, center, column nowrap);
+        // background: blue;
+
+        .inputWrapper {
+          @include abstracts.boxProperty(100%, 55px, '', 0px);
+          @include abstracts.displayFlex(
+            space-between,
+            flex-start,
+            column nowrap
+          );
+          // background: red;
+          .inputLabel {
+            font-size: 0.8rem;
+          }
+
+          .input {
+            @include abstracts.boxProperty(
+              100%,
+              30px,
+              '',
+              abstracts.remsize(5)
+            );
+            color: abstracts.$black;
+            font-size: 0.9rem;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+          }
+
+          .eyeContainer {
+            @include abstracts.boxProperty(
+              100%,
+              30px,
+              '',
+              0px,
+              abstracts.$light
+            );
+            @include abstracts.displayFlex(space-between, center, row nowrap);
+            border-radius: 7px;
+
+            .passwordEyeWrapper {
+              width: 30px;
+              height: 90%;
+              cursor: pointer;
+              color: abstracts.$black;
+              @include abstracts.displayFlex(center, center);
+              #passwordEyeOpen,
+              #comfirmPasswordEyeOpen {
+                display: none;
+              }
+            }
+
+            .comfirmPasswordEyeWrapper {
+              width: 30px;
+              height: 90%;
+              cursor: pointer;
+              color: abstracts.$black;
+              @include abstracts.displayFlex(center, center);
+              #passwordEyeOpen,
+              #comfirmPasswordEyeOpen {
+                display: none;
+              }
+
+              .open {
+                #passwordEyeClose {
+                  display: none;
+                }
+              }
+            }
+
+            .input {
+              width: 90%;
+              border: none;
+              height: 90%;
+            }
+
+            .passwordEyeOpen {
+              display: none;
+            }
+
+            .comfirmPasswordEyeOpen {
+              display: none;
+            }
+          }
+        }
+        .signupAuthButtonWrapper {
+          width: 100%;
+          height: 35px;
+          // background: abstracts.$black;
+          // border-radius: 10px;
+          // padding: 10px;
+        }
+      }
+    }
+
+    .section3 {
+      @include abstracts.boxProperty(100%, 50px, '', 5px, inherit);
+      // background: red;
+      .forgotpasswordWrapper {
+        width: 100%;
+        height: 30px;
+      }
+
+      .alreadyWrapper {
+        @include abstracts.boxProperty(100%, 100%, '', 0px, none);
+        @include abstracts.displayFlex(center, center);
+        color: abstracts.$white;
+        text-align: center;
+        // background: red;
+      }
+    }
+  }
+}

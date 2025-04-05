@@ -6,16 +6,19 @@ import Link from 'next/link'
 import { sendEmailVerification } from 'firebase/auth'
 import { useAuth } from '@/context/AuthContext'
 import { useRouter } from 'next/navigation'
+import { CircleArrowRight } from 'lucide-react'
+import Themes from '@/lib/utilities/themes'
+import SigninLink from '@/ui/components/links/signinLink/SigninLink'
 
 export default function EmailVerify() {
   const { user, isVerified, loading } = useAuth()
   const [message, setMessage] = useState<string>('')
-  const [sending, setSending] = useState(false) 
+  const [sending, setSending] = useState(false)
   const router = useRouter()
 
   useEffect(() => {
     if (isVerified) {
-      router.push('/auth/signin/email') 
+      router.push('/auth/signin/email')
     }
   }, [isVerified, router])
 
@@ -69,15 +72,14 @@ export default function EmailVerify() {
 
           <button type='submit' className={styles.button} disabled={sending}>
             {sending ? 'Sending...' : 'Verify'}
+            <CircleArrowRight size={15} color={Themes.$white} />
           </button>
         </form>
         <div className={styles.already}>
-          <p>
-            Already a member?{' '}
-            <span>
-              <Link href={'/auth/signin/email'}>Sign In</Link>
-            </span>
-          </p>
+          Already a member?{' '}
+          <span>
+            <SigninLink />
+          </span>
         </div>
       </div>
     </div>

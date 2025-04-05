@@ -3,13 +3,15 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import boxProperty from '@/lib/utilities/boxProperty'
 import displayFlex from '@/lib/utilities/displayFlex'
+import Themes from '@/lib/utilities/themes'
+import mq from '@/lib/utilities/mediaQueries'
 
 export default function DontHaveAnAccount(props: any) {
   if (props.admin) {
     return (
       <Container>
         <p>
-          Dont have an account ? <Link href='/auth/signup/admin'>Sign Up</Link>
+          Dont have an account ? <Link href='/signup/admin'>Sign Up</Link>
         </p>
       </Container>
     )
@@ -17,7 +19,7 @@ export default function DontHaveAnAccount(props: any) {
     return (
       <Container>
         <p>
-          Dont have an account ? <Link href='/auth/signup/email'> Sign Up</Link>
+          Dont have an account ? <Link href='/signup/email'> Sign Up</Link>
         </p>
       </Container>
     )
@@ -25,18 +27,26 @@ export default function DontHaveAnAccount(props: any) {
 }
 
 const Container = styled.div`
-  ${boxProperty('100%', '100%', '', '5px')};
+${mq('mobileS')(`
+
+  ${boxProperty('85%', '100%')};
   ${displayFlex('center', 'center')};
 
+
   p {
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
     ${displayFlex('space-around', 'center', 'row nowrap')};
-    // background: red;
-    font-size: 0.9rem;
+    color: ${Themes.$white};
+    font-size: 0.8rem;
     a {
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
   }
+`)}
+
+${mq('tablet')(`
+  ${boxProperty('70%', '100%')};
+`)}
 `

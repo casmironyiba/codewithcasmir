@@ -11,7 +11,7 @@ import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
 } from 'firebase/auth';
-
+import { loginSchema } from '@/lib/helpers/schemas';
 export const addUser = async (userInput: any) => {
   try {
     const { name, username, email, password,role } = userInput;
