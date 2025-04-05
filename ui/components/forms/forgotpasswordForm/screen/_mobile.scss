@@ -10,13 +10,13 @@
     .textWrapper {
       @include abstracts.boxProperty(100%, 100px, '', 0px, inherit);
       @include abstracts.displayFlex(center, center);
+    font-size: 0.7rem;
     }
 
     .form {
-      @include abstracts.boxProperty(100%, 200px, auto, 0px, inherit);
-      @include abstracts.displayFlex(space-around, center, column nowrap);
+      @include abstracts.boxProperty(100%, 200px, '', 0px, inherit);
+      @include abstracts.displayFlex(space-between, center, column nowrap);
       font-size: 0.8rem;
-      background: inherit;
     }
 
     .error {

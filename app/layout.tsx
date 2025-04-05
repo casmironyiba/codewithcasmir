@@ -1,23 +1,15 @@
 'use client'
-// import Footer from '@/ui/components/layout/Footer'
 import type { Metadata } from 'next'
-// import StyledComponentsRegistry from '@/libs/styledRegistry'
-import Main from '@/ui/components/layout/Main'
-// import styles from './page.module.scss';
 import '../ui/globals.scss'
-import styles from './layout.module.scss'
-// import GlobalStyle from '@/components/Globaltyle';
-// import { AuthProvider } from '@/Provider'
 import StyledComponentsRegistry from '@/lib/helpers/styledRegistry'
 import { Open_Sans, Roboto } from 'next/font/google'
-import { usePathname } from 'next/navigation'
 import { AuthProvider } from '@/context/AuthContext'
 import styled from 'styled-components'
-import Navbar from '@/ui/components/navbar/Navbar'
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import mq from '@/lib/utilities/mediaQueries'
 import boxProperty from '@/lib/utilities/boxProperty'
 import Themes from '@/lib/utilities/themes'
+import Main from '@/ui/components/layout/Main'
 
 const openSans = Open_Sans({
   subsets: ['latin'],
@@ -34,27 +26,22 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const pathname = usePathname()
-  // const isAdmin = pathname.startsWith('/admin')
-  // const isInstructor = pathname.startsWith('/instructor')
-  // const isStudent = pathname.startsWith('/student')
-  const [isNavBarOpen, setIsNavBarOpen] = useState(false)
   return (
     <html lang='en'>
       <body>
         <StyledComponentsRegistry>
           <AuthProvider>
-            <Container>
-              <Main>{children}</Main>
-            </Container>
+            <Suspense fallback={null}>
+              <Container>
+                <Main>{children}</Main>
+              </Container>
+            </Suspense>
           </AuthProvider>
         </StyledComponentsRegistry>
       </body>
     </html>
   )
 }
-// {!isAdmin || !isInstructor || (!isStudent && <Header />)}
-// {!isAdmin || !isInstructor || (!isStudent && <Footer />)}
 
 const metadata: Metadata = {
   title: 'Create Next App',
@@ -62,17 +49,10 @@ const metadata: Metadata = {
 }
 
 const Container = styled.div`
-  display: grid;
   ${mq('mobileS')(`
   
-    ${boxProperty('100%', '', 'auto', '0px', Themes.$black)};
-    background:${Themes.$special};
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: 80px auto 80px;
-    grid-template-areas:
-      'm m m m m m m m m m'
-      'm m m m m m m m m m'
-      'm m m m m m m m m m'
+    ${boxProperty('100%', '100%', 'auto', '0px', Themes.$black)};
+    // background:${Themes.$special};
   `)}
 
   ${mq('tablet')(`
@@ -80,20 +60,9 @@ const Container = styled.div`
   `)}
 
   ${mq('laptop')(`
-    ${boxProperty('100%', '', 'auto', '0px')};
-    // padding-left:100px;
-    // padding-right:100px;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: 70px auto 50px;
-    grid-template-areas:
-      'm m m m m m m m m m'
-      'm m m m m m m m m m'
-      'm m m m m m m m m m';
   `)}
 
   ${mq('laptopL')(`
-    // padding-left:200px;
-    // padding-right:200px;
 
   `)}
 `

@@ -6,10 +6,8 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff'
 import VisibilityIcon from '@mui/icons-material/Visibility'
 import styles from './email.module.scss'
 import AlreadyHaveAnAccount from '@/ui/components/AlreadyHaveAnAccount'
-import ResetFormData from '@/ui/components/resetFormData/ResetFormData'
-import AuthText from '@/ui/components/AuthText'
 import { signupAction } from '@/actions/signup'
-import IUser from '@/types/IUser'
+// import IUser from '@/types/IUser'
 import resetFormFields from '@/lib/utilities/resetFormInput'
 import GoogleLogin from '../../GoogleLogin'
 import { Label } from '@/ui/components/Label'
@@ -173,7 +171,7 @@ export default function SignupByEmailForm() {
               onChange={(e) => setName(e.target.value)}
               ref={nameRef}
               onKeyDown={nameKeyDown}
-              placeholder='Name'
+              placeholder='Enter youy name'
               required
             />
           </div>
@@ -189,7 +187,7 @@ export default function SignupByEmailForm() {
               onChange={(e) => setUsername(e.target.value)}
               ref={usernameRef}
               onKeyDown={usernameKeyDown}
-              placeholder='Username'
+              placeholder='Enter your username'
               required
             />
           </div>
@@ -206,7 +204,7 @@ export default function SignupByEmailForm() {
               onChange={(e) => setEmail(e.target.value)}
               ref={emailRef}
               onKeyDown={emailKeyDown}
-              placeholder='Email'
+              placeholder='Enter your email'
               required
             />
           </div>
@@ -275,7 +273,7 @@ export default function SignupByEmailForm() {
                 onChange={(e) => setComfirmPassword(e.target.value)}
                 ref={comfirmPasswordRef}
                 onKeyDown={comfirmPasswordKeyDown}
-                placeholder='Comfirm Password'
+                placeholder='Comfirm your password'
                 required
               />
             </div>

@@ -30,7 +30,7 @@
         }
 
         .searchInputWrapper {
-          @include abstracts.boxProperty(80px, 45px, '', '', abstracts.$dark);
+          @include abstracts.boxProperty(80px, 40px, '', '', abstracts.$dark);
           @include abstracts.displayFlex(space-around, center, row nowrap);
           border-radius: 10px;
 
@@ -58,7 +58,7 @@
         background: inherit;
 
         .actions {
-          @include abstracts.boxProperty(100%, 45px, '', '', abstracts.$dark);
+          @include abstracts.boxProperty(100%, 40px, '', '', abstracts.$dark);
           @include abstracts.displayFlex(space-between, center, row nowrap);
           background: inherit;
 
@@ -108,7 +108,7 @@
               width: 70px;
               height: 100%;
               @include abstracts.displayFlex(center, center);
-              border-radius: 8px;
+              border-radius: 7px;
               color: abstracts.$light;
             }
             .authButtonLogin {

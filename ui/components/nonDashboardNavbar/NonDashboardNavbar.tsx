@@ -1,22 +1,23 @@
 import React, { FC, useEffect, useState } from 'react'
-import styles from './navBar.module.scss'
+import styles from './nonDashboardNavbar.module.scss'
 import Link from 'next/link'
 import { Bell, BookOpen } from 'lucide-react'
 import Logo, { LogoIcon } from '../Logo'
 
-interface NavBarProps {
-  isNavBarOpen: boolean
-  setIsNavBarOpen: any
-}
+// interface NavBarProps {
+//   isNavBarOpen: boolean
+//   setIsNavBarOpen: any
+// }
 
-const NonDashboardNavbar: FC<NavBarProps> = ({ isNavBarOpen }) => {
+const NonDashboardNavbar: FC = () => {
   // const [isNavBarOpen, setIsNavBarOpen] = useState(false)
-  useEffect(() => {
-    console.log('NavBar isNavBarOpen:', isNavBarOpen)
-  }, [isNavBarOpen])
+  // useEffect(() => {
+  //   console.log('NavBar isNavBarOpen:', isNavBarOpen)
+  // }, [isNavBarOpen])
 
+  // <nav className={isNavBarOpen ? styles.navbarOpen : styles.container}>
   return (
-    <nav className={isNavBarOpen ? styles.navbarOpen : styles.container}>
+    <nav className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.layout1}>
           <div className={styles.logoWrapper}>
@@ -69,4 +70,4 @@ const NonDashboardNavbar: FC<NavBarProps> = ({ isNavBarOpen }) => {
     </nav>
   )
 }
- export default NonDashboardNavbar
+export default NonDashboardNavbar

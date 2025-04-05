@@ -50,9 +50,7 @@
       }
 
       .layout2 {
-        @include abstracts.boxProperty(205px, 100%, '', 0px, red);
         @include abstracts.displayFlex(space-around, center, row nowrap);
-        background: inherit;
 
         .actions {
           @include abstracts.boxProperty(100%, 80%, '', '', abstracts.$dark);

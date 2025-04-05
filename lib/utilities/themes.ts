@@ -7,7 +7,7 @@ const Themes = {
   $heroDark: '#1E1E26',
   $lightgreen: 'lightgreen',
   $blue: 'blue',
-  $black: 'blue',
+  $black: 'black',
   $red: 'red',
   $palevioletred: 'palevioletred',
   $light: '#eeeeee',

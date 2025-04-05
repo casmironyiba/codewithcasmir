@@ -6,28 +6,21 @@
     @include abstracts.displayFlex(space-between, center, column nowrap);
     font-size: 0.8rem;
     color: white;
-    // background: grey;
-    // gap: 20px;
 
     .section1 {
       @include abstracts.boxProperty(100%, '', '', 0px, inherit);
       @include abstracts.displayFlex(space-between, center, column nowrap);
-    // font-size: 0.7rem;
-      // margin-bottom: 10px;
-      // background: blue;
-        position: relative;
-        bottom:20px;
+      position: relative;
+      gap: 20px;
 
       .signinText {
         @include abstracts.boxProperty(100%, 55px, '', 0px, inherit);
         @include abstracts.displayFlex(space-between, center, column nowrap);
-        // background:grey;
 
         .header {
           width: 100%;
           height: 30px;
           @include abstracts.displayFlex(center, center);
-          // background: green;
           font-size: 0.9rem;
         }
 
@@ -35,7 +28,6 @@
           width: 100%;
           height: 20px;
           @include abstracts.displayFlex(center, center);
-          // background: grey;
           font-size: 0.8rem;
         }
       }
@@ -44,12 +36,12 @@
         width: 100%;
         height: 40px;
         @include abstracts.displayFlex(center, center);
-        // background: red;
       }
 
       .separator {
         width: 100%;
         height: 10px;
+        margin-top: 10px;
         @include abstracts.displayFlex(space-between, flex-end, row nowrap);
         position: relative;
 
@@ -71,18 +63,14 @@
       @include abstracts.boxProperty(100%, 230px, '', 0px, inherit);
       @include abstracts.displayFlex(space-around, center, column nowrap);
       font-size: 0.8rem;
-      // background: abstracts.$red;
 
       .errorWrapper {
         @include abstracts.boxProperty(100%, 40px, '', 3px, inherit);
         @include abstracts.displayFlex(center, center);
         color: abstracts.$black;
-        // background: grey;
-        // margin: 10px;
 
         .error {
           width: 100%;
-          // height: 100%;
           text-align: center;
           background: #eeeeee;
           color: black;
@@ -94,11 +82,9 @@
       .inputContainer {
         @include abstracts.boxProperty(100%, 200px, '', 5px);
         @include abstracts.displayFlex(space-around, center, column nowrap);
-        // background: blue;
         min-height: 200px;
         max-height: 300px;
         gap: 20px;
-
 
         .emailInputWrapper {
           @include abstracts.boxProperty(100%, 55px, '', 0);
@@ -107,7 +93,6 @@
             flex-start,
             column nowrap
           );
-          // background: blue;
 
           .emailLabel {
             font-size: 0.8rem;
@@ -121,7 +106,7 @@
               5px,
               abstracts.$light
             );
-            // font-size: 1rem;
+            font-size: 0.8rem;
             border: none;
             border-bottom: 1px solid;
             border-radius: 7px;
@@ -161,7 +146,6 @@
             .passwordEyeClose {
               color: abstracts.$black;
               font-size: 1.1rem;
-              // width: 10px;
             }
             .input {
               @include abstracts.boxProperty(
@@ -173,7 +157,7 @@
               );
               border: none;
               color: abstracts.$black;
-              font-size: 0.9rem;
+              font-size: 0.8rem;
               outline: none;
             }
 
@@ -191,12 +175,11 @@
         .authButtonWrapper {
           width: 100%;
           height: 35px;
-          // padding: 10px;
         }
       }
     }
     .section3 {
-       @include abstracts.boxProperty(100%,80px,'',5px, inherit);
+      @include abstracts.boxProperty(100%, 80px, '', 5px, inherit);
       .forgotpasswordWrapper {
         width: 100%;
         height: 30px;

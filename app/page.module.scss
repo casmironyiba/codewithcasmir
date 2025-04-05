@@ -1,7 +1,29 @@
 @use '@/ui/abstracts';
 
 .home {
+  display: grid;
   @include abstracts.mq('mobileS') {
-    @include abstracts.boxProperty(100%, 100%, auto, 0px, abstracts.$special);
+    @include abstracts.boxProperty(100%, '', auto, 0px, abstracts.$black);
+    background: abstracts.$special;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 70px auto 70px;
+    grid-template-areas:
+      'n n n n n n n n n n '
+      'm m m m m m m m m m'
+      'f f f f f f f f f f ';
+  }
+
+  @include abstracts.mq('tablet') {
+    // grid-template-rows: 80px auto 400px;
+  }
+
+  @include abstracts.mq('laptop') {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  @include abstracts.mq('laptopL') {
+    // padding-left:200px;
+    // padding-right:200px;
   }
 }
